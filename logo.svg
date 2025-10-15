@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="Fábrica da Net – Soluções Digitais">
+  <defs>
+    <style>
+      .indigo { fill: #4F46E5; }
+      .slate { fill: #334155; }
+      .none { fill: none; }
+    </style>
+  </defs>
+
+  <!-- Icone: engrenagem + balão com F/N no espaço negativo -->
+  <g transform="translate(24,24)">
+    <!-- Engrenagem base -->
+    <g class="indigo" transform="translate(0,0)">
+      <circle cx="72" cy="96" r="54" />
+      <!-- dentes simples para visual vetorial limpo -->
+      <g>
+        <rect x="68" y="-8" width="8" height="24" transform="translate(0,96) rotate(0 72 12)"/>
+        <rect x="68" y="-8" width="8" height="24" transform="translate(0,96) rotate(30 72 12)"/>
+        <rect x="68" y="-8" width="8" height="24" transform="translate(0,96) rotate(60 72 12)"/>
+        <rect x="68" y="-8" width="8" height="24" transform="translate(0,96) rotate(90 72 12)"/>
+        <rect x="68" y="-8" width="8" height="24" transform="translate(0,96) rotate(120 72 12)"/>
+        <rect x="68" y="-8" width="8" height="24" transform="translate(0,96) rotate(150 72 12)"/>
+        <rect x="68" y="-8" width="8" height="24" transform="translate(0,96) rotate(180 72 12)"/>
+        <rect x="68" y="-8" width="8" height="24" transform="translate(0,96) rotate(210 72 12)"/>
+        <rect x="68" y="-8" width="8" height="24" transform="translate(0,96) rotate(240 72 12)"/>
+        <rect x="68" y="-8" width="8" height="24" transform="translate(0,96) rotate(270 72 12)"/>
+        <rect x="68" y="-8" width="8" height="24" transform="translate(0,96) rotate(300 72 12)"/>
+        <rect x="68" y="-8" width="8" height="24" transform="translate(0,96) rotate(330 72 12)"/>
+      </g>
+    </g>
+
+    <!-- Balão de chat (recorta dentro da engrenagem) -->
+    <mask id="bubbleMask">
+      <rect width="100%" height="100%" fill="#fff"/>
+      <!-- recorte do espaço negativo para F e N será feito via shapes pretas (que retiram) -->
+      <!-- desenha o balão cheio: mantém branco para preservar -->
+      <path d="M72,48
+               a40,40 0 1 1 0,80
+               h-2 l-14,14 4-14
+               a40,40 0 0 1 12,-80 z"
+            fill="#000"/>
+      <!-- Cortes para F e N (removem do balão) -->
+    </mask>
+
+    <!-- Balão aplicado via máscara invertida sobre a engrenagem -->
+    <g mask="url(#bubbleMask)">
+      <circle cx="72" cy="96" r="52" class="indigo"/>
+    </g>
+
+    <!-- Desenha o balão por cima com a cor de fundo (branco via none) para limpar -->
+    <path d="M72,52
+             a36,36 0 1 1 0,72
+             h-3 l-11,11 3-11
+             a36,36 0 0 1 11,-72 z"
+          fill="#ffffff"/>
+
+    <!-- F e N (negativo dentro do balão) usando a cor do fundo para 'recortar' -->
+    <!-- F -->
+    <rect x="52" y="70" width="8" height="40" fill="#4F46E5"/>
+    <rect x="60" y="70" width="20" height="8" fill="#4F46E5"/>
+    <rect x="60" y="87" width="16" height="8" fill="#4F46E5"/>
+
+    <!-- N -->
+    <rect x="86" y="70" width="8" height="40" fill="#4F46E5"/>
+    <polygon points="94,70 112,110 104,110 86,70" fill="#4F46E5"/>
+    <rect x="104" y="70" width="8" height="40" fill="#4F46E5"/>
+  </g>
+
+  <!-- Texto -->
+  <g transform="translate(192,88)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif"
+          font-size="36" font-weight="700" class="slate">
+      Fábrica da Net
+    </text>
+    <text x="0" y="36" font-family="system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif"
+          font-size="20" font-weight="600" letter-spacing="1" class="indigo"
+          style="text-transform: uppercase;">
+      Soluções Digitais
+    </text>
+  </g>
+</svg>
