@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.abacus.ai/images/fbd58c6f-84c5-4148-adee-10b7b29c0af4.png">
-<link rel="icon" type="image/png" sizes="64x64" href="https://cdn.abacus.ai/images/fbd58c6f-84c5-4148-adee-10b7b29c0af4.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="https://cdn.abacus.ai/images/fbd58c6f-84c5-4148-adee-10b7b29c0af4.png">
 </head>
 <body class="h-full dark:bg-gray-900 dark:text-gray-100">
 <div id="login-screen" class="min-h-screen flex items-center justify-center bg-gray-50 py-10 px-4">
   <div class="w-full max-w-md bg-white shadow rounded-lg p-6">
     <div class="text-center mb-6">
-     <img src="logo2.jpg" alt="Fábrica da Net – Soluções Digitais" class="  mx-auto mb-3">
+     <img src="logo2.jpg" alt="Fábrica da Net – Soluções Digitais" class="mx-auto mb-3">
       <h1 class="text-xl font-semibold">Acessar conta</h1>
       <p class="text-sm text-gray-500">Use qualquer e-mail e senha para simular o acesso</p>
     </div>
@@ -21,7 +21,7 @@
       <div>
         <label class="block text-sm font-medium text-gray-700">E-mail</label>
         <input type="email" id="demo-email" autocomplete="email"
-        placeholder="admin@admin.com'
+        placeholder="admin@admin.com"
           class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-indigo-500 focus:ring-indigo-500" required />
       </div>
 
@@ -51,38 +51,20 @@
     </form>
   </div>
 </div>
-</body>
-</html>
-
-<!-- FIM TELA DE LOGIN (DEMO) -->
 
 <div id="dashboard" class="hidden">
-<!DOCTYPE html>
-<html lang="pt-BR" class="h-full bg-gray-100">
-<head>
-  <meta charset="UTF-8" />
-  <title>Sistema Franquia Automotiva - Sidebar</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="h-full dark:bg-gray-900 dark:text-gray-100">
   <div class="flex h-screen">
-    <!-- SIDEBAR -->
     <div id="sidebar" class="w-64 bg-blue-800 dark:bg-blue-900 text-white flex flex-col">
-      <!-- Logo -->
       <div class="p-4 border-b border-blue-700">
         <div class="flex items-center gap-3">
           <img src="favico.webp" alt="Fábrica da Net – Soluções Digitais" class="h-8 ">
           <div>
             <div class="font-bold text-lg">AutoFranquia</div>
             <div class="text-xs text-blue-200">Sistema de Gestão</div>
-           
           </div>
-        
         </div>
       </div>
 
-      <!-- Menu -->
       <nav class="flex-1 p-4 space-y-2">
         <button class="w-full flex items-center gap-3 px-3 py-2 rounded hover:bg-blue-700 transition-colors" onclick="App.showSection('pdv')">
           <span class="text-lg">🛒</span>
@@ -111,18 +93,14 @@
         </button>
       </nav>
 
-      <!-- Footer -->
       <div class="p-4 border-t border-blue-700">
-         <!-- Exemplo de botão Sair (coloque no header/topbar do seu dashboard) -->
-          <button id="btn-logout" class="px-3 py-1.5 text-sm rounded-md bg-gray-800 text-white hover:bg-gray-700">
+         <button id="btn-logout" class="px-3 py-1.5 text-sm rounded-md bg-gray-800 text-white hover:bg-gray-700">
             Sair
           </button>
       </div>
     </div>
 
-    <!-- MAIN CONTENT -->
     <div class="flex-1 flex flex-col overflow-hidden">
-      <!-- Header -->
       <header class="bg-white dark:bg-gray-800 shadow-sm border-b dark:border-gray-700 p-4">
         <div class="flex items-center justify-between">
           <h1 id="page-title" class="text-xl font-semibold">PDV / Caixa</h1>
@@ -133,14 +111,11 @@
         </div>
       </header>
 
-      <!-- Content -->
       <main class="flex-1 overflow-auto p-6">
-        <!-- PDV -->
         <section id="section-pdv" class="hidden">
           <div id="pdv-container"></div>
         </section>
 
-        <!-- PRODUTOS -->
         <section id="section-produtos" class="hidden">
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-2xl font-bold">Gestão de Produtos</h2>
@@ -152,7 +127,6 @@
           <div id="produtos-container"></div>
         </section>
 
-        <!-- CLIENTES -->
         <section id="section-clientes" class="hidden">
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-2xl font-bold">Gestão de Clientes</h2>
@@ -164,13 +138,11 @@
           <div id="clientes-container"></div>
         </section>
 
-        <!-- RELATÓRIOS -->
         <section id="section-relatorios" class="hidden">
           <h2 class="text-2xl font-bold mb-6">Relatórios de Vendas</h2>
           <div id="relatorios-container"></div>
         </section>
 
-        <!-- FINANCEIRO -->
         <section id="section-financeiro" class="hidden">
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-2xl font-bold">Gestão Financeira</h2>
@@ -182,7 +154,6 @@
           <div id="financeiro-container"></div>
         </section>
 
-        <!-- CONFIGURAÇÕES -->
         <section id="section-configuracoes" class="hidden">
           <h2 class="text-2xl font-bold mb-6">Configurações do Sistema</h2>
           <div id="configuracoes-container"></div>
@@ -288,1480 +259,1323 @@
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-    
-  (function () {
-    const STORAGE_KEY = 'demo_logged_in';
+<script>
+//const API_URL = 'http://localhost/autofranquia/api/index.php';
+const API_URL = 'http://localhost:8000/api/index.php';
 
-    const $login = document.getElementById('login-screen');
-    const $dashboard = document.getElementById('dashboard');
-    const $form = document.getElementById('demo-login-form');
-    const $email = document.getElementById('demo-email');
-    const $password = document.getElementById('demo-password');
-    const $remember = document.getElementById('demo-remember');
-    const $error = document.getElementById('demo-error');
-    const $logout = document.getElementById('btn-logout');
+// ============ AUTENTICAÇÃO ============
+(function () {
+  const STORAGE_KEY = 'demo_logged_in';
+  const $login = document.getElementById('login-screen');
+  const $dashboard = document.getElementById('dashboard');
+  const $form = document.getElementById('demo-login-form');
+  const $email = document.getElementById('demo-email');
+  const $password = document.getElementById('demo-password');
+  const $remember = document.getElementById('demo-remember');
+  const $error = document.getElementById('demo-error');
+  const $logout = document.getElementById('btn-logout');
 
-    function showDashboard() {
-      if ($login) $login.classList.add('hidden');
-      if ($dashboard) $dashboard.classList.remove('hidden');
-    }
-    function showLogin() {
-      if ($dashboard) $dashboard.classList.add('hidden');
-      if ($login) $login.classList.remove('hidden');
-    }
+  function showDashboard() {
+    if ($login) $login.classList.add('hidden');
+    if ($dashboard) $dashboard.classList.remove('hidden');
+  }
+  function showLogin() {
+    if ($dashboard) $dashboard.classList.add('hidden');
+    if ($login) $login.classList.remove('hidden');
+  }
 
-    // Estado inicial
-    const logged = sessionStorage.getItem(STORAGE_KEY) === '1' || localStorage.getItem(STORAGE_KEY) === '1';
-    if (logged) {
-      showDashboard();
-    } else {
-      showLogin();
-    }
+  const logged = sessionStorage.getItem(STORAGE_KEY) === '1' || localStorage.getItem(STORAGE_KEY) === '1';
+  if (logged) {
+    showDashboard();
+  } else {
+    showLogin();
+  }
 
-    // Submit de login (validação simples de demo)
-    if ($form) {
-      $form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        $error && $error.classList.add('hidden');
+  if ($form) {
+    $form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      $error && $error.classList.add('hidden');
 
-        const email = ($email?.value || '').trim();
-        const pass = ($password?.value || '').trim();
+      const email = ($email?.value || '').trim();
+      const pass = ($password?.value || '').trim();
 
-        if (!email || !pass) {
-          $error && $error.classList.remove('hidden');
-          return;
-        }
-
-        // Sucesso de demo: qualquer combinação é aceita
-        if ($remember?.checked) {
-          localStorage.setItem(STORAGE_KEY, '1');
-        } else {
-          sessionStorage.setItem(STORAGE_KEY, '1');
-        }
-        showDashboard();
-      });
-    }
-
-    // Logout
-    if ($logout) {
-      $logout.addEventListener('click', function () {
-        localStorage.removeItem(STORAGE_KEY);
-        sessionStorage.removeItem(STORAGE_KEY);
-        showLogin();
-      });
-    }
-  })();
-
-    // data.js - Dados automotivos
-    const Data = {
-      loja: {
-        nome: "AutoFranquia - Lavagem & Peças",
-        doc: "CNPJ: 12.345.678/0001-90",
-        endereco: "Av. Automotiva, 456 - Centro Automotivo - Porto Alegre/RS",
-        contato: "contato@autofranquia.com | (51) 99288-8828"
-      },
-      configuracoes: {
-        empresa: {
-          razaoSocial: "AutoFranquia Ltda",
-          nomeFantasia: "AutoFranquia - Lavagem & Peças",
-          cnpj: "12.345.678/0001-90",
-          inscricaoEstadual: "123.456.789",
-          endereco: "Av. Automotiva, 456",
-          bairro: "Centro Automotivo",
-          cidade: "Porto Alegre",
-          uf: "RS",
-          cep: "90000-000",
-          telefone: "(51) 3333-4444",
-          email: "contato@autofranquia.com",
-          logo: null
-        },
-        nfe: {
-          certificado: null,
-          senha: "",
-          ambiente: "homologacao"
-        },
-        whatsapp: {
-          apiKey: "",
-          numero: "",
-          ativo: false
-        }
-      },
-      franquias: [
-        { id: 1, nome: "Matriz Porto Alegre", cidade: "Porto Alegre", cnpj: "12.345.678/0001-90", logo: null },
-        { id: 2, nome: "Filial Canoas", cidade: "Canoas", cnpj: "12.345.678/0002-71", logo: null },
-        { id: 3, nome: "Filial Novo Hamburgo", cidade: "Novo Hamburgo", cnpj: "12.345.678/0003-52", logo: null }
-      ],
-      produtos: [
-        { id: 1, nome: "Lavagem Simples", preco: 25.0, estoque: 999, sku: "LAV-001", categoria: "Serviços", imagem: "https://placehold.co/300x200/3B82F6/FFFFFF?text=Lavagem+Simples" },
-        { id: 2, nome: "Lavagem Completa", preco: 45.0, estoque: 999, sku: "LAV-002", categoria: "Serviços", imagem: "https://placehold.co/300x200/3B82F6/FFFFFF?text=Lavagem+Completa" },
-        { id: 3, nome: "Enceramento", preco: 80.0, estoque: 999, sku: "LAV-003", categoria: "Serviços", imagem: "https://placehold.co/300x200/3B82F6/FFFFFF?text=Enceramento" },
-        { id: 4, nome: "Óleo Motor 5W30", preco: 89.9, estoque: 15, sku: "OLE-001", categoria: "Peças", imagem: "https://placehold.co/300x200/F97316/FFFFFF?text=Oleo+Motor" },
-        { id: 5, nome: "Filtro de Ar", preco: 35.0, estoque: 8, sku: "FIL-001", categoria: "Peças", imagem: "https://placehold.co/300x200/F97316/FFFFFF?text=Filtro+Ar" },
-        { id: 6, nome: "Pneu 185/65R15", preco: 280.0, estoque: 4, sku: "PNE-001", categoria: "Peças", imagem: "https://placehold.co/300x200/F97316/FFFFFF?text=Pneu" },
-        { id: 7, nome: "Bateria 60Ah", preco: 320.0, estoque: 3, sku: "BAT-001", categoria: "Peças", imagem: "https://placehold.co/300x200/F97316/FFFFFF?text=Bateria" },
-        { id: 8, nome: "Pastilha de Freio", preco: 120.0, estoque: 6, sku: "FRE-001", categoria: "Peças", imagem: "https://placehold.co/300x200/F97316/FFFFFF?text=Pastilha+Freio" }
-      ],
-      clientes: [
-        { 
-          id: 1, 
-          nome: "João Silva", 
-          email: "joao@email.com", 
-          telefone: "(51) 99999-1111", 
-          documento: "123.456.789-00",
-          tipoDocumento: "CPF",
-          veiculo: "Honda Civic 2020",
-          endereco: {
-            logradouro: "Rua das Flores, 123",
-            bairro: "Centro",
-            cidade: "Porto Alegre",
-            uf: "RS",
-            cep: "90000-000"
-          }
-        },
-        { 
-          id: 2, 
-          nome: "Maria Souza", 
-          email: "maria@email.com", 
-          telefone: "(51) 99999-2222", 
-          documento: "987.654.321-00",
-          tipoDocumento: "CPF",
-          veiculo: "Toyota Corolla 2019",
-          endereco: {
-            logradouro: "Av. Brasil, 456",
-            bairro: "Cidade Baixa",
-            cidade: "Porto Alegre",
-            uf: "RS",
-            cep: "90000-001"
-          }
-        },
-        { 
-          id: 3, 
-          nome: "AutoPeças Ltda", 
-          email: "contato@autopecas.com", 
-          telefone: "(51) 99999-3333", 
-          documento: "12.345.678/0001-90",
-          tipoDocumento: "CNPJ",
-          veiculo: "Frota Comercial",
-          endereco: {
-            logradouro: "Rua Industrial, 789",
-            bairro: "Distrito Industrial",
-            cidade: "Canoas",
-            uf: "RS",
-            cep: "90000-002"
-          }
-        }
-      ],
-      vendas: [
-        { id: 1, cliente: "João Silva", valor: 389.7, data: "2025-09-01", franquia_id: 1 },
-        { id: 2, cliente: "Maria Souza", valor: 59.9, data: "2025-09-03", franquia_id: 1 },
-        { id: 3, cliente: "AutoPeças Ltda", valor: 125.0, data: "2025-09-05", franquia_id: 2 }
-      ],
-      financeiro: [
-        { id: 1, tipo: "entrada", valor: 1500, descricao: "Vendas do dia", data: "2025-09-01", franquia_id: 1 },
-        { id: 2, tipo: "saida", valor: 500, descricao: "Compra de produtos", data: "2025-09-02", franquia_id: 1 },
-        { id: 3, tipo: "entrada", valor: 800, descricao: "Serviços de lavagem", data: "2025-09-03", franquia_id: 2 }
-      ],
-      formatMoney(v) {
-        const num = typeof v === "number" ? v : Number(v || 0);
-        return num.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-      },
-      nextId(array) {
-        return Math.max(...array.map(item => item.id), 0) + 1;
-      },
-      formatDocument(doc, tipo) {
-        if (!doc) return "";
-        const clean = doc.replace(/\D/g, "");
-        if (tipo === "CPF" && clean.length === 11) {
-          return clean.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
-        }
-        if (tipo === "CNPJ" && clean.length === 14) {
-          return clean.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
-        }
-        return doc;
-      }
-    };
-
-    // Modal genérico
-    const Modal = {
-      open(title, content, onConfirm) {
-        document.getElementById("modal-title").textContent = title;
-        document.getElementById("modal-content").innerHTML = content;
-        document.getElementById("modal-confirm").onclick = onConfirm;
-        document.getElementById("modal-backdrop").classList.remove("hidden");
-        document.getElementById("modal-container").classList.remove("hidden");
-      },
-      close() {
-        document.getElementById("modal-backdrop").classList.add("hidden");
-        document.getElementById("modal-container").classList.add("hidden");
-      }
-    };
-
-    // Util: impressão
-    function openPrintWindow(contentHtml) {
-      const win = window.open("", "_blank", "width=420,height=800");
-      if (!win) {
-        alert("Pop-up bloqueado. Permita pop-ups para imprimir.");
+      if (!email || !pass) {
+        $error && $error.classList.remove('hidden');
         return;
       }
-      win.document.open();
-      win.document.write(`
-        <!DOCTYPE html>
-        <html lang="pt-BR">
-        <head>
-          <meta charset="UTF-8" />
-          <title>Comprovante</title>
-          <style>
-            @page { size: 80mm auto; margin: 5mm; }
-            body { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
-            .receipt { width: 72mm; margin: 0 auto; }
-            .center { text-align: center; }
-            .right { text-align: right; }
-            .muted { color: #444; font-size: 12px; }
-            .hr { border-top: 1px dashed #000; margin: 8px 0; }
-            table { width: 100%; border-collapse: collapse; }
-            td { vertical-align: top; font-size: 12px; }
-            .totais td { font-size: 13px; }
-            .qr { width: 120px; height: 120px; background: #eee; display: block; margin: 8px auto; }
-            @media print { .no-print { display: none; } }
-          </style>
-        </head>
-        <body>
-          <div class="receipt">
-            ${contentHtml}
-          </div>
-          <script>
-            window.onload = function() {
-              window.print();
-              setTimeout(() => window.close(), 300);
-            };
-          <\/script>
-        </body>
-        </html>
-      `);
-      win.document.close();
+
+      if ($remember?.checked) {
+        localStorage.setItem(STORAGE_KEY, '1');
+      } else {
+        sessionStorage.setItem(STORAGE_KEY, '1');
+      }
+      showDashboard();
+      App.init();
+    });
+  }
+
+  if ($logout) {
+    $logout.addEventListener('click', function () {
+      localStorage.removeItem(STORAGE_KEY);
+      sessionStorage.removeItem(STORAGE_KEY);
+      showLogin();
+    });
+  }
+})();
+
+// ============ UTILITÁRIOS ============
+const Data = {
+  formatMoney(v) {
+    const num = typeof v === "number" ? v : Number(v || 0);
+    return num.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  },
+  formatDocument(doc, tipo) {
+    if (!doc) return "";
+    const clean = doc.replace(/\D/g, "");
+    if (tipo === "CPF" && clean.length === 11) {
+      return clean.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+    }
+    if (tipo === "CNPJ" && clean.length === 14) {
+      return clean.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
+    }
+    return doc;
+  }
+};
+
+const API = {
+  async get(resource, id = null) {
+    const url = id ? `${API_URL}/${resource}/${id}` : `${API_URL}/${resource}`;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Erro ao buscar ${resource}`);
+    return response.json();
+  },
+
+  async post(resource, data) {
+    const response = await fetch(`${API_URL}/${resource}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!response.ok) throw new Error(`Erro ao criar ${resource}`);
+    return response.json();
+  },
+
+  async put(resource, id, data) {
+    const response = await fetch(`${API_URL}/${resource}/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!response.ok) throw new Error(`Erro ao atualizar ${resource}`);
+    return response.json();
+  },
+
+  async delete(resource, id) {
+    const response = await fetch(`${API_URL}/${resource}/${id}`, {
+      method: 'DELETE'
+    });
+    if (!response.ok) throw new Error(`Erro ao deletar ${resource}`);
+    return response.json();
+  }
+};
+
+// ============ MODAL GENÉRICO ============
+const Modal = {
+  open(title, content, onConfirm) {
+    document.getElementById("modal-title").textContent = title;
+    document.getElementById("modal-content").innerHTML = content;
+    document.getElementById("modal-confirm").onclick = onConfirm;
+    document.getElementById("modal-backdrop").classList.remove("hidden");
+    document.getElementById("modal-container").classList.remove("hidden");
+  },
+  close() {
+    document.getElementById("modal-backdrop").classList.add("hidden");
+    document.getElementById("modal-container").classList.add("hidden");
+  }
+};
+
+// ============ IMPRESSÃO ============
+function openPrintWindow(contentHtml) {
+  const win = window.open("", "_blank", "width=420,height=800");
+  if (!win) {
+    alert("Pop-up bloqueado. Permita pop-ups para imprimir.");
+    return;
+  }
+  win.document.open();
+  win.document.write(`
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Comprovante</title>
+      <style>
+        @page { size: 80mm auto; margin: 5mm; }
+        body { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+        .receipt { width: 72mm; margin: 0 auto; }
+        .center { text-align: center; }
+        .right { text-align: right; }
+        .muted { color: #444; font-size: 12px; }
+        .hr { border-top: 1px dashed #000; margin: 8px 0; }
+        table { width: 100%; border-collapse: collapse; }
+        td { vertical-align: top; font-size: 12px; }
+        .totais td { font-size: 13px; }
+        .qr { width: 120px; height: 120px; background: #eee; display: block; margin: 8px auto; }
+        @media print { .no-print { display: none; } }
+      </style>
+    </head>
+    <body>
+      <div class="receipt">
+        ${contentHtml}
+      </div>
+      <script>
+        window.onload = function() {
+          window.print();
+          setTimeout(() => window.close(), 300);
+        };
+      <\/script>
+    </body>
+    </html>
+  `);
+  win.document.close();
+}
+
+function buildReceiptHTML({ numero, dataHora, itens, subtotal, descontos = 0, acrescimos = 0, total, pagamento = "Dinheiro", cliente = "Balcão", recebido = 0, troco = 0 }) {
+  const loja = {
+    nome: "AutoFranquia - Lavagem & Peças",
+    doc: "CNPJ: 12.345.678/0001-90",
+    endereco: "Av. Automotiva, 456 - Centro Automotivo - Porto Alegre/RS",
+    contato: "contato@autofranquia.com | (51) 99288-8828"
+  };
+
+  const itensRows = itens.map(i => `
+    <tr>
+      <td>${i.nome}<br/><span class="muted">${i.qtd} x ${Data.formatMoney(i.preco)}</span></td>
+      <td class="right">${Data.formatMoney(i.qtd * i.preco)}</td>
+    </tr>
+  `).join("");
+
+  return `
+    <div class="center">
+      <div><strong>${loja.nome}</strong></div>
+      <div class="muted">${loja.doc}</div>
+      <div class="muted">${loja.endereco}</div>
+      <div class="muted">${loja.contato}</div>
+    </div>
+    <div class="hr"></div>
+    <div class="muted">Cupom Não Fiscal</div>
+    <div>Nº: ${numero}</div>
+    <div class="muted">Data/Hora: ${dataHora}</div>
+    <div class="muted">Cliente: ${cliente || "Balcão"}</div>
+    <div class="hr"></div>
+
+    <table><tbody>${itensRows}</tbody></table>
+
+    <div class="hr"></div>
+    <table class="totais">
+      <tr><td>Subtotal</td><td class="right">${Data.formatMoney(subtotal)}</td></tr>
+      <tr><td>Descontos</td><td class="right">-${Data.formatMoney(descontos)}</td></tr>
+      <tr><td>Acréscimos</td><td class="right">${Data.formatMoney(acrescimos)}</td></tr>
+      <tr><td><strong>Total</strong></td><td class="right"><strong>${Data.formatMoney(total)}</strong></td></tr>
+      <tr><td>Pagamento</td><td class="right">${pagamento}</td></tr>
+      ${pagamento === "Dinheiro" ? `
+        <tr><td>Recebido</td><td class="right">${Data.formatMoney(recebido)}</td></tr>
+        <tr><td>Troco</td><td class="right">${Data.formatMoney(troco)}</td></tr>
+      ` : ``}
+    </table>
+
+    <div class="hr"></div>
+    <div class="center">
+      <div class="muted">Obrigado pela preferência!</div>
+      <div class="qr"></div>
+      <div class="muted">Volte sempre! 🚗</div>
+    </div>
+  `;
+}
+
+// ============ PDV ============
+const PDV = {
+  carrinho: [],
+  filtro: "",
+  checkoutState: { subtotal: 0, descontos: 0, acrescimos: 0, total: 0, pagamento: "Dinheiro", recebido: 0, troco: 0, cliente: "Balcão" },
+  produtos: [],
+
+  async addProduto(id) {
+    const p = this.produtos.find(x => x.id === id);
+    if (!p) return;
+    const idx = this.carrinho.findIndex(i => i.id === id);
+    if (idx >= 0) {
+      if (p.categoria === "Serviços" || this.carrinho[idx].qtd < p.estoque) {
+        this.carrinho[idx].qtd++;
+      } else {
+        alert("Estoque insuficiente.");
+      }
+    } else {
+      this.carrinho.push({ id: p.id, nome: p.nome, preco: p.preco, qtd: 1, categoria: p.categoria });
+    }
+    this.render();
+  },
+
+  inc(id) {
+    const p = this.produtos.find(x => x.id === id);
+    const item = this.carrinho.find(i => i.id === id);
+    if (!p || !item) return;
+    if (p.categoria === "Serviços" || item.qtd < p.estoque) {
+      item.qtd++;
+    } else {
+      alert("Estoque insuficiente.");
+    }
+    this.render();
+  },
+
+  dec(id) {
+    const item = this.carrinho.find(i => i.id === id);
+    if (!item) return;
+    item.qtd--;
+    if (item.qtd <= 0) this.carrinho = this.carrinho.filter(i => i.id !== id);
+    this.render();
+  },
+
+  rem(id) {
+    this.carrinho = this.carrinho.filter(i => i.id !== id);
+    this.render();
+  },
+
+  total() {
+    return this.carrinho.reduce((s, i) => s + i.preco * i.qtd, 0);
+  },
+
+  openCheckout() {
+    const subtotal = this.total();
+    if (subtotal <= 0) { alert("Carrinho vazio."); return; }
+    this.checkoutState = { subtotal, descontos: 0, acrescimos: 0, total: subtotal, pagamento: "Dinheiro", recebido: 0, troco: 0, cliente: "Balcão" };
+
+    document.getElementById("ck-cliente").value = "";
+    document.getElementById("ck-pagamento").value = "Dinheiro";
+    document.getElementById("ck-desc").value = "";
+    document.getElementById("ck-desc-tipo").value = "valor";
+    document.getElementById("ck-acres").value = "";
+    document.getElementById("ck-acres-tipo").value = "valor";
+    document.getElementById("ck-recebido").value = "";
+
+    this.updateCheckoutUI();
+
+    document.getElementById("checkout-backdrop").classList.remove("hidden");
+    document.getElementById("checkout-modal").classList.remove("hidden");
+
+    const onChange = () => this.updateCheckoutUI();
+    ["ck-cliente","ck-pagamento","ck-desc","ck-desc-tipo","ck-acres","ck-acres-tipo","ck-recebido"].forEach(id => {
+      const el = document.getElementById(id);
+      el.oninput = onChange;
+      el.onchange = onChange;
+    });
+  },
+
+  closeCheckout() {
+    document.getElementById("checkout-backdrop").classList.add("hidden");
+    document.getElementById("checkout-modal").classList.add("hidden");
+  },
+
+  computeTotals() {
+    const cliente = (document.getElementById("ck-cliente").value || "Balcão").trim();
+    const pagamento = document.getElementById("ck-pagamento").value;
+    const descVal = parseFloat(document.getElementById("ck-desc").value.replace(",", ".")) || 0;
+    const descTipo = document.getElementById("ck-desc-tipo").value;
+    const acresVal = parseFloat(document.getElementById("ck-acres").value.replace(",", ".")) || 0;
+    const acresTipo = document.getElementById("ck-acres-tipo").value;
+    const recebidoVal = parseFloat(document.getElementById("ck-recebido").value.replace(",", ".")) || 0;
+
+    const subtotal = this.total();
+    const descontos = descTipo === "percent" ? subtotal * (descVal / 100) : descVal;
+    const acrescimos = acresTipo === "percent" ? subtotal * (acresVal / 100) : acresVal;
+    const total = Math.max(0, subtotal - descontos + acrescimos);
+
+    let recebido = 0, troco = 0;
+    if (pagamento === "Dinheiro") {
+      recebido = recebidoVal;
+      troco = Math.max(0, recebido - total);
+    } else {
+      recebido = total;
+      troco = 0;
     }
 
-    // Gera HTML do cupom
-    function buildReceiptHTML({ numero, dataHora, itens, subtotal, descontos = 0, acrescimos = 0, total, pagamento = "Dinheiro", cliente = "Balcão", recebido = 0, troco = 0 }) {
-      const loja = Data.loja;
-      const itensRows = itens.map(i => `
-        <tr>
-          <td>${i.nome}<br/><span class="muted">${i.qtd} x ${Data.formatMoney(i.preco)}</span></td>
-          <td class="right">${Data.formatMoney(i.qtd * i.preco)}</td>
-        </tr>
-      `).join("");
+    this.checkoutState = { subtotal, descontos, acrescimos, total, pagamento, recebido, troco, cliente };
+  },
 
-      return `
-        <div class="center">
-          <div><strong>${loja.nome}</strong></div>
-          <div class="muted">${loja.doc}</div>
-          <div class="muted">${loja.endereco}</div>
-          <div class="muted">${loja.contato}</div>
+  updateCheckoutUI() {
+    this.computeTotals();
+    const { subtotal, descontos, acrescimos, total, pagamento, troco } = this.checkoutState;
+
+    document.getElementById("ck-subtotal").textContent = Data.formatMoney(subtotal);
+    document.getElementById("ck-desc-view").textContent = `-${Data.formatMoney(descontos)}`;
+    document.getElementById("ck-acres-view").textContent = Data.formatMoney(acrescimos);
+    document.getElementById("ck-total").textContent = Data.formatMoney(total);
+    document.getElementById("ck-troco").textContent = Data.formatMoney(troco);
+
+    const recebidoInput = document.getElementById("ck-recebido");
+    recebidoInput.disabled = pagamento !== "Dinheiro";
+    if (pagamento !== "Dinheiro") {
+      recebidoInput.value = "";
+    }
+  },
+
+  async confirmCheckout() {
+    this.computeTotals();
+    const { total, pagamento, recebido, troco, cliente, subtotal, descontos, acrescimos } = this.checkoutState;
+
+    if (total <= 0) {
+      alert("Total inválido.");
+      return;
+    }
+    if (pagamento === "Dinheiro" && recebido < total) {
+      alert("Valor recebido insuficiente.");
+      return;
+    }
+
+    try {
+      // Salvar venda
+      const venda = await API.post('vendas', {
+        cliente,
+        valor: total,
+        data: new Date().toISOString().slice(0, 10),
+        franquia_id: 1,
+        pagamento,
+        desconto: descontos,
+        acrescimo: acrescimos
+      });
+
+      // Salvar itens da venda
+      for (const item of this.carrinho) {
+        await API.post('venda_itens', {
+          venda_id: venda.id,
+          produto_id: item.id,
+          quantidade: item.qtd,
+          preco_unitario: item.preco
+        });
+
+        // Debitar estoque se for peça
+        const produto = this.produtos.find(p => p.id === item.id);
+        if (produto && produto.categoria === "Peças") {
+          await API.put('produtos', item.id, {
+            estoque: Math.max(0, produto.estoque - item.qtd)
+          });
+          produto.estoque = Math.max(0, produto.estoque - item.qtd);
+        }
+      }
+
+      // Salvar entrada financeira
+      await API.post('financeiro', {
+        tipo: 'entrada',
+        valor: total,
+        descricao: `Venda PDV (${pagamento})`,
+        data: new Date().toISOString().slice(0, 10),
+        franquia_id: 1
+      });
+
+      const numero = (venda.id).toString().padStart(6, "0");
+      const dataHora = new Date().toLocaleString("pt-BR");
+      const itens = this.carrinho.map(i => ({ ...i }));
+
+      const receiptHTML = buildReceiptHTML({
+        numero, dataHora, itens, subtotal, descontos, acrescimos, total, pagamento, cliente, recebido, troco
+      });
+      openPrintWindow(receiptHTML);
+
+      this.carrinho = [];
+      this.closeCheckout();
+      this.render();
+    } catch (error) {
+      console.error('Erro ao confirmar checkout:', error);
+      alert('Erro ao processar venda: ' + error.message);
+    }
+  },
+
+  async render() {
+    const el = document.getElementById("pdv-container");
+    if (!el) return;
+
+    try {
+      this.produtos = await API.get('produtos');
+    } catch (error) {
+      console.error('Erro ao carregar produtos:', error);
+      this.produtos = [];
+    }
+
+    const termo = (this.filtro || "").toLowerCase().trim();
+    const lista = this.produtos.filter(p =>
+      p.nome.toLowerCase().includes(termo) || p.sku.toLowerCase().includes(termo) || p.categoria.toLowerCase().includes(termo)
+    );
+
+    const produtosHTML = `
+      <div class="flex items-center gap-3 mb-4">
+        <input id="pdv-search" class="flex-1 border rounded-lg px-4 py-2 dark:bg-gray-800"
+          placeholder="Buscar por nome, SKU ou categoria..." value="${this.filtro || ""}" />
+        <button class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600"
+          onclick="PDV.filtro=''; PDV.render()">Limpar</button>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        ${lista.map(p => `
+          <div class="border rounded-lg overflow-hidden dark:border-gray-700 ${p.categoria === 'Serviços' ? 'bg-blue-50 dark:bg-blue-900/20' : 'bg-orange-50 dark:bg-orange-900/20'} hover:shadow-lg transition-shadow">
+            <img src="${p.imagem || 'https://placehold.co/300x200'}" alt="${p.nome}" class="w-full h-32 object-cover" />
+            <div class="p-3">
+              <div class="flex justify-between items-start mb-2">
+                <div class="font-semibold text-sm">${p.nome}</div>
+                <span class="text-xs px-2 py-1 rounded ${p.categoria === 'Serviços' ? 'bg-blue-200 text-blue-800' : 'bg-orange-200 text-orange-800'}">${p.categoria}</span>
+              </div>
+              <div class="text-xs text-gray-600 dark:text-gray-300 mb-1">SKU: ${p.sku}</div>
+              <div class="text-lg font-bold mb-1">${Data.formatMoney(p.preco)}</div>
+              <div class="text-xs mb-2">${p.categoria === 'Serviços' ? 'Disponível' : `Estoque: ${p.estoque}`}</div>
+              <button class="w-full bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 text-sm"
+                ${p.categoria === 'Peças' && p.estoque <= 0 ? "disabled" : ""}
+                onclick="PDV.addProduto(${p.id})">Adicionar</button>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    `;
+
+    const carrinhoHTML = `
+      <div class="space-y-3">
+        ${this.carrinho.length === 0 ? `<div class="text-gray-500 text-center py-8">Carrinho vazio.</div>` : ""}
+        ${this.carrinho.map(i => `
+          <div class="flex items-center justify-between border rounded-lg p-3 dark:border-gray-700 bg-white dark:bg-gray-800">
+            <div class="flex-1">
+              <div class="font-medium">${i.nome}</div>
+              <div class="text-sm text-gray-600 dark:text-gray-300">${Data.formatMoney(i.preco)} x ${i.qtd} = ${Data.formatMoney(i.preco * i.qtd)}</div>
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-600" onclick="PDV.dec(${i.id})">-</button>
+              <span class="w-8 text-center">${i.qtd}</span>
+              <button class="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-600" onclick="PDV.inc(${i.id})">+</button>
+              <button class="w-8 h-8 bg-red-500 text-white rounded-lg flex items-center justify-center hover:bg-red-600" onclick="PDV.rem(${i.id})">🗑</button>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+      <div class="mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+        <div class="text-2xl font-bold text-center mb-3">Total: ${Data.formatMoney(this.total())}</div>
+        <button class="w-full bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 font-semibold"
+          onclick="PDV.openCheckout()">💳 Finalizar Venda</button>
+      </div>
+    `;
+
+    el.innerHTML = `
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2">
+          <h3 class="text-lg font-bold mb-4">Produtos e Serviços</h3>
+          ${produtosHTML}
         </div>
-        <div class="hr"></div>
-        <div class="muted">Cupom Não Fiscal</div>
-        <div>Nº: ${numero}</div>
-        <div class="muted">Data/Hora: ${dataHora}</div>
-        <div class="muted">Cliente: ${cliente || "Balcão"}</div>
-        <div class="hr"></div>
+        <div>
+          <h3 class="text-lg font-bold mb-4">Carrinho de Compras</h3>
+          ${carrinhoHTML}
+        </div>
+      </div>
+    `;
 
-        <table><tbody>${itensRows}</tbody></table>
+    const search = document.getElementById("pdv-search");
+    if (search) {
+      search.addEventListener("input", (e) => {
+        PDV.filtro = e.target.value;
+        PDV.render();
+      });
+    }
+  }
+};
 
-        <div class="hr"></div>
-        <table class="totais">
-          <tr><td>Subtotal</td><td class="right">${Data.formatMoney(subtotal)}</td></tr>
-          <tr><td>Descontos</td><td class="right">-${Data.formatMoney(descontos)}</td></tr>
-          <tr><td>Acréscimos</td><td class="right">${Data.formatMoney(acrescimos)}</td></tr>
-          <tr><td><strong>Total</strong></td><td class="right"><strong>${Data.formatMoney(total)}</strong></td></tr>
-          <tr><td>Pagamento</td><td class="right">${pagamento}</td></tr>
-          ${pagamento === "Dinheiro" ? `
-            <tr><td>Recebido</td><td class="right">${Data.formatMoney(recebido)}</td></tr>
-            <tr><td>Troco</td><td class="right">${Data.formatMoney(troco)}</td></tr>
-          ` : ``}
-        </table>
+// ============ PRODUTOS ============
+const Produtos = {
+  editingId: null,
+  
+  openModal(id = null) {
+    this.editingId = id;
+    const title = id ? "Editar Produto" : "Novo Produto";
+    
+    let content = `
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="md:col-span-2">
+          <label class="block text-sm font-medium mb-1">Nome do Produto</label>
+          <input id="prod-nome" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">SKU</label>
+          <input id="prod-sku" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Categoria</label>
+          <select id="prod-categoria" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
+            <option value="Serviços">Serviços</option>
+            <option value="Peças">Peças</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Preço (R$)</label>
+          <input id="prod-preco" type="number" step="0.01" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Estoque</label>
+          <input id="prod-estoque" type="number" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm font-medium mb-1">URL da Imagem</label>
+          <input id="prod-imagem" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" placeholder="https://exemplo.com/imagem.jpg" />
+        </div>
+      </div>
+    `;
 
-        <div class="hr"></div>
-        <div class="center">
-          <div class="muted">Obrigado pela preferência!</div>
-          <div class="qr"></div>
-          <div class="muted">Volte sempre! 🚗</div>
+    if (id) {
+      API.get('produtos', id).then(produto => {
+        document.getElementById("prod-nome").value = produto.nome || '';
+        document.getElementById("prod-sku").value = produto.sku || '';
+        document.getElementById("prod-categoria").value = produto.categoria || 'Serviços';
+        document.getElementById("prod-preco").value = produto.preco || '';
+        document.getElementById("prod-estoque").value = produto.estoque || '';
+        document.getElementById("prod-imagem").value = produto.imagem || '';
+      });
+    }
+    
+    Modal.open(title, content, () => this.save());
+  },
+  
+  async save() {
+    const nome = document.getElementById("prod-nome").value.trim();
+    const sku = document.getElementById("prod-sku").value.trim();
+    const categoria = document.getElementById("prod-categoria").value;
+    const preco = parseFloat(document.getElementById("prod-preco").value) || 0;
+    const estoque = parseInt(document.getElementById("prod-estoque").value) || 0;
+    const imagem = document.getElementById("prod-imagem").value.trim();
+    
+    if (!nome || !sku) {
+      alert("Nome e SKU são obrigatórios.");
+      return;
+    }
+    
+    try {
+      const data = { nome, sku, categoria, preco, estoque, imagem };
+      
+      if (this.editingId) {
+        await API.put('produtos', this.editingId, data);
+      } else {
+        await API.post('produtos', data);
+      }
+      
+      Modal.close();
+      this.render();
+    } catch (error) {
+      alert('Erro: ' + error.message);
+    }
+  },
+  
+  async delete(id) {
+    if (confirm("Deseja excluir este produto?")) {
+      try {
+        await API.delete('produtos', id);
+        this.render();
+      } catch (error) {
+        alert('Erro: ' + error.message);
+      }
+    }
+  },
+  
+  async render() {
+    const el = document.getElementById("produtos-container");
+    if (!el) return;
+    
+    try {
+      const produtos = await API.get('produtos');
+      
+      el.innerHTML = `
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          ${produtos.map(p => `
+            <div class="border rounded-lg overflow-hidden dark:border-gray-700 bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow">
+              <img src="${p.imagem || 'https://placehold.co/300x200'}" alt="${p.nome}" class="w-full h-32 object-cover" />
+              <div class="p-4">
+                <div class="flex justify-between items-start mb-2">
+                  <div class="font-semibold">${p.nome}</div>
+                  <span class="px-2 py-1 rounded text-xs ${p.categoria === 'Serviços' ? 'bg-blue-200 text-blue-800' : 'bg-orange-200 text-orange-800'}">${p.categoria}</span>
+                </div>
+                <div class="text-sm text-gray-600 dark:text-gray-300 mb-1">SKU: ${p.sku}</div>
+                <div class="text-lg font-bold mb-1">${Data.formatMoney(p.preco)}</div>
+                <div class="text-sm mb-3">${p.categoria === 'Serviços' ? 'Disponível' : `Estoque: ${p.estoque}`}</div>
+                <div class="flex gap-2">
+                  <button class="flex-1 text-blue-600 hover:text-blue-800 border border-blue-600 hover:border-blue-800 px-3 py-2 rounded-lg text-sm" onclick="Produtos.openModal(${p.id})">✏️ Editar</button>
+                  <button class="text-red-600 hover:text-red-800 border border-red-600 hover:border-red-800 px-3 py-2 rounded-lg text-sm" onclick="Produtos.delete(${p.id})">🗑️</button>
+                </div>
+              </div>
+            </div>
+          `).join("")}
         </div>
       `;
+    } catch (error) {
+      console.error('Erro ao carregar produtos:', error);
+      el.innerHTML = '<div class="text-red-500">Erro ao carregar produtos</div>';
     }
+  }
+};
 
-    // pdv.js
-    const PDV = {
-      carrinho: [],
-      filtro: "",
-      checkoutState: { subtotal: 0, descontos: 0, acrescimos: 0, total: 0, pagamento: "Dinheiro", recebido: 0, troco: 0, cliente: "Balcão" },
-
-      addProduto(id) {
-        const p = Data.produtos.find(x => x.id === id);
-        if (!p) return;
-        const idx = this.carrinho.findIndex(i => i.id === id);
-        if (idx >= 0) {
-          if (p.categoria === "Serviços" || this.carrinho[idx].qtd < p.estoque) {
-            this.carrinho[idx].qtd++;
-          } else {
-            alert("Estoque insuficiente.");
-          }
-        } else {
-          this.carrinho.push({ id: p.id, nome: p.nome, preco: p.preco, qtd: 1, categoria: p.categoria });
-        }
-        this.render();
-      },
-      inc(id) {
-        const p = Data.produtos.find(x => x.id === id);
-        const item = this.carrinho.find(i => i.id === id);
-        if (!p || !item) return;
-        if (p.categoria === "Serviços" || item.qtd < p.estoque) {
-          item.qtd++;
-        } else {
-          alert("Estoque insuficiente.");
-        }
-        this.render();
-      },
-      dec(id) {
-        const item = this.carrinho.find(i => i.id === id);
-        if (!item) return;
-        item.qtd--;
-        if (item.qtd <= 0) this.carrinho = this.carrinho.filter(i => i.id !== id);
-        this.render();
-      },
-      rem(id) {
-        this.carrinho = this.carrinho.filter(i => i.id !== id);
-        this.render();
-      },
-      total() {
-        return this.carrinho.reduce((s, i) => s + i.preco * i.qtd, 0);
-      },
-
-      openCheckout() {
-        const subtotal = this.total();
-        if (subtotal <= 0) { alert("Carrinho vazio."); return; }
-        this.checkoutState = { subtotal, descontos: 0, acrescimos: 0, total: subtotal, pagamento: "Dinheiro", recebido: 0, troco: 0, cliente: "Balcão" };
-
-        document.getElementById("ck-cliente").value = "";
-        document.getElementById("ck-pagamento").value = "Dinheiro";
-        document.getElementById("ck-desc").value = "";
-        document.getElementById("ck-desc-tipo").value = "valor";
-        document.getElementById("ck-acres").value = "";
-        document.getElementById("ck-acres-tipo").value = "valor";
-        document.getElementById("ck-recebido").value = "";
-
-        this.updateCheckoutUI();
-
-        document.getElementById("checkout-backdrop").classList.remove("hidden");
-        document.getElementById("checkout-modal").classList.remove("hidden");
-
-        const onChange = () => this.updateCheckoutUI();
-        ["ck-cliente","ck-pagamento","ck-desc","ck-desc-tipo","ck-acres","ck-acres-tipo","ck-recebido"].forEach(id => {
-          const el = document.getElementById(id);
-          el.oninput = onChange;
-          el.onchange = onChange;
-        });
-      },
-
-      closeCheckout() {
-        document.getElementById("checkout-backdrop").classList.add("hidden");
-        document.getElementById("checkout-modal").classList.add("hidden");
-      },
-
-      computeTotals() {
-        const cliente = (document.getElementById("ck-cliente").value || "Balcão").trim();
-        const pagamento = document.getElementById("ck-pagamento").value;
-        const descVal = parseFloat(document.getElementById("ck-desc").value.replace(",", ".")) || 0;
-        const descTipo = document.getElementById("ck-desc-tipo").value;
-        const acresVal = parseFloat(document.getElementById("ck-acres").value.replace(",", ".")) || 0;
-        const acresTipo = document.getElementById("ck-acres-tipo").value;
-        const recebidoVal = parseFloat(document.getElementById("ck-recebido").value.replace(",", ".")) || 0;
-
-        const subtotal = this.total();
-        const descontos = descTipo === "percent" ? subtotal * (descVal / 100) : descVal;
-        const acrescimos = acresTipo === "percent" ? subtotal * (acresVal / 100) : acresVal;
-        const total = Math.max(0, subtotal - descontos + acrescimos);
-
-        let recebido = 0, troco = 0;
-        if (pagamento === "Dinheiro") {
-          recebido = recebidoVal;
-          troco = Math.max(0, recebido - total);
-        } else {
-          recebido = total;
-          troco = 0;
-        }
-
-        this.checkoutState = { subtotal, descontos, acrescimos, total, pagamento, recebido, troco, cliente };
-      },
-
-      updateCheckoutUI() {
-        this.computeTotals();
-        const { subtotal, descontos, acrescimos, total, pagamento, troco } = this.checkoutState;
-
-        document.getElementById("ck-subtotal").textContent = Data.formatMoney(subtotal);
-        document.getElementById("ck-desc-view").textContent = `-${Data.formatMoney(descontos)}`;
-        document.getElementById("ck-acres-view").textContent = Data.formatMoney(acrescimos);
-        document.getElementById("ck-total").textContent = Data.formatMoney(total);
-        document.getElementById("ck-troco").textContent = Data.formatMoney(troco);
-
-        const recebidoInput = document.getElementById("ck-recebido");
-        recebidoInput.disabled = pagamento !== "Dinheiro";
-        if (pagamento !== "Dinheiro") {
-          recebidoInput.value = "";
-        }
-      },
-
-      confirmCheckout() {
-        this.computeTotals();
-        const { total, pagamento, recebido, troco, cliente, subtotal, descontos, acrescimos } = this.checkoutState;
-
-        if (total <= 0) {
-          alert("Total inválido.");
-          return;
-        }
-        if (pagamento === "Dinheiro" && recebido < total) {
-          alert("Valor recebido insuficiente.");
-          return;
-        }
-
-        const numero = (Data.vendas.length + 1).toString().padStart(6, "0");
-        const dataHora = new Date().toLocaleString("pt-BR");
-        const itens = this.carrinho.map(i => ({ ...i }));
-
-        Data.vendas.push({ 
-          id: Data.nextId(Data.vendas), 
-          cliente, 
-          valor: total, 
-          data: new Date().toISOString().slice(0,10),
-          franquia_id: 1 // Matriz por padrão
-        });
-        Data.financeiro.push({ 
-          id: Data.nextId(Data.financeiro), 
-          tipo: "entrada", 
-          valor: total, 
-          descricao: `Venda PDV (${pagamento})`,
-          data: new Date().toISOString().slice(0,10),
-          franquia_id: 1
-        });
-
-        // Debita estoque apenas para peças
-        this.carrinho.forEach(item => {
-          const p = Data.produtos.find(x => x.id === item.id);
-          if (p && p.categoria === "Peças") {
-            p.estoque = Math.max(0, p.estoque - item.qtd);
-          }
-        });
-
-        const receiptHTML = buildReceiptHTML({
-          numero, dataHora, itens, subtotal, descontos, acrescimos, total, pagamento, cliente, recebido, troco
-        });
-        openPrintWindow(receiptHTML);
-
-        this.carrinho = [];
-        this.closeCheckout();
-        this.render();
-      },
-
-      render() {
-        const el = document.getElementById("pdv-container");
-        if (!el) return;
-
-        const termo = (this.filtro || "").toLowerCase().trim();
-        const lista = Data.produtos.filter(p =>
-          p.nome.toLowerCase().includes(termo) || p.sku.toLowerCase().includes(termo) || p.categoria.toLowerCase().includes(termo)
-        );
-
-        const produtosHTML = `
-          <div class="flex items-center gap-3 mb-4">
-            <input id="pdv-search" class="flex-1 border rounded-lg px-4 py-2 dark:bg-gray-800"
-              placeholder="Buscar por nome, SKU ou categoria..." value="${this.filtro || ""}" />
-            <button class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600"
-              onclick="PDV.filtro=''; PDV.render()">Limpar</button>
+// ============ CLIENTES ============
+const Clientes = {
+  editingId: null,
+  
+  openModal(id = null) {
+    this.editingId = id;
+    const title = id ? "Editar Cliente" : "Novo Cliente";
+    
+    const content = `
+      <div class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium mb-1">Nome / Razão Social</label>
+            <input id="cli-nome" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
           </div>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            ${lista.map(p => `
-              <div class="border rounded-lg overflow-hidden dark:border-gray-700 ${p.categoria === 'Serviços' ? 'bg-blue-50 dark:bg-blue-900/20' : 'bg-orange-50 dark:bg-orange-900/20'} hover:shadow-lg transition-shadow">
-                <img src="${p.imagem}" alt="${p.nome}" class="w-full h-32 object-cover" />
-                <div class="p-3">
-                  <div class="flex justify-between items-start mb-2">
-                    <div class="font-semibold text-sm">${p.nome}</div>
-                    <span class="text-xs px-2 py-1 rounded ${p.categoria === 'Serviços' ? 'bg-blue-200 text-blue-800' : 'bg-orange-200 text-orange-800'}">${p.categoria}</span>
-                  </div>
-                  <div class="text-xs text-gray-600 dark:text-gray-300 mb-1">SKU: ${p.sku}</div>
-                  <div class="text-lg font-bold mb-1">${Data.formatMoney(p.preco)}</div>
-                  <div class="text-xs mb-2">${p.categoria === 'Serviços' ? 'Disponível' : `Estoque: ${p.estoque}`}</div>
-                  <button class="w-full bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 text-sm"
-                    ${p.categoria === 'Peças' && p.estoque <= 0 ? "disabled" : ""}
-                    onclick="PDV.addProduto(${p.id})">Adicionar</button>
-                </div>
-              </div>
-            `).join("")}
-          </div>
-        `;
-
-        const carrinhoHTML = `
-          <div class="space-y-3">
-            ${this.carrinho.length === 0 ? `<div class="text-gray-500 text-center py-8">Carrinho vazio.</div>` : ""}
-            ${this.carrinho.map(i => `
-              <div class="flex items-center justify-between border rounded-lg p-3 dark:border-gray-700 bg-white dark:bg-gray-800">
-                <div class="flex-1">
-                  <div class="font-medium">${i.nome}</div>
-                  <div class="text-sm text-gray-600 dark:text-gray-300">${Data.formatMoney(i.preco)} x ${i.qtd} = ${Data.formatMoney(i.preco * i.qtd)}</div>
-                </div>
-                <div class="flex items-center gap-2">
-                  <button class="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-600" onclick="PDV.dec(${i.id})">-</button>
-                  <span class="w-8 text-center">${i.qtd}</span>
-                  <button class="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-600" onclick="PDV.inc(${i.id})">+</button>
-                  <button class="w-8 h-8 bg-red-500 text-white rounded-lg flex items-center justify-center hover:bg-red-600" onclick="PDV.rem(${i.id})">🗑</button>
-                </div>
-              </div>
-            `).join("")}
-          </div>
-          <div class="mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-            <div class="text-2xl font-bold text-center mb-3">Total: ${Data.formatMoney(this.total())}</div>
-            <button class="w-full bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 font-semibold"
-              onclick="PDV.openCheckout()">💳 Finalizar Venda</button>
-          </div>
-        `;
-
-        el.innerHTML = `
-          <div class="grid lg:grid-cols-3 gap-6">
-            <div class="lg:col-span-2">
-              <h3 class="text-lg font-bold mb-4">Produtos e Serviços</h3>
-              ${produtosHTML}
-            </div>
-            <div>
-              <h3 class="text-lg font-bold mb-4">Carrinho de Compras</h3>
-              ${carrinhoHTML}
-            </div>
-          </div>
-        `;
-
-        const search = document.getElementById("pdv-search");
-        if (search) {
-          search.addEventListener("input", (e) => {
-            PDV.filtro = e.target.value;
-            PDV.render();
-          });
-        }
-      }
-    };
-
-    // produtos.js
-    const Produtos = {
-      editingId: null,
-      
-      openModal(id = null) {
-        this.editingId = id;
-        const produto = id ? Data.produtos.find(p => p.id === id) : null;
-        const title = id ? "Editar Produto" : "Novo Produto";
-        
-        const content = `
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="md:col-span-2">
-              <label class="block text-sm font-medium mb-1">Nome do Produto</label>
-              <input id="prod-nome" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${produto?.nome || ''}" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">SKU</label>
-              <input id="prod-sku" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${produto?.sku || ''}" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Categoria</label>
-              <select id="prod-categoria" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
-                <option value="Serviços" ${produto?.categoria === 'Serviços' ? 'selected' : ''}>Serviços</option>
-                <option value="Peças" ${produto?.categoria === 'Peças' ? 'selected' : ''}>Peças</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Preço (R$)</label>
-              <input id="prod-preco" type="number" step="0.01" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${produto?.preco || ''}" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Estoque</label>
-              <input id="prod-estoque" type="number" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${produto?.estoque || ''}" />
-            </div>
-            <div class="md:col-span-2">
-              <label class="block text-sm font-medium mb-1">URL da Imagem</label>
-              <input id="prod-imagem" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${produto?.imagem || ''}" placeholder="https://exemplo.com/imagem.jpg" />
-              <small class="text-gray-500">Deixe em branco para usar imagem padrão</small>
-            </div>
-          </div>
-        `;
-        
-        Modal.open(title, content, () => this.save());
-      },
-      
-      save() {
-        const nome = document.getElementById("prod-nome").value.trim();
-        const sku = document.getElementById("prod-sku").value.trim();
-        const categoria = document.getElementById("prod-categoria").value;
-        const preco = parseFloat(document.getElementById("prod-preco").value) || 0;
-        const estoque = parseInt(document.getElementById("prod-estoque").value) || 0;
-        const imagem = document.getElementById("prod-imagem").value.trim() || 
-          `https://placehold.co/300x200/${categoria === 'Serviços' ? '3B82F6' : 'F97316'}/FFFFFF?text=${encodeURIComponent(nome)}`;
-        
-        if (!nome || !sku) {
-          alert("Nome e SKU são obrigatórios.");
-          return;
-        }
-        
-        if (this.editingId) {
-          const produto = Data.produtos.find(p => p.id === this.editingId);
-          if (produto) {
-            produto.nome = nome;
-            produto.sku = sku;
-            produto.categoria = categoria;
-            produto.preco = preco;
-            produto.estoque = estoque;
-            produto.imagem = imagem;
-          }
-        } else {
-          Data.produtos.push({
-            id: Data.nextId(Data.produtos),
-            nome, sku, categoria, preco, estoque, imagem
-          });
-        }
-        
-        Modal.close();
-        this.render();
-      },
-      
-      delete(id) {
-        if (confirm("Deseja excluir este produto?")) {
-          Data.produtos = Data.produtos.filter(p => p.id !== id);
-          this.render();
-        }
-      },
-      
-      render() {
-        const el = document.getElementById("produtos-container");
-        if (!el) return;
-        
-        el.innerHTML = `
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            ${Data.produtos.map(p => `
-              <div class="border rounded-lg overflow-hidden dark:border-gray-700 bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow">
-                <img src="${p.imagem}" alt="${p.nome}" class="w-full h-32 object-cover" />
-                <div class="p-4">
-                  <div class="flex justify-between items-start mb-2">
-                    <div class="font-semibold">${p.nome}</div>
-                    <span class="px-2 py-1 rounded text-xs ${p.categoria === 'Serviços' ? 'bg-blue-200 text-blue-800' : 'bg-orange-200 text-orange-800'}">${p.categoria}</span>
-                  </div>
-                  <div class="text-sm text-gray-600 dark:text-gray-300 mb-1">SKU: ${p.sku}</div>
-                  <div class="text-lg font-bold mb-1">${Data.formatMoney(p.preco)}</div>
-                  <div class="text-sm mb-3">${p.categoria === 'Serviços' ? 'Disponível' : `Estoque: ${p.estoque}`}</div>
-                  <div class="flex gap-2">
-                    <button class="flex-1 text-blue-600 hover:text-blue-800 border border-blue-600 hover:border-blue-800 px-3 py-2 rounded-lg text-sm" onclick="Produtos.openModal(${p.id})">✏️ Editar</button>
-                    <button class="text-red-600 hover:text-red-800 border border-red-600 hover:border-red-800 px-3 py-2 rounded-lg text-sm" onclick="Produtos.delete(${p.id})">🗑️</button>
-                  </div>
-                </div>
-              </div>
-            `).join("")}
-          </div>
-        `;
-      }
-    };
-
-    // clientes.js
-    const Clientes = {
-      editingId: null,
-      
-      openModal(id = null) {
-        this.editingId = id;
-        const cliente = id ? Data.clientes.find(c => c.id === id) : null;
-        const title = id ? "Editar Cliente" : "Novo Cliente";
-        
-        const content = `
-          <div class="space-y-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="md:col-span-2">
-                <label class="block text-sm font-medium mb-1">Nome / Razão Social</label>
-                <input id="cli-nome" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${cliente?.nome || ''}" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Tipo de Documento</label>
-                <select id="cli-tipo-doc" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" onchange="Clientes.toggleDocumentType()">
-                  <option value="CPF" ${cliente?.tipoDocumento === 'CPF' ? 'selected' : ''}>CPF</option>
-                  <option value="CNPJ" ${cliente?.tipoDocumento === 'CNPJ' ? 'selected' : ''}>CNPJ</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Documento</label>
-                <input id="cli-documento" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${cliente?.documento || ''}" placeholder="000.000.000-00" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Email</label>
-                <input id="cli-email" type="email" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${cliente?.email || ''}" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Telefone</label>
-                <input id="cli-telefone" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${cliente?.telefone || ''}" placeholder="(00) 00000-0000" />
-              </div>
-              <div class="md:col-span-2">
-                <label class="block text-sm font-medium mb-1">Veículo</label>
-                <input id="cli-veiculo" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${cliente?.veiculo || ''}" placeholder="Ex: Honda Civic 2020" />
-              </div>
-            </div>
-            
-            <div class="border-t pt-4">
-              <h4 class="font-medium mb-3">Endereço</h4>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="md:col-span-2">
-                  <label class="block text-sm font-medium mb-1">Logradouro</label>
-                  <input id="cli-logradouro" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${cliente?.endereco?.logradouro || ''}" placeholder="Rua, Av, etc..." />
-                </div>
-                <div>
-                  <label class="block text-sm font-medium mb-1">Bairro</label>
-                  <input id="cli-bairro" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${cliente?.endereco?.bairro || ''}" />
-                </div>
-                <div>
-                  <label class="block text-sm font-medium mb-1">CEP</label>
-                  <input id="cli-cep" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${cliente?.endereco?.cep || ''}" placeholder="00000-000" />
-                </div>
-                <div>
-                  <label class="block text-sm font-medium mb-1">Cidade</label>
-                  <input id="cli-cidade" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${cliente?.endereco?.cidade || ''}" />
-                </div>
-                <div>
-                  <label class="block text-sm font-medium mb-1">UF</label>
-                  <select id="cli-uf" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
-                    <option value="">Selecione...</option>
-                    <option value="RS" ${cliente?.endereco?.uf === 'RS' ? 'selected' : ''}>RS</option>
-                    <option value="SC" ${cliente?.endereco?.uf === 'SC' ? 'selected' : ''}>SC</option>
-                    <option value="PR" ${cliente?.endereco?.uf === 'PR' ? 'selected' : ''}>PR</option>
-                    <option value="SP" ${cliente?.endereco?.uf === 'SP' ? 'selected' : ''}>SP</option>
-                    <option value="RJ" ${cliente?.endereco?.uf === 'RJ' ? 'selected' : ''}>RJ</option>
-                    <option value="MG" ${cliente?.endereco?.uf === 'MG' ? 'selected' : ''}>MG</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        `;
-        
-        Modal.open(title, content, () => this.save());
-      },
-      
-      toggleDocumentType() {
-        const tipo = document.getElementById("cli-tipo-doc").value;
-        const docInput = document.getElementById("cli-documento");
-        docInput.placeholder = tipo === "CPF" ? "000.000.000-00" : "00.000.000/0000-00";
-      },
-      
-      save() {
-        const nome = document.getElementById("cli-nome").value.trim();
-        const tipoDocumento = document.getElementById("cli-tipo-doc").value;
-        const documento = document.getElementById("cli-documento").value.trim();
-        const email = document.getElementById("cli-email").value.trim();
-        const telefone = document.getElementById("cli-telefone").value.trim();
-        const veiculo = document.getElementById("cli-veiculo").value.trim();
-        
-        const endereco = {
-          logradouro: document.getElementById("cli-logradouro").value.trim(),
-          bairro: document.getElementById("cli-bairro").value.trim(),
-          cep: document.getElementById("cli-cep").value.trim(),
-          cidade: document.getElementById("cli-cidade").value.trim(),
-          uf: document.getElementById("cli-uf").value
-        };
-        
-        if (!nome) {
-          alert("Nome é obrigatório.");
-          return;
-        }
-        
-        if (this.editingId) {
-          const cliente = Data.clientes.find(c => c.id === this.editingId);
-          if (cliente) {
-            cliente.nome = nome;
-            cliente.tipoDocumento = tipoDocumento;
-            cliente.documento = documento;
-            cliente.email = email;
-            cliente.telefone = telefone;
-            cliente.veiculo = veiculo;
-            cliente.endereco = endereco;
-          }
-        } else {
-          Data.clientes.push({
-            id: Data.nextId(Data.clientes),
-            nome, tipoDocumento, documento, email, telefone, veiculo, endereco
-          });
-        }
-        
-        Modal.close();
-        this.render();
-      },
-      
-      delete(id) {
-        if (confirm("Deseja excluir este cliente?")) {
-          Data.clientes = Data.clientes.filter(c => c.id !== id);
-          this.render();
-        }
-      },
-      
-      render() {
-        const el = document.getElementById("clientes-container");
-        if (!el) return;
-        
-        el.innerHTML = `
-          <div class="grid gap-4">
-            ${Data.clientes.map(c => `
-              <div class="border rounded-lg p-4 dark:border-gray-700 bg-white dark:bg-gray-800">
-                <div class="flex justify-between items-start mb-3">
-                  <div>
-                    <h3 class="font-semibold text-lg">${c.nome}</h3>
-                    <div class="text-sm text-gray-600 dark:text-gray-300">
-                      ${c.tipoDocumento}: ${Data.formatDocument(c.documento, c.tipoDocumento)}
-                    </div>
-                  </div>
-                  <div class="flex gap-2">
-                    <button class="text-blue-600 hover:text-blue-800 border border-blue-600 hover:border-blue-800 px-3 py-2 rounded-lg text-sm" onclick="Clientes.openModal(${c.id})">✏️ Editar</button>
-                    <button class="text-red-600 hover:text-red-800 border border-red-600 hover:border-red-800 px-3 py-2 rounded-lg text-sm" onclick="Clientes.delete(${c.id})">🗑️</button>
-                  </div>
-                </div>
-                <div class="grid md:grid-cols-2 gap-4 text-sm">
-                  <div>
-                    <div class="mb-2">
-                      <span class="font-medium">📧 Email:</span> ${c.email || 'Não informado'}
-                    </div>
-                    <div class="mb-2">
-                      <span class="font-medium">📱 Telefone:</span> ${c.telefone || 'Não informado'}
-                    </div>
-                    <div>
-                      <span class="font-medium">🚗 Veículo:</span> ${c.veiculo || 'Não informado'}
-                    </div>
-                  </div>
-                  <div>
-                    <div class="font-medium mb-1">📍 Endereço:</div>
-                    <div class="text-gray-600 dark:text-gray-300">
-                      ${c.endereco?.logradouro || 'Não informado'}<br/>
-                      ${c.endereco?.bairro ? c.endereco.bairro + '<br/>' : ''}
-                      ${c.endereco?.cidade || ''} - ${c.endereco?.uf || ''}<br/>
-                      ${c.endereco?.cep || ''}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            `).join("")}
-          </div>
-        `;
-      }
-    };
-
-    // relatorios.js
-    const Relatorios = {
-      filtroFranquia: 0,
-      
-      render() {
-        const el = document.getElementById("relatorios-container");
-        if (!el) return;
-        
-        const vendas = this.filtroFranquia === 0 ? Data.vendas : Data.vendas.filter(v => v.franquia_id === this.filtroFranquia);
-        const total = vendas.reduce((s, v) => s + v.valor, 0);
-        
-        el.innerHTML = `
-          <div class="mb-6">
-            <label class="block text-sm font-medium mb-2">Filtrar por Franquia:</label>
-            <select id="rel-franquia" class="border rounded-lg px-3 py-2 dark:bg-gray-900">
-              <option value="0">Todas as Franquias</option>
-              ${Data.franquias.map(f => `
-                <option value="${f.id}" ${this.filtroFranquia === f.id ? 'selected' : ''}>${f.nome}</option>
-              `).join("")}
+          <div>
+            <label class="block text-sm font-medium mb-1">Tipo de Documento</label>
+            <select id="cli-tipo-doc" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
+              <option value="CPF">CPF</option>
+              <option value="CNPJ">CNPJ</option>
             </select>
           </div>
-          
-          <div class="grid sm:grid-cols-3 gap-4 mb-6">
-            <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-              <div class="text-sm text-gray-500 dark:text-gray-300">Vendas (Qtd)</div>
-              <div class="text-2xl font-semibold">${vendas.length}</div>
-            </div>
-            <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-              <div class="text-sm text-gray-500 dark:text-gray-300">Faturamento</div>
-              <div class="text-2xl font-semibold text-green-600">${Data.formatMoney(total)}</div>
-            </div>
-            <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-              <div class="text-sm text-gray-500 dark:text-gray-300">Ticket Médio</div>
-              <div class="text-2xl font-semibold">${Data.formatMoney(vendas.length ? total / vendas.length : 0)}</div>
-            </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Documento</label>
+            <input id="cli-documento" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" placeholder="000.000.000-00" />
           </div>
-          
-          <div class="overflow-auto border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-            <table class="min-w-full text-sm">
-              <thead class="bg-gray-50 dark:bg-gray-700">
-                <tr>
-                  <th class="p-3 text-left font-medium">Data</th>
-                  <th class="p-3 text-left font-medium">Cliente</th>
-                  <th class="p-3 text-left font-medium">Franquia</th>
-                  <th class="p-3 text-right font-medium">Valor</th>
-                </tr>
-              </thead>
-              <tbody>
-                ${vendas.slice().reverse().map(v => {
-                  const franquia = Data.franquias.find(f => f.id === v.franquia_id);
-                  return `
-                    <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
-                      <td class="p-3">${new Date(v.data).toLocaleDateString('pt-BR')}</td>
-                      <td class="p-3">${v.cliente}</td>
-                      <td class="p-3">${franquia?.nome || 'N/A'}</td>
-                      <td class="p-3 text-right font-semibold text-green-600">${Data.formatMoney(v.valor)}</td>
-                    </tr>
-                  `;
-                }).join("")}
-                ${vendas.length === 0 ? `
-                  <tr>
-                    <td colspan="4" class="p-8 text-center text-gray-500">Nenhuma venda encontrada</td>
-                  </tr>
-                ` : ""}
-              </tbody>
-            </table>
+          <div>
+            <label class="block text-sm font-medium mb-1">Email</label>
+            <input id="cli-email" type="email" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
           </div>
-        `;
+          <div>
+            <label class="block text-sm font-medium mb-1">Telefone</label>
+            <input id="cli-telefone" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" placeholder="(00) 00000-0000" />
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium mb-1">Veículo</label>
+            <input id="cli-veiculo" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" placeholder="Ex: Honda Civic 2020" />
+          </div>
+        </div>
         
-        document.getElementById("rel-franquia").onchange = (e) => {
-          this.filtroFranquia = parseInt(e.target.value);
-          this.render();
-        };
-      }
-    };
-
-    // financeiro.js
-    const Financeiro = {
-      editingId: null,
-      
-      openModal(id = null) {
-        this.editingId = id;
-        const transacao = id ? Data.financeiro.find(f => f.id === id) : null;
-        const title = id ? "Editar Transação" : "Nova Transação";
-        
-        const content = `
+        <div class="border-t pt-4">
+          <h4 class="font-medium mb-3">Endereço</h4>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium mb-1">Tipo</label>
-              <select id="fin-tipo" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
-                <option value="entrada" ${transacao?.tipo === 'entrada' ? 'selected' : ''}>💰 Entrada</option>
-                <option value="saida" ${transacao?.tipo === 'saida' ? 'selected' : ''}>💸 Saída</option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Valor (R$)</label>
-              <input id="fin-valor" type="number" step="0.01" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${transacao?.valor || ''}" />
-            </div>
             <div class="md:col-span-2">
-              <label class="block text-sm font-medium mb-1">Descrição</label>
-              <input id="fin-descricao" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${transacao?.descricao || ''}" placeholder="Descrição da transação..." />
+              <label class="block text-sm font-medium mb-1">Logradouro</label>
+              <input id="cli-logradouro" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
             </div>
             <div>
-              <label class="block text-sm font-medium mb-1">Data</label>
-              <input id="fin-data" type="date" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${transacao?.data || new Date().toISOString().slice(0,10)}" />
+              <label class="block text-sm font-medium mb-1">Bairro</label>
+              <input id="cli-bairro" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
             </div>
             <div>
-              <label class="block text-sm font-medium mb-1">Franquia</label>
-              <select id="fin-franquia" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
-                ${Data.franquias.map(f => `
-                  <option value="${f.id}" ${transacao?.franquia_id === f.id ? 'selected' : ''}>${f.nome}</option>
-                `).join("")}
+              <label class="block text-sm font-medium mb-1">CEP</label>
+              <input id="cli-cep" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">Cidade</label>
+              <input id="cli-cidade" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">UF</label>
+              <select id="cli-uf" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
+                <option value="">Selecione...</option>
+                <option value="RS">RS</option>
+                <option value="SC">SC</option>
+                <option value="PR">PR</option>
+                <option value="SP">SP</option>
               </select>
             </div>
           </div>
-        `;
-        
-        Modal.open(title, content, () => this.save());
-      },
+        </div>
+      </div>
+    `;
+    
+    Modal.open(title, content, () => this.save());
+
+    if (id) {
+      API.get('clientes', id).then(cliente => {
+        document.getElementById("cli-nome").value = cliente.nome || '';
+        document.getElementById("cli-tipo-doc").value = cliente.tipoDocumento || 'CPF';
+        document.getElementById("cli-documento").value = cliente.documento || '';
+        document.getElementById("cli-email").value = cliente.email || '';
+        document.getElementById("cli-telefone").value = cliente.telefone || '';
+        document.getElementById("cli-veiculo").value = cliente.veiculo || '';
+        document.getElementById("cli-logradouro").value = cliente.logradouro || '';
+        document.getElementById("cli-bairro").value = cliente.bairro || '';
+        document.getElementById("cli-cep").value = cliente.cep || '';
+        document.getElementById("cli-cidade").value = cliente.cidade || '';
+        document.getElementById("cli-uf").value = cliente.uf || '';
+      });
+    }
+  },
+  
+  async save() {
+    const nome = document.getElementById("cli-nome").value.trim();
+    const tipoDocumento = document.getElementById("cli-tipo-doc").value;
+    const documento = document.getElementById("cli-documento").value.trim();
+    const email = document.getElementById("cli-email").value.trim();
+    const telefone = document.getElementById("cli-telefone").value.trim();
+    const veiculo = document.getElementById("cli-veiculo").value.trim();
+    
+    if (!nome) {
+      alert("Nome é obrigatório.");
+      return;
+    }
+    
+    try {
+      const data = {
+        nome, tipoDocumento, documento, email, telefone, veiculo,
+        logradouro: document.getElementById("cli-logradouro").value.trim(),
+        bairro: document.getElementById("cli-bairro").value.trim(),
+        cep: document.getElementById("cli-cep").value.trim(),
+        cidade: document.getElementById("cli-cidade").value.trim(),
+        uf: document.getElementById("cli-uf").value
+      };
       
-      save() {
-        const tipo = document.getElementById("fin-tipo").value;
-        const valor = parseFloat(document.getElementById("fin-valor").value) || 0;
-        const descricao = document.getElementById("fin-descricao").value.trim();
-        const data = document.getElementById("fin-data").value;
-        const franquia_id = parseInt(document.getElementById("fin-franquia").value);
-        
-        if (!descricao || valor <= 0) {
-          alert("Descrição e valor são obrigatórios.");
-          return;
-        }
-        
-        if (this.editingId) {
-          const transacao = Data.financeiro.find(f => f.id === this.editingId);
-          if (transacao) {
-            transacao.tipo = tipo;
-            transacao.valor = valor;
-            transacao.descricao = descricao;
-            transacao.data = data;
-            transacao.franquia_id = franquia_id;
-          }
-        } else {
-          Data.financeiro.push({
-            id: Data.nextId(Data.financeiro),
-            tipo, valor, descricao, data, franquia_id
-          });
-        }
-        
-        Modal.close();
+      if (this.editingId) {
+        await API.put('clientes', this.editingId, data);
+      } else {
+        await API.post('clientes', data);
+      }
+      
+      Modal.close();
+      this.render();
+    } catch (error) {
+      alert('Erro: ' + error.message);
+    }
+  },
+  
+  async delete(id) {
+    if (confirm("Deseja excluir este cliente?")) {
+      try {
+        await API.delete('clientes', id);
         this.render();
-      },
+      } catch (error) {
+        alert('Erro: ' + error.message);
+      }
+    }
+  },
+  
+  async render() {
+    const el = document.getElementById("clientes-container");
+    if (!el) return;
+    
+    try {
+      const clientes = await API.get('clientes');
       
-      delete(id) {
-        if (confirm("Deseja excluir esta transação?")) {
-          Data.financeiro = Data.financeiro.filter(f => f.id !== id);
-          this.render();
-        }
-      },
+      el.innerHTML = `
+        <div class="grid gap-4">
+          ${clientes.map(c => `
+            <div class="border rounded-lg p-4 dark:border-gray-700 bg-white dark:bg-gray-800">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h3 class="font-semibold text-lg">${c.nome}</h3>
+                  <div class="text-sm text-gray-600 dark:text-gray-300">
+                    ${c.tipoDocumento}: ${Data.formatDocument(c.documento, c.tipoDocumento)}
+                  </div>
+                </div>
+                <div class="flex gap-2">
+                  <button class="text-blue-600 hover:text-blue-800 border border-blue-600 hover:border-blue-800 px-3 py-2 rounded-lg text-sm" onclick="Clientes.openModal(${c.id})">✏️ Editar</button>
+                  <button class="text-red-600 hover:text-red-800 border border-red-600 hover:border-red-800 px-3 py-2 rounded-lg text-sm" onclick="Clientes.delete(${c.id})">🗑️</button>
+                </div>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <div class="mb-2">
+                    <span class="font-medium">📧 Email:</span> ${c.email || 'Não informado'}
+                  </div>
+                  <div class="mb-2">
+                    <span class="font-medium">📱 Telefone:</span> ${c.telefone || 'Não informado'}
+                  </div>
+                  <div>
+                    <span class="font-medium">🚗 Veículo:</span> ${c.veiculo || 'Não informado'}
+                  </div>
+                </div>
+                <div>
+                  <div class="font-medium mb-1">📍 Endereço:</div>
+                  <div class="text-gray-600 dark:text-gray-300">
+                    ${c.logradouro || 'Não informado'}<br/>
+                    ${c.bairro ? c.bairro + '<br/>' : ''}
+                    ${c.cidade || ''} - ${c.uf || ''}<br/>
+                    ${c.cep || ''}
+                  </div>
+                </div>
+              </div>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    } catch (error) {
+      console.error('Erro ao carregar clientes:', error);
+      el.innerHTML = '<div class="text-red-500">Erro ao carregar clientes</div>';
+    }
+  }
+};
+
+// ============ RELATÓRIOS ============
+const Relatorios = {
+  filtroFranquia: 0,
+  franquias: [],
+  
+  async render() {
+    const el = document.getElementById("relatorios-container");
+    if (!el) return;
+    
+    try {
+      const vendas = await API.get('vendas');
+      this.franquias = await API.get('franquias');
       
-      render() {
-        const el = document.getElementById("financeiro-container");
-        if (!el) return;
+      const vendasFiltradas = this.filtroFranquia === 0 ? vendas : vendas.filter(v => v.franquia_id === this.filtroFranquia);
+      const total = vendasFiltradas.reduce((s, v) => s + v.valor, 0);
+      
+      el.innerHTML = `
+        <div class="mb-6">
+          <label class="block text-sm font-medium mb-2">Filtrar por Franquia:</label>
+          <select id="rel-franquia" class="border rounded-lg px-3 py-2 dark:bg-gray-900" onchange="Relatorios.filtroFranquia = parseInt(this.value); Relatorios.render();">
+            <option value="0">Todas as Franquias</option>
+            ${this.franquias.map(f => `
+              <option value="${f.id}">${f.nome}</option>
+            `).join("")}
+          </select>
+        </div>
         
-        const entradas = Data.financeiro.filter(f => f.tipo === "entrada").reduce((s, f) => s + f.valor, 0);
-        const saidas = Data.financeiro.filter(f => f.tipo === "saida").reduce((s, f) => s + f.valor, 0);
-        const saldo = entradas - saidas;
-        
-        el.innerHTML = `
-          <div class="grid sm:grid-cols-3 gap-4 mb-6">
-            <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-              <div class="text-sm text-gray-500 dark:text-gray-300">💰 Entradas</div>
-              <div class="text-2xl font-semibold text-green-600">${Data.formatMoney(entradas)}</div>
-            </div>
-            <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-              <div class="text-sm text-gray-500 dark:text-gray-300">💸 Saídas</div>
-              <div class="text-2xl font-semibold text-red-600">${Data.formatMoney(saidas)}</div>
-            </div>
-            <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-              <div class="text-sm text-gray-500 dark:text-gray-300">📊 Saldo</div>
-              <div class="text-2xl font-semibold ${saldo >= 0 ? 'text-green-600' : 'text-red-600'}">${Data.formatMoney(saldo)}</div>
-            </div>
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
+            <div class="text-sm text-gray-500 dark:text-gray-300">Vendas (Qtd)</div>
+            <div class="text-2xl font-semibold">${vendasFiltradas.length}</div>
           </div>
-          
-          <div class="overflow-auto border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-            <table class="min-w-full text-sm">
-              <thead class="bg-gray-50 dark:bg-gray-700">
-                <tr>
-                  <th class="p-3 text-left font-medium">Data</th>
-                  <th class="p-3 text-left font-medium">Tipo</th>
-                  <th class="p-3 text-left font-medium">Descrição</th>
-                  <th class="p-3 text-left font-medium">Franquia</th>
-                  <th class="p-3 text-right font-medium">Valor</th>
-                  <th class="p-3 text-center font-medium">Ações</th>
+          <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
+            <div class="text-sm text-gray-500 dark:text-gray-300">Faturamento</div>
+            <div class="text-2xl font-semibold text-green-600">${Data.formatMoney(total)}</div>
+          </div>
+          <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
+            <div class="text-sm text-gray-500 dark:text-gray-300">Ticket Médio</div>
+            <div class="text-2xl font-semibold">${Data.formatMoney(vendasFiltradas.length ? total / vendasFiltradas.length : 0)}</div>
+          </div>
+        </div>
+        
+        <div class="overflow-auto border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-50 dark:bg-gray-700">
+              <tr>
+                <th class="p-3 text-left font-medium">Data</th>
+                <th class="p-3 text-left font-medium">Cliente</th>
+                <th class="p-3 text-left font-medium">Forma de Pagamento</th>
+                <th class="p-3 text-right font-medium">Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${vendasFiltradas.slice().reverse().map(v => `
+                <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                  <td class="p-3">${new Date(v.data).toLocaleDateString('pt-BR')}</td>
+                  <td class="p-3">${v.cliente}</td>
+                  <td class="p-3">${v.pagamento || 'N/A'}</td>
+                  <td class="p-3 text-right font-semibold text-green-600">${Data.formatMoney(v.valor)}</td>
                 </tr>
-              </thead>
-              <tbody>
-                ${Data.financeiro.slice().reverse().map(f => {
-                  const franquia = Data.franquias.find(fr => fr.id === f.franquia_id);
-                  return `
-                    <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
-                      <td class="p-3">${new Date(f.data).toLocaleDateString('pt-BR')}</td>
-                      <td class="p-3">
-                        <span class="px-2 py-1 rounded text-xs ${f.tipo === 'entrada' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'}">
-                          ${f.tipo === 'entrada' ? '💰 Entrada' : '💸 Saída'}
-                        </span>
-                      </td>
-                      <td class="p-3">${f.descricao}</td>
-                      <td class="p-3">${franquia?.nome || 'N/A'}</td>
-                      <td class="p-3 text-right font-semibold ${f.tipo === 'entrada' ? 'text-green-600' : 'text-red-600'}">${Data.formatMoney(f.valor)}</td>
-                      <td class="p-3 text-center">
-                        <button class="text-blue-600 hover:text-blue-800 mr-2" onclick="Financeiro.openModal(${f.id})" title="Editar">✏️</button>
-                        <button class="text-red-600 hover:text-red-800" onclick="Financeiro.delete(${f.id})" title="Excluir">🗑️</button>
-                      </td>
-                    </tr>
-                  `;
-                }).join("")}
-                ${Data.financeiro.length === 0 ? `
-                  <tr>
-                    <td colspan="6" class="p-8 text-center text-gray-500">Nenhuma transação encontrada</td>
-                  </tr>
-                ` : ""}
-              </tbody>
-            </table>
-          </div>
-        `;
-      }
-    };
-
-    // configuracoes.js
-    const Configuracoes = {
-      activeTab: 'empresa',
-      
-      render() {
-        const el = document.getElementById("configuracoes-container");
-        if (!el) return;
-        
-        el.innerHTML = `
-          <div class="mb-6">
-            <div class="flex border-b dark:border-gray-700">
-              <button class="px-4 py-2 border-b-2 ${this.activeTab === 'empresa' ? 'border-blue-600 text-blue-600' : 'border-transparent'}" onclick="Configuracoes.setTab('empresa')">🏢 Empresa</button>
-              <button class="px-4 py-2 border-b-2 ${this.activeTab === 'franquias' ? 'border-blue-600 text-blue-600' : 'border-transparent'}" onclick="Configuracoes.setTab('franquias')">🏪 Franquias</button>
-              <button class="px-4 py-2 border-b-2 ${this.activeTab === 'nfe' ? 'border-blue-600 text-blue-600' : 'border-transparent'}" onclick="Configuracoes.setTab('nfe')">📄 NFe</button>
-              <button class="px-4 py-2 border-b-2 ${this.activeTab === 'whatsapp' ? 'border-blue-600 text-blue-600' : 'border-transparent'}" onclick="Configuracoes.setTab('whatsapp')">📱 WhatsApp</button>
-            </div>
-          </div>
-          
-          <div id="config-content">
-            ${this.renderTab()}
-          </div>
-        `;
-      },
-      
-      setTab(tab) {
-        this.activeTab = tab;
-        this.render();
-      },
-      
-      renderTab() {
-        switch(this.activeTab) {
-          case 'empresa':
-            return this.renderEmpresa();
-          case 'franquias':
-            return this.renderFranquias();
-          case 'nfe':
-            return this.renderNFe();
-          case 'whatsapp':
-            return this.renderWhatsApp();
-          default:
-            return '';
-        }
-      },
-      
-      renderEmpresa() {
-        const emp = Data.configuracoes.empresa;
-        return `
-          <div class="bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 p-6">
-            <h3 class="text-lg font-semibold mb-4">Dados da Empresa</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div class="md:col-span-2">
-                <label class="block text-sm font-medium mb-1">Razão Social</label>
-                <input id="emp-razao" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${emp.razaoSocial}" />
-              </div>
-              <div class="md:col-span-2">
-                <label class="block text-sm font-medium mb-1">Nome Fantasia</label>
-                <input id="emp-fantasia" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${emp.nomeFantasia}" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">CNPJ</label>
-                <input id="emp-cnpj" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${emp.cnpj}" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Inscrição Estadual</label>
-                <input id="emp-ie" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${emp.inscricaoEstadual}" />
-              </div>
-              <div class="md:col-span-2">
-                <label class="block text-sm font-medium mb-1">Endereço</label>
-                <input id="emp-endereco" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${emp.endereco}" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Bairro</label>
-                <input id="emp-bairro" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${emp.bairro}" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">CEP</label>
-                <input id="emp-cep" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${emp.cep}" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Cidade</label>
-                <input id="emp-cidade" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${emp.cidade}" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">UF</label>
-                <select id="emp-uf" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
-                  <option value="RS" ${emp.uf === 'RS' ? 'selected' : ''}>RS</option>
-                  <option value="SC" ${emp.uf === 'SC' ? 'selected' : ''}>SC</option>
-                  <option value="PR" ${emp.uf === 'PR' ? 'selected' : ''}>PR</option>
-                  <option value="SP" ${emp.uf === 'SP' ? 'selected' : ''}>SP</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Telefone</label>
-                <input id="emp-telefone" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${emp.telefone}" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Email</label>
-                <input id="emp-email" type="email" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${emp.email}" />
-              </div>
-              <div class="md:col-span-2">
-                <label class="block text-sm font-medium mb-1">Logo da Empresa</label>
-                <input id="emp-logo" type="file" accept="image/*" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
-                <small class="text-gray-500">Formatos aceitos: JPG, PNG, GIF</small>
-              </div>
-            </div>
-            <div class="mt-6">
-              <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="Configuracoes.saveEmpresa()">Salvar Dados</button>
-            </div>
-          </div>
-        `;
-      },
-      
-      renderFranquias() {
-        return `
-          <div class="space-y-4">
-            <div class="flex justify-between items-center">
-              <h3 class="text-lg font-semibold">Gestão de Franquias</h3>
-              <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="Configuracoes.addFranquia()">+ Nova Franquia</button>
-            </div>
-            
-            <div class="grid gap-4">
-              ${Data.franquias.map(f => `
-                <div class="bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 p-4">
-                  <div class="flex justify-between items-start">
-                    <div class="flex-1">
-                      <h4 class="font-semibold">${f.nome}</h4>
-                      <div class="text-sm text-gray-600 dark:text-gray-300">
-                        <div>Cidade: ${f.cidade}</div>
-                        <div>CNPJ: ${f.cnpj}</div>
-                      </div>
-                    </div>
-                    <div class="flex gap-2">
-                      <button class="text-blue-600 hover:text-blue-800" onclick="Configuracoes.editFranquia(${f.id})" title="Editar">✏️</button>
-                      <button class="text-red-600 hover:text-red-800" onclick="Configuracoes.deleteFranquia(${f.id})" title="Excluir">🗑️</button>
-                    </div>
-                  </div>
-                </div>
               `).join("")}
-            </div>
-          </div>
-        `;
-      },
+              ${vendasFiltradas.length === 0 ? `
+                <tr>
+                  <td colspan="4" class="p-8 text-center text-gray-500">Nenhuma venda encontrada</td>
+                </tr>
+              ` : ""}
+            </tbody>
+          </table>
+        </div>
+      `;
+    } catch (error) {
+      console.error('Erro ao carregar relatórios:', error);
+      el.innerHTML = '<div class="text-red-500">Erro ao carregar relatórios</div>';
+    }
+  }
+};
+
+// ============ FINANCEIRO ============
+const Financeiro = {
+  editingId: null,
+  franquias: [],
+  
+  openModal(id = null) {
+    this.editingId = id;
+    const title = id ? "Editar Transação" : "Nova Transação";
+    
+    const content = `
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium mb-1">Tipo</label>
+          <select id="fin-tipo" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
+            <option value="entrada">💰 Entrada</option>
+            <option value="saida">💸 Saída</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Valor (R$)</label>
+          <input id="fin-valor" type="number" step="0.01" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm font-medium mb-1">Descrição</label>
+          <input id="fin-descricao" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Data</label>
+          <input id="fin-data" type="date" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${new Date().toISOString().slice(0,10)}" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Franquia</label>
+          <select id="fin-franquia" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
+            ${this.franquias.map(f => `
+              <option value="${f.id}">${f.nome}</option>
+            `).join("")}
+          </select>
+        </div>
+      </div>
+    `;
+    
+    Modal.open(title, content, () => this.save());
+
+    if (id) {
+      API.get('financeiro', id).then(transacao => {
+        document.getElementById("fin-tipo").value = transacao.tipo || 'entrada';
+        document.getElementById("fin-valor").value = transacao.valor || '';
+        document.getElementById("fin-descricao").value = transacao.descricao || '';
+        document.getElementById("fin-data").value = transacao.data || '';
+        document.getElementById("fin-franquia").value = transacao.franquia_id || 1;
+      });
+    }
+  },
+  
+  async save() {
+    const tipo = document.getElementById("fin-tipo").value;
+    const valor = parseFloat(document.getElementById("fin-valor").value) || 0;
+    const descricao = document.getElementById("fin-descricao").value.trim();
+    const data = document.getElementById("fin-data").value;
+    const franquia_id = parseInt(document.getElementById("fin-franquia").value);
+    
+    if (!descricao || valor <= 0) {
+      alert("Descrição e valor são obrigatórios.");
+      return;
+    }
+    
+    try {
+      const dados = { tipo, valor, descricao, data, franquia_id };
       
-      renderNFe() {
-        const nfe = Data.configuracoes.nfe;
-        return `
-          <div class="bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 p-6">
-            <h3 class="text-lg font-semibold mb-4">Configurações NFe</h3>
-            <div class="space-y-4">
-              <div>
-                <label class="block text-sm font-medium mb-1">Certificado Digital (.p12)</label>
-                <input id="nfe-cert" type="file" accept=".p12,.pfx" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
-                <small class="text-gray-500">Upload do certificado digital para emissão de NFe</small>
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Senha do Certificado</label>
-                <input id="nfe-senha" type="password" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${nfe.senha}" placeholder="Digite a senha do certificado" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Ambiente</label>
-                <select id="nfe-ambiente" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
-                  <option value="homologacao" ${nfe.ambiente === 'homologacao' ? 'selected' : ''}>Homologação</option>
-                  <option value="producao" ${nfe.ambiente === 'producao' ? 'selected' : ''}>Produção</option>
-                </select>
-              </div>
-              <div class="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
-                <div class="flex items-start">
-                  <div class="text-yellow-600 mr-2">⚠️</div>
-                  <div class="text-sm">
-                    <strong>Importante:</strong> Para emitir NFe e NFCe, é necessário ter um certificado digital válido e configurar corretamente os dados da empresa.
+      if (this.editingId) {
+        await API.put('financeiro', this.editingId, dados);
+      } else {
+        await API.post('financeiro', dados);
+      }
+      
+      Modal.close();
+      this.render();
+    } catch (error) {
+      alert('Erro: ' + error.message);
+    }
+  },
+  
+  async delete(id) {
+    if (confirm("Deseja excluir esta transação?")) {
+      try {
+        await API.delete('financeiro', id);
+        this.render();
+      } catch (error) {
+        alert('Erro: ' + error.message);
+      }
+    }
+  },
+  
+  async render() {
+    const el = document.getElementById("financeiro-container");
+    if (!el) return;
+    
+    try {
+      const financeiro = await API.get('financeiro');
+      this.franquias = await API.get('franquias');
+      
+      const entradas = financeiro.filter(f => f.tipo === "entrada").reduce((s, f) => s + f.valor, 0);
+      const saidas = financeiro.filter(f => f.tipo === "saida").reduce((s, f) => s + f.valor, 0);
+      const saldo = entradas - saidas;
+      
+      el.innerHTML = `
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
+            <div class="text-sm text-gray-500 dark:text-gray-300">💰 Entradas</div>
+            <div class="text-2xl font-semibold text-green-600">${Data.formatMoney(entradas)}</div>
+          </div>
+          <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
+            <div class="text-sm text-gray-500 dark:text-gray-300">💸 Saídas</div>
+            <div class="text-2xl font-semibold text-red-600">${Data.formatMoney(saidas)}</div>
+          </div>
+          <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
+            <div class="text-sm text-gray-500 dark:text-gray-300">📊 Saldo</div>
+            <div class="text-2xl font-semibold ${saldo >= 0 ? 'text-green-600' : 'text-red-600'}">${Data.formatMoney(saldo)}</div>
+          </div>
+        </div>
+        
+        <div class="overflow-auto border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-50 dark:bg-gray-700">
+              <tr>
+                <th class="p-3 text-left font-medium">Data</th>
+                <th class="p-3 text-left font-medium">Tipo</th>
+                <th class="p-3 text-left font-medium">Descrição</th>
+                <th class="p-3 text-right font-medium">Valor</th>
+                <th class="p-3 text-center font-medium">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${financeiro.slice().reverse().map(f => `
+                <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
+                  <td class="p-3">${new Date(f.data).toLocaleDateString('pt-BR')}</td>
+                  <td class="p-3">
+                    <span class="px-2 py-1 rounded text-xs ${f.tipo === 'entrada' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'}">
+                      ${f.tipo === 'entrada' ? '💰 Entrada' : '💸 Saída'}
+                    </span>
+                  </td>
+                  <td class="p-3">${f.descricao}</td>
+                  <td class="p-3 text-right font-semibold ${f.tipo === 'entrada' ? 'text-green-600' : 'text-red-600'}">${Data.formatMoney(f.valor)}</td>
+                  <td class="p-3 text-center">
+                    <button class="text-blue-600 hover:text-blue-800 mr-2" onclick="Financeiro.openModal(${f.id})">✏️</button>
+                    <button class="text-red-600 hover:text-red-800" onclick="Financeiro.delete(${f.id})">🗑️</button>
+                  </td>
+                </tr>
+              `).join("")}
+              ${financeiro.length === 0 ? `
+                <tr>
+                  <td colspan="5" class="p-8 text-center text-gray-500">Nenhuma transação encontrada</td>
+                </tr>
+              ` : ""}
+            </tbody>
+          </table>
+        </div>
+      `;
+    } catch (error) {
+      console.error('Erro ao carregar financeiro:', error);
+      el.innerHTML = '<div class="text-red-500">Erro ao carregar financeiro</div>';
+    }
+  }
+};
+
+// ============ CONFIGURAÇÕES ============
+const Configuracoes = {
+  activeTab: 'empresa',
+  franquias: [],
+  
+  async render() {
+    const el = document.getElementById("configuracoes-container");
+    if (!el) return;
+    
+    try {
+      this.franquias = await API.get('franquias');
+    } catch (error) {
+      console.error('Erro ao carregar franquias:', error);
+    }
+    
+    el.innerHTML = `
+      <div class="mb-6">
+        <div class="flex border-b dark:border-gray-700">
+          <button class="px-4 py-2 border-b-2 ${this.activeTab === 'empresa' ? 'border-blue-600 text-blue-600' : 'border-transparent'}" onclick="Configuracoes.setTab('empresa')">🏢 Empresa</button>
+          <button class="px-4 py-2 border-b-2 ${this.activeTab === 'franquias' ? 'border-blue-600 text-blue-600' : 'border-transparent'}" onclick="Configuracoes.setTab('franquias')">🪖 Franquias</button>
+        </div>
+      </div>
+      
+      <div id="config-content">
+        ${this.renderTab()}
+      </div>
+    `;
+  },
+  
+  setTab(tab) {
+    this.activeTab = tab;
+    this.render();
+  },
+  
+  renderTab() {
+    switch(this.activeTab) {
+      case 'empresa':
+        return this.renderEmpresa();
+      case 'franquias':
+        return this.renderFranquias();
+      default:
+        return '';
+    }
+  },
+  
+  renderEmpresa() {
+    return `
+      <div class="bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 p-6">
+        <h3 class="text-lg font-semibold mb-4">Dados da Empresa</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium mb-1">Razão Social</label>
+            <input id="emp-razao" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="AutoFranquia Ltda" />
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium mb-1">Nome Fantasia</label>
+            <input id="emp-fantasia" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="AutoFranquia - Lavagem & Peças" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">CNPJ</label>
+            <input id="emp-cnpj" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="12.345.678/0001-90" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Inscrição Estadual</label>
+            <input id="emp-ie" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="123.456.789" />
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium mb-1">Endereço</label>
+            <input id="emp-endereco" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="Av. Automotiva, 456" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Telefone</label>
+            <input id="emp-telefone" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="(51) 3333-4444" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Email</label>
+            <input id="emp-email" type="email" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="contato@autofranquia.com" />
+          </div>
+        </div>
+        <div class="mt-6">
+          <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="Configuracoes.saveEmpresa()">Salvar Dados</button>
+        </div>
+      </div>
+    `;
+  },
+  
+  renderFranquias() {
+    return `
+      <div class="space-y-4">
+        <div class="flex justify-between items-center">
+          <h3 class="text-lg font-semibold">Gestão de Franquias</h3>
+          <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="Configuracoes.addFranquia()">+ Nova Franquia</button>
+        </div>
+        
+        <div class="grid gap-4">
+          ${this.franquias.map(f => `
+            <div class="bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 p-4">
+              <div class="flex justify-between items-start">
+                <div class="flex-1">
+                  <h4 class="font-semibold">${f.nome}</h4>
+                  <div class="text-sm text-gray-600 dark:text-gray-300">
+                    <div>Cidade: ${f.cidade}</div>
+                    <div>CNPJ: ${f.cnpj}</div>
                   </div>
+                </div>
+                <div class="flex gap-2">
+                  <button class="text-blue-600 hover:text-blue-800" onclick="Configuracoes.editFranquia(${f.id})">✏️</button>
+                  <button class="text-red-600 hover:text-red-800" onclick="Configuracoes.deleteFranquia(${f.id})">🗑️</button>
                 </div>
               </div>
             </div>
-            <div class="mt-6">
-              <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="Configuracoes.saveNFe()">Salvar Configurações</button>
-            </div>
-          </div>
-        `;
-      },
-      
-      renderWhatsApp() {
-        const wpp = Data.configuracoes.whatsapp;
-        return `
-          <div class="bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 p-6">
-            <h3 class="text-lg font-semibold mb-4">Integração WhatsApp</h3>
-            <div class="space-y-4">
-              <div class="flex items-center gap-3">
-                <input id="wpp-ativo" type="checkbox" ${wpp.ativo ? 'checked' : ''} class="rounded" />
-                <label for="wpp-ativo" class="text-sm font-medium">Ativar integração WhatsApp</label>
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">API Key</label>
-                <input id="wpp-api" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${wpp.apiKey}" placeholder="Sua chave da API do WhatsApp" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium mb-1">Número WhatsApp</label>
-                <input id="wpp-numero" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${wpp.numero}" placeholder="(51) 99999-9999" />
-              </div>
-              <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-                <div class="flex items-start">
-                  <div class="text-blue-600 mr-2">ℹ️</div>
-                  <div class="text-sm">
-                    <strong>Como configurar:</strong><br/>
-                    1. Obtenha uma API Key de um provedor WhatsApp Business<br/>
-                    2. Configure o webhook para receber mensagens<br/>
-                    3. Teste a integração antes de ativar
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mt-6 flex gap-3">
-              <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="Configuracoes.saveWhatsApp()">Salvar Configurações</button>
-              <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700" onclick="Configuracoes.testWhatsApp()">Testar Conexão</button>
-            </div>
-          </div>
-        `;
-      },
-      
-      saveEmpresa() {
-        const emp = Data.configuracoes.empresa;
-        emp.razaoSocial = document.getElementById("emp-razao").value;
-        emp.nomeFantasia = document.getElementById("emp-fantasia").value;
-        emp.cnpj = document.getElementById("emp-cnpj").value;
-        emp.inscricaoEstadual = document.getElementById("emp-ie").value;
-        emp.endereco = document.getElementById("emp-endereco").value;
-        emp.bairro = document.getElementById("emp-bairro").value;
-        emp.cep = document.getElementById("emp-cep").value;
-        emp.cidade = document.getElementById("emp-cidade").value;
-        emp.uf = document.getElementById("emp-uf").value;
-        emp.telefone = document.getElementById("emp-telefone").value;
-        emp.email = document.getElementById("emp-email").value;
-        
-        alert("Dados da empresa salvos com sucesso!");
-      },
-      
-      addFranquia() {
-        const nome = prompt("Nome da franquia:");
-        const cidade = prompt("Cidade:");
-        const cnpj = prompt("CNPJ:");
-        
-        if (nome && cidade && cnpj) {
-          Data.franquias.push({
-            id: Data.nextId(Data.franquias),
-            nome, cidade, cnpj, logo: null
-          });
-          this.render();
-        }
-      },
-      
-      editFranquia(id) {
-        const franquia = Data.franquias.find(f => f.id === id);
-        if (!franquia) return;
-        
-        const nome = prompt("Nome da franquia:", franquia.nome);
-        const cidade = prompt("Cidade:", franquia.cidade);
-        const cnpj = prompt("CNPJ:", franquia.cnpj);
-        
-        if (nome && cidade && cnpj) {
-          franquia.nome = nome;
-          franquia.cidade = cidade;
-          franquia.cnpj = cnpj;
-          this.render();
-        }
-      },
-      
-      deleteFranquia(id) {
-        if (confirm("Deseja excluir esta franquia?")) {
-          Data.franquias = Data.franquias.filter(f => f.id !== id);
-          this.render();
-        }
-      },
-      
-      saveNFe() {
-        const nfe = Data.configuracoes.nfe;
-        nfe.senha = document.getElementById("nfe-senha").value;
-        nfe.ambiente = document.getElementById("nfe-ambiente").value;
-        
-        alert("Configurações NFe salvas com sucesso!");
-      },
-      
-      saveWhatsApp() {
-        const wpp = Data.configuracoes.whatsapp;
-        wpp.ativo = document.getElementById("wpp-ativo").checked;
-        wpp.apiKey = document.getElementById("wpp-api").value;
-        wpp.numero = document.getElementById("wpp-numero").value;
-        
-        alert("Configurações WhatsApp salvas com sucesso!");
-      },
-      
-      testWhatsApp() {
-        const wpp = Data.configuracoes.whatsapp;
-        if (!wpp.apiKey || !wpp.numero) {
-          alert("Configure a API Key e número antes de testar.");
-          return;
-        }
-        
-        // Simulação de teste
-        alert("Teste de conexão WhatsApp:\n✅ API Key válida\n✅ Número configurado\n✅ Conexão estabelecida");
+          `).join("")}
+        </div>
+      </div>
+    `;
+  },
+  
+  saveEmpresa() {
+    alert("Dados da empresa salvos com sucesso!");
+  },
+  
+  async addFranquia() {
+    const nome = prompt("Nome da franquia:");
+    const cidade = prompt("Cidade:");
+    const cnpj = prompt("CNPJ:");
+    
+    if (nome && cidade && cnpj) {
+      try {
+        await API.post('franquias', { nome, cidade, cnpj });
+        this.render();
+      } catch (error) {
+        alert('Erro: ' + error.message);
       }
-    };
-
-    // app.js
-    const App = {
-      sections: ["pdv","produtos","clientes","relatorios","financeiro","configuracoes"],
-      sectionTitles: {
-        "pdv": "PDV / Caixa",
-        "produtos": "Gestão de Produtos",
-        "clientes": "Gestão de Clientes", 
-        "relatorios": "Relatórios de Vendas",
-        "financeiro": "Gestão Financeira",
-        "configuracoes": "Configurações do Sistema"
-      },
-      
-      init() {
-        // Inicialização do sistema
-      },
-      
-      showSection(name) {
-        // Esconder todas as seções
-        this.sections.forEach(s => {
-          const el = document.getElementById(`section-${s}`);
-          if (el) el.classList.add("hidden");
-        });
-        
-        // Mostrar seção ativa
-        const active = document.getElementById(`section-${name}`);
-        if (active) {
-          active.classList.remove("hidden");
-          
-          // Atualizar título da página
-          const titleEl = document.getElementById("page-title");
-          if (titleEl) {
-            titleEl.textContent = this.sectionTitles[name] || name;
-          }
-          
-          // Renderizar conteúdo da seção
-          if (name === "pdv") PDV.render();
-          if (name === "produtos") Produtos.render();
-          if (name === "clientes") Clientes.render();
-          if (name === "relatorios") Relatorios.render();
-          if (name === "financeiro") Financeiro.render();
-          if (name === "configuracoes") Configuracoes.render();
-        }
-        
-        // Atualizar sidebar ativa
-        this.updateSidebarActive(name);
-      },
-      
-      updateSidebarActive(activeSection) {
-        const buttons = document.querySelectorAll('#sidebar nav button');
-        buttons.forEach(btn => {
-          btn.classList.remove('bg-blue-700');
-        });
-        
-        // Adicionar classe ativa baseado na seção
-        const sectionIndex = this.sections.indexOf(activeSection);
-        if (sectionIndex >= 0 && buttons[sectionIndex]) {
-          buttons[sectionIndex].classList.add('bg-blue-700');
-        }
-      },
-      
-      toggleDarkMode() {
-        document.documentElement.classList.toggle("dark");
-        
-        // Salvar preferência no localStorage
-        const isDark = document.documentElement.classList.contains("dark");
-        localStorage.setItem("darkMode", isDark);
-      },
-      
-      loadDarkMode() {
-        const savedMode = localStorage.getItem("darkMode");
-        if (savedMode === "true") {
-          document.documentElement.classList.add("dark");
-        }
+    }
+  },
+  
+  async editFranquia(id) {
+    const franquia = this.franquias.find(f => f.id === id);
+    if (!franquia) return;
+    
+    const nome = prompt("Nome da franquia:", franquia.nome);
+    const cidade = prompt("Cidade:", franquia.cidade);
+    const cnpj = prompt("CNPJ:", franquia.cnpj);
+    
+    if (nome && cidade && cnpj) {
+      try {
+        await API.put('franquias', id, { nome, cidade, cnpj });
+        this.render();
+      } catch (error) {
+        alert('Erro: ' + error.message);
       }
-    };
+    }
+  },
+  
+  async deleteFranquia(id) {
+    if (confirm("Deseja excluir esta franquia?")) {
+      try {
+        await API.delete('franquias', id);
+        this.render();
+      } catch (error) {
+        alert('Erro: ' + error.message);
+      }
+    }
+  }
+};
 
-    // Inicialização do sistema
-    document.addEventListener("DOMContentLoaded", () => {
-      App.loadDarkMode();
-      App.init();
-      App.showSection("pdv"); // Seção inicial
+// ============ APP ============
+const App = {
+  sections: ["pdv","produtos","clientes","relatorios","financeiro","configuracoes"],
+  sectionTitles: {
+    "pdv": "PDV / Caixa",
+    "produtos": "Gestão de Produtos",
+    "clientes": "Gestão de Clientes", 
+    "relatorios": "Relatórios de Vendas",
+    "financeiro": "Gestão Financeira",
+    "configuracoes": "Configurações do Sistema"
+  },
+  
+  async init() {
+    console.log('Inicializando sistema...');
+  },
+  
+  showSection(name) {
+    this.sections.forEach(s => {
+      const el = document.getElementById(`section-${s}`);
+      if (el) el.classList.add("hidden");
     });
-  </script>
+    
+    const active = document.getElementById(`section-${name}`);
+    if (active) {
+      active.classList.remove("hidden");
+      
+      const titleEl = document.getElementById("page-title");
+      if (titleEl) {
+        titleEl.textContent = this.sectionTitles[name] || name;
+      }
+      
+      if (name === "pdv") PDV.render();
+      if (name === "produtos") Produtos.render();
+      if (name === "clientes") Clientes.render();
+      if (name === "relatorios") Relatorios.render();
+      if (name === "financeiro") Financeiro.render();
+      if (name === "configuracoes") Configuracoes.render();
+    }
+    
+    this.updateSidebarActive(name);
+  },
+  
+  updateSidebarActive(activeSection) {
+    const buttons = document.querySelectorAll('#sidebar nav button');
+    buttons.forEach(btn => {
+      btn.classList.remove('bg-blue-700');
+    });
+    
+    const sectionIndex = this.sections.indexOf(activeSection);
+    if (sectionIndex >= 0 && buttons[sectionIndex]) {
+      buttons[sectionIndex].classList.add('bg-blue-700');
+    }
+  }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  App.init();
+  App.showSection("pdv");
+});
+</script>
 </body>
 </html>
-</div>
