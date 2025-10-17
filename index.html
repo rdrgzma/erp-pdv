@@ -2,53 +2,45 @@
 <html lang="pt-BR" class="h-full bg-gray-100">
 <head>
   <meta charset="UTF-8" />
-  <title>Sistema Franquia Automotiva - Sidebar</title>
+  <title>AutoFranquia - Sistema de Gestão</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.abacus.ai/images/fbd58c6f-84c5-4148-adee-10b7b29c0af4.png">
-  <link rel="icon" type="image/png" sizes="64x64" href="https://cdn.abacus.ai/images/fbd58c6f-84c5-4148-adee-10b7b29c0af4.png">
 </head>
 <body class="h-full dark:bg-gray-900 dark:text-gray-100">
-<div id="login-screen" class="min-h-screen flex items-center justify-center bg-gray-50 py-10 px-4">
-  <div class="w-full max-w-md bg-white shadow rounded-lg p-6">
-    <div class="text-center mb-6">
-     <img src="logo2.jpg" alt="Fábrica da Net – Soluções Digitais" class="mx-auto mb-3">
-      <h1 class="text-xl font-semibold">Acessar conta</h1>
-      <p class="text-sm text-gray-500">Use qualquer e-mail e senha para simular o acesso</p>
+
+<div id="login-screen" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-700 py-10 px-4">
+  <div class="w-full max-w-md bg-white shadow-xl rounded-lg p-8">
+    <div class="text-center mb-8">
+      <div class="text-4xl font-bold text-blue-600 mb-2">AutoFranquia</div>
+      <p class="text-gray-600">Sistema de Gestão</p>
     </div>
 
-    <form id="demo-login-form" class="space-y-4">
+    <form id="login-form" class="space-y-4">
       <div>
         <label class="block text-sm font-medium text-gray-700">E-mail</label>
-        <input type="email" id="demo-email" autocomplete="email"
-        placeholder="admin@admin.com"
-          class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-indigo-500 focus:ring-indigo-500" required />
+        <input type="email" id="login-email" autocomplete="email"
+          class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-blue-500" required />
       </div>
 
       <div>
         <label class="block text-sm font-medium text-gray-700">Senha</label>
-        <input type="password" id="demo-password" autocomplete="current-password"
-        placeholder="admin123"
-          class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-indigo-500 focus:ring-indigo-500" required />
+        <input type="password" id="login-senha" autocomplete="current-password"
+          class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 focus:border-blue-500 focus:ring-blue-500" required />
       </div>
 
-      <div class="flex items-center justify-between">
-        <label class="flex items-center gap-2 text-sm text-gray-700">
-          <input type="checkbox" id="demo-remember" class="rounded border-gray-300 text-indigo-600">
-          Lembrar de mim
-        </label>
-        <a href="#" class="text-sm text-indigo-600 hover:underline" onclick="alert('Funcionalidade de demo');return false;">
-          Esqueci minha senha
-        </a>
-      </div>
-
-      <button type="submit"
-        class="w-full inline-flex justify-center items-center px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none">
+      <button type="submit" class="w-full inline-flex justify-center items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none font-semibold">
         Entrar
       </button>
 
-      <p id="demo-error" class="hidden text-sm text-red-600">Informe e-mail e senha válidos.</p>
+      <p id="login-error" class="hidden text-sm text-red-600 text-center"></p>
     </form>
+
+    <div class="mt-6 p-4 bg-blue-50 rounded-lg text-sm text-gray-700 text-center">
+      <strong>Teste:</strong><br/>
+      admin@autofranquia.com / 123456<br/>
+      gerente@franquia.com / 123456<br/>
+      vendedor@franquia.com / 123456
+    </div>
   </div>
 </div>
 
@@ -56,187 +48,109 @@
   <div class="flex h-screen">
     <div id="sidebar" class="w-64 bg-blue-800 dark:bg-blue-900 text-white flex flex-col">
       <div class="p-4 border-b border-blue-700">
-        <div class="flex items-center gap-3">
-          <img src="favico.webp" alt="Fábrica da Net – Soluções Digitais" class="h-8 ">
-          <div>
-            <div class="font-bold text-lg">AutoFranquia</div>
-            <div class="text-xs text-blue-200">Sistema de Gestão</div>
-          </div>
-        </div>
+        <div class="font-bold text-lg">AutoFranquia</div>
+        <div class="text-xs text-blue-200" id="user-role"></div>
       </div>
 
       <nav class="flex-1 p-4 space-y-2">
         <button class="w-full flex items-center gap-3 px-3 py-2 rounded hover:bg-blue-700 transition-colors" onclick="App.showSection('pdv')">
-          <span class="text-lg">🛒</span>
-          <span>PDV / Caixa</span>
+          <span>🛒</span> <span>PDV / Caixa</span>
         </button>
         <button class="w-full flex items-center gap-3 px-3 py-2 rounded hover:bg-blue-700 transition-colors" onclick="App.showSection('produtos')">
-          <span class="text-lg">🔧</span>
-          <span>Produtos</span>
+          <span>🔧</span> <span>Produtos</span>
         </button>
         <button class="w-full flex items-center gap-3 px-3 py-2 rounded hover:bg-blue-700 transition-colors" onclick="App.showSection('clientes')">
-          <span class="text-lg">👥</span>
-          <span>Clientes</span>
+          <span>👥</span> <span>Clientes</span>
         </button>
         <button class="w-full flex items-center gap-3 px-3 py-2 rounded hover:bg-blue-700 transition-colors" onclick="App.showSection('relatorios')">
-          <span class="text-lg">📊</span>
-          <span>Relatórios</span>
+          <span>📊</span> <span>Relatórios</span>
         </button>
         <button class="w-full flex items-center gap-3 px-3 py-2 rounded hover:bg-blue-700 transition-colors" onclick="App.showSection('financeiro')">
-          <span class="text-lg">💰</span>
-          <span>Financeiro</span>
+          <span>💰</span> <span>Financeiro</span>
         </button>
         <div class="border-t border-blue-700 my-4"></div>
+        <button id="menu-franquias" class="w-full flex items-center gap-3 px-3 py-2 rounded hover:bg-blue-700 transition-colors hidden" onclick="App.showSection('franquias')">
+          <span>🪖</span> <span>Franquias</span>
+        </button>
+        <button id="menu-usuarios" class="w-full flex items-center gap-3 px-3 py-2 rounded hover:bg-blue-700 transition-colors hidden" onclick="App.showSection('usuarios')">
+          <span>👤</span> <span>Usuários</span>
+        </button>
         <button class="w-full flex items-center gap-3 px-3 py-2 rounded hover:bg-blue-700 transition-colors" onclick="App.showSection('configuracoes')">
-          <span class="text-lg">⚙️</span>
-          <span>Configurações</span>
+          <span>⚙️</span> <span>Configurações</span>
         </button>
       </nav>
 
-      <div class="p-4 border-t border-blue-700">
-         <button id="btn-logout" class="px-3 py-1.5 text-sm rounded-md bg-gray-800 text-white hover:bg-gray-700">
-            Sair
-          </button>
+      <div class="p-4 border-t border-blue-700 space-y-2">
+        <div class="text-xs text-blue-200" id="user-name"></div>
+        <button id="btn-logout" class="w-full px-3 py-1.5 text-sm rounded-md bg-red-600 text-white hover:bg-red-700">
+          Sair
+        </button>
       </div>
     </div>
 
     <div class="flex-1 flex flex-col overflow-hidden">
       <header class="bg-white dark:bg-gray-800 shadow-sm border-b dark:border-gray-700 p-4">
-        <div class="flex items-center justify-between">
-          <h1 id="page-title" class="text-xl font-semibold">PDV / Caixa</h1>
-          <div class="flex items-center gap-3">
-            <span class="text-sm text-gray-500 dark:text-gray-400">Usuário: Admin</span>
-            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm">A</div>
-          </div>
-        </div>
+        <h1 id="page-title" class="text-xl font-semibold">PDV / Caixa</h1>
       </header>
 
       <main class="flex-1 overflow-auto p-6">
-        <section id="section-pdv" class="hidden">
-          <div id="pdv-container"></div>
-        </section>
-
+        <section id="section-pdv" class="hidden"><div id="pdv-container"></div></section>
         <section id="section-produtos" class="hidden">
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-2xl font-bold">Gestão de Produtos</h2>
-            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2" onclick="Produtos.openModal()">
-              <span>+</span>
-              <span>Novo Produto</span>
-            </button>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="Produtos.openModal()">+ Novo Produto</button>
           </div>
           <div id="produtos-container"></div>
         </section>
-
         <section id="section-clientes" class="hidden">
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-2xl font-bold">Gestão de Clientes</h2>
-            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 flex items-center gap-2" onclick="Clientes.openModal()">
-              <span>+</span>
-              <span>Novo Cliente</span>
-            </button>
+            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700" onclick="Clientes.openModal()">+ Novo Cliente</button>
           </div>
           <div id="clientes-container"></div>
         </section>
-
-        <section id="section-relatorios" class="hidden">
-          <h2 class="text-2xl font-bold mb-6">Relatórios de Vendas</h2>
-          <div id="relatorios-container"></div>
-        </section>
-
+        <section id="section-relatorios" class="hidden"><h2 class="text-2xl font-bold mb-6">Relatórios de Vendas</h2><div id="relatorios-container"></div></section>
         <section id="section-financeiro" class="hidden">
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-2xl font-bold">Gestão Financeira</h2>
-            <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 flex items-center gap-2" onclick="Financeiro.openModal()">
-              <span>+</span>
-              <span>Nova Transação</span>
-            </button>
+            <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700" onclick="Financeiro.openModal()">+ Nova Transação</button>
           </div>
           <div id="financeiro-container"></div>
         </section>
-
-        <section id="section-configuracoes" class="hidden">
-          <h2 class="text-2xl font-bold mb-6">Configurações do Sistema</h2>
-          <div id="configuracoes-container"></div>
+        <section id="section-franquias" class="hidden">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold">Gerenciar Franquias</h2>
+            <button class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700" onclick="Franquias.openModal()">+ Nova Franquia</button>
+          </div>
+          <div id="franquias-container"></div>
         </section>
+        <section id="section-usuarios" class="hidden">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold">Gerenciar Usuários</h2>
+            <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700" onclick="Usuarios.openModal()">+ Novo Usuário</button>
+          </div>
+          <div id="usuarios-container"></div>
+        </section>
+        <section id="section-configuracoes" class="hidden"><h2 class="text-2xl font-bold mb-6">Configurações do Sistema</h2><div id="configuracoes-container"></div></section>
       </main>
     </div>
   </div>
 
-  <!-- MODAL CHECKOUT -->
   <div id="checkout-backdrop" class="fixed inset-0 bg-black/50 hidden z-40"></div>
   <div id="checkout-modal" class="fixed inset-0 flex items-center justify-center hidden z-50">
     <div class="w-full max-w-lg bg-white dark:bg-gray-800 rounded-lg shadow-lg p-5">
       <div class="flex items-center justify-between mb-3">
         <h3 class="text-lg font-semibold">Finalizar Venda</h3>
-        <button class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300" onclick="PDV.closeCheckout()">✕</button>
+        <button class="text-gray-500 hover:text-gray-700" onclick="PDV.closeCheckout()">✕</button>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-sm mb-1">Cliente (opcional)</label>
-          <input id="ck-cliente" class="w-full border rounded px-3 py-2 dark:bg-gray-900" placeholder="Balcão" />
-        </div>
-        <div>
-          <label class="block text-sm mb-1">Forma de Pagamento</label>
-          <select id="ck-pagamento" class="w-full border rounded px-3 py-2 dark:bg-gray-900">
-            <option>Dinheiro</option>
-            <option>Cartão</option>
-            <option>Pix</option>
-          </select>
-        </div>
-
-        <div>
-          <label class="block text-sm mb-1">Desconto</label>
-          <div class="flex gap-2">
-            <input id="ck-desc" type="number" min="0" step="0.01" class="w-full border rounded px-3 py-2 dark:bg-gray-900" placeholder="0,00" />
-            <select id="ck-desc-tipo" class="border rounded px-2 py-2 dark:bg-gray-900">
-              <option value="valor">R$</option>
-              <option value="percent">%</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-sm mb-1">Acréscimo</label>
-          <div class="flex gap-2">
-            <input id="ck-acres" type="number" min="0" step="0.01" class="w-full border rounded px-3 py-2 dark:bg-gray-900" placeholder="0,00" />
-            <select id="ck-acres-tipo" class="border rounded px-2 py-2 dark:bg-gray-900">
-              <option value="valor">R$</option>
-              <option value="percent">%</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-sm mb-1">Valor Recebido</label>
-          <input id="ck-recebido" type="number" min="0" step="0.01" class="w-full border rounded px-3 py-2 dark:bg-gray-900" placeholder="0,00" />
-          <small class="text-gray-500 dark:text-gray-400">Somente para Dinheiro</small>
-        </div>
-
-        <div class="border rounded p-3 dark:border-gray-700">
-          <div class="flex justify-between text-sm">
-            <span>Subtotal</span>
-            <span id="ck-subtotal">R$ 0,00</span>
-          </div>
-          <div class="flex justify-between text-sm">
-            <span>Desconto</span>
-            <span id="ck-desc-view">R$ 0,00</span>
-          </div>
-          <div class="flex justify-between text-sm">
-            <span>Acréscimo</span>
-            <span id="ck-acres-view">R$ 0,00</span>
-          </div>
-          <div class="flex justify-between font-semibold mt-2">
-            <span>Total</span>
-            <span id="ck-total">R$ 0,00</span>
-          </div>
-          <div class="flex justify-between mt-1">
-            <span>Troco</span>
-            <span id="ck-troco">R$ 0,00</span>
-          </div>
-        </div>
+        <div><label class="block text-sm mb-1">Cliente (opcional)</label><input id="ck-cliente" class="w-full border rounded px-3 py-2 dark:bg-gray-900" placeholder="Balcão" /></div>
+        <div><label class="block text-sm mb-1">Forma de Pagamento</label><select id="ck-pagamento" class="w-full border rounded px-3 py-2 dark:bg-gray-900"><option>Dinheiro</option><option>Cartão</option><option>Pix</option></select></div>
+        <div><label class="block text-sm mb-1">Desconto</label><div class="flex gap-2"><input id="ck-desc" type="number" min="0" step="0.01" class="w-full border rounded px-3 py-2 dark:bg-gray-900" /><select id="ck-desc-tipo" class="border rounded px-2 py-2 dark:bg-gray-900"><option value="valor">R$</option><option value="percent">%</option></select></div></div>
+        <div><label class="block text-sm mb-1">Acréscimo</label><div class="flex gap-2"><input id="ck-acres" type="number" min="0" step="0.01" class="w-full border rounded px-3 py-2 dark:bg-gray-900" /><select id="ck-acres-tipo" class="border rounded px-2 py-2 dark:bg-gray-900"><option value="valor">R$</option><option value="percent">%</option></select></div></div>
+        <div><label class="block text-sm mb-1">Valor Recebido</label><input id="ck-recebido" type="number" min="0" step="0.01" class="w-full border rounded px-3 py-2 dark:bg-gray-900" /></div>
+        <div class="border rounded p-3 dark:border-gray-700"><div class="flex justify-between text-sm"><span>Subtotal</span><span id="ck-subtotal">R$ 0,00</span></div><div class="flex justify-between text-sm"><span>Desconto</span><span id="ck-desc-view">R$ 0,00</span></div><div class="flex justify-between text-sm"><span>Acréscimo</span><span id="ck-acres-view">R$ 0,00</span></div><div class="flex justify-between font-semibold mt-2"><span>Total</span><span id="ck-total">R$ 0,00</span></div><div class="flex justify-between mt-1"><span>Troco</span><span id="ck-troco">R$ 0,00</span></div></div>
       </div>
-
       <div class="mt-4 flex justify-end gap-2">
         <button class="px-4 py-2 rounded bg-gray-200 dark:bg-gray-700" onclick="PDV.closeCheckout()">Cancelar</button>
         <button class="px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700" onclick="PDV.confirmCheckout()">Confirmar e Imprimir</button>
@@ -244,13 +158,12 @@
     </div>
   </div>
 
-  <!-- MODAL GENÉRICO -->
   <div id="modal-backdrop" class="fixed inset-0 bg-black/50 hidden z-40"></div>
   <div id="modal-container" class="fixed inset-0 flex items-center justify-center hidden z-50">
     <div class="w-full max-w-2xl bg-white dark:bg-gray-800 rounded-lg shadow-lg p-5 max-h-[90vh] overflow-y-auto">
       <div class="flex items-center justify-between mb-3">
         <h3 id="modal-title" class="text-lg font-semibold">Modal</h3>
-        <button class="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300" onclick="Modal.close()">✕</button>
+        <button class="text-gray-500 hover:text-gray-700" onclick="Modal.close()">✕</button>
       </div>
       <div id="modal-content"></div>
       <div class="mt-4 flex justify-end gap-2">
@@ -262,70 +175,90 @@
 </div>
 
 <script>
-//const API_URL = 'http://localhost/autofranquia/api/index.php';
 const API_URL = 'http://localhost:8000/api/index.php';
 
-// ============ AUTENTICAÇÃO ============
-(function () {
-  const STORAGE_KEY = 'demo_logged_in';
-  const $login = document.getElementById('login-screen');
-  const $dashboard = document.getElementById('dashboard');
-  const $form = document.getElementById('demo-login-form');
-  const $email = document.getElementById('demo-email');
-  const $password = document.getElementById('demo-password');
-  const $remember = document.getElementById('demo-remember');
-  const $error = document.getElementById('demo-error');
-  const $logout = document.getElementById('btn-logout');
+const Auth = {
+  usuario: null,
 
-  function showDashboard() {
-    if ($login) $login.classList.add('hidden');
-    if ($dashboard) $dashboard.classList.remove('hidden');
-  }
-  function showLogin() {
-    if ($dashboard) $dashboard.classList.add('hidden');
-    if ($login) $login.classList.remove('hidden');
-  }
-
-  const logged = sessionStorage.getItem(STORAGE_KEY) === '1' || localStorage.getItem(STORAGE_KEY) === '1';
-  if (logged) {
-    showDashboard();
-  } else {
-    showLogin();
-  }
-
-  if ($form) {
-    $form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      $error && $error.classList.add('hidden');
-
-      const email = ($email?.value || '').trim();
-      const pass = ($password?.value || '').trim();
-
-      if (!email || !pass) {
-        $error && $error.classList.remove('hidden');
-        return;
-      }
-
-      if ($remember?.checked) {
-        localStorage.setItem(STORAGE_KEY, '1');
-      } else {
-        sessionStorage.setItem(STORAGE_KEY, '1');
-      }
-      showDashboard();
-      App.init();
+  async login(email, senha) {
+    const response = await fetch(`${API_URL}/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, senha })
     });
-  }
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.error || 'Erro ao fazer login');
+    }
+    this.usuario = (await response.json()).usuario;
+    return true;
+  },
 
-  if ($logout) {
-    $logout.addEventListener('click', function () {
-      localStorage.removeItem(STORAGE_KEY);
-      sessionStorage.removeItem(STORAGE_KEY);
-      showLogin();
+  async logout() {
+    await fetch(`${API_URL}/auth/logout`, { method: 'POST' });
+    this.usuario = null;
+  },
+
+  async getPerfil() {
+    try {
+      const response = await fetch(`${API_URL}/auth/perfil`);
+      if (response.ok) this.usuario = await response.json();
+    } catch (error) {
+      console.error('Erro:', error);
+    }
+    return this.usuario;
+  }
+};
+
+const API = {
+  async get(resource, id = null) {
+    const url = id ? `${API_URL}/${resource}/${id}` : `${API_URL}/${resource}`;
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Erro ao buscar');
+    return response.json();
+  },
+
+  async post(resource, data) {
+    const response = await fetch(`${API_URL}/${resource}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
     });
-  }
-})();
+    if (!response.ok) throw new Error('Erro ao criar');
+    return response.json();
+  },
 
-// ============ UTILITÁRIOS ============
+  async put(resource, id, data) {
+    const response = await fetch(`${API_URL}/${resource}/${id}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (!response.ok) throw new Error('Erro ao atualizar');
+    return response.json();
+  },
+
+  async delete(resource, id) {
+    const response = await fetch(`${API_URL}/${resource}/${id}`, { method: 'DELETE' });
+    if (!response.ok) throw new Error('Erro ao deletar');
+    return response.json();
+  }
+};
+
+const Modal = {
+  open(title, content, onConfirm) {
+    document.getElementById("modal-title").textContent = title;
+    document.getElementById("modal-content").innerHTML = content;
+    document.getElementById("modal-confirm").onclick = onConfirm;
+    document.getElementById("modal-backdrop").classList.remove("hidden");
+    document.getElementById("modal-container").classList.remove("hidden");
+  },
+  close() {
+    document.getElementById("modal-backdrop").classList.add("hidden");
+    document.getElementById("modal-container").classList.add("hidden");
+  }
+};
+
 const Data = {
   formatMoney(v) {
     const num = typeof v === "number" ? v : Number(v || 0);
@@ -344,162 +277,29 @@ const Data = {
   }
 };
 
-const API = {
-  async get(resource, id = null) {
-    const url = id ? `${API_URL}/${resource}/${id}` : `${API_URL}/${resource}`;
-    const response = await fetch(url);
-    if (!response.ok) throw new Error(`Erro ao buscar ${resource}`);
-    return response.json();
-  },
-
-  async post(resource, data) {
-    const response = await fetch(`${API_URL}/${resource}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-    if (!response.ok) throw new Error(`Erro ao criar ${resource}`);
-    return response.json();
-  },
-
-  async put(resource, id, data) {
-    const response = await fetch(`${API_URL}/${resource}/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-    if (!response.ok) throw new Error(`Erro ao atualizar ${resource}`);
-    return response.json();
-  },
-
-  async delete(resource, id) {
-    const response = await fetch(`${API_URL}/${resource}/${id}`, {
-      method: 'DELETE'
-    });
-    if (!response.ok) throw new Error(`Erro ao deletar ${resource}`);
-    return response.json();
-  }
-};
-
-// ============ MODAL GENÉRICO ============
-const Modal = {
-  open(title, content, onConfirm) {
-    document.getElementById("modal-title").textContent = title;
-    document.getElementById("modal-content").innerHTML = content;
-    document.getElementById("modal-confirm").onclick = onConfirm;
-    document.getElementById("modal-backdrop").classList.remove("hidden");
-    document.getElementById("modal-container").classList.remove("hidden");
-  },
-  close() {
-    document.getElementById("modal-backdrop").classList.add("hidden");
-    document.getElementById("modal-container").classList.add("hidden");
-  }
-};
-
-// ============ IMPRESSÃO ============
 function openPrintWindow(contentHtml) {
   const win = window.open("", "_blank", "width=420,height=800");
   if (!win) {
-    alert("Pop-up bloqueado. Permita pop-ups para imprimir.");
+    alert("Pop-up bloqueado");
     return;
   }
   win.document.open();
-  win.document.write(`
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-      <meta charset="UTF-8" />
-      <title>Comprovante</title>
-      <style>
-        @page { size: 80mm auto; margin: 5mm; }
-        body { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
-        .receipt { width: 72mm; margin: 0 auto; }
-        .center { text-align: center; }
-        .right { text-align: right; }
-        .muted { color: #444; font-size: 12px; }
-        .hr { border-top: 1px dashed #000; margin: 8px 0; }
-        table { width: 100%; border-collapse: collapse; }
-        td { vertical-align: top; font-size: 12px; }
-        .totais td { font-size: 13px; }
-        .qr { width: 120px; height: 120px; background: #eee; display: block; margin: 8px auto; }
-        @media print { .no-print { display: none; } }
-      </style>
-    </head>
-    <body>
-      <div class="receipt">
-        ${contentHtml}
-      </div>
-      <script>
-        window.onload = function() {
-          window.print();
-          setTimeout(() => window.close(), 300);
-        };
-      <\/script>
-    </body>
-    </html>
-  `);
+  win.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Comprovante</title><style>@page{size:80mm auto;margin:5mm}body{font-family:monospace}table{width:100%;border-collapse:collapse}td{vertical-align:top;font-size:12px}.center{text-align:center}.right{text-align:right}.hr{border-top:1px dashed #000;margin:8px 0}</style></head><body><div style="width:72mm;margin:0 auto">${contentHtml}</div><script>window.onload=function(){window.print();setTimeout(()=>window.close(),300)}<\/script></body></html>`);
   win.document.close();
 }
 
-function buildReceiptHTML({ numero, dataHora, itens, subtotal, descontos = 0, acrescimos = 0, total, pagamento = "Dinheiro", cliente = "Balcão", recebido = 0, troco = 0 }) {
-  const loja = {
-    nome: "AutoFranquia - Lavagem & Peças",
-    doc: "CNPJ: 12.345.678/0001-90",
-    endereco: "Av. Automotiva, 456 - Centro Automotivo - Porto Alegre/RS",
-    contato: "contato@autofranquia.com | (51) 99288-8828"
-  };
-
-  const itensRows = itens.map(i => `
-    <tr>
-      <td>${i.nome}<br/><span class="muted">${i.qtd} x ${Data.formatMoney(i.preco)}</span></td>
-      <td class="right">${Data.formatMoney(i.qtd * i.preco)}</td>
-    </tr>
-  `).join("");
-
-  return `
-    <div class="center">
-      <div><strong>${loja.nome}</strong></div>
-      <div class="muted">${loja.doc}</div>
-      <div class="muted">${loja.endereco}</div>
-      <div class="muted">${loja.contato}</div>
-    </div>
-    <div class="hr"></div>
-    <div class="muted">Cupom Não Fiscal</div>
-    <div>Nº: ${numero}</div>
-    <div class="muted">Data/Hora: ${dataHora}</div>
-    <div class="muted">Cliente: ${cliente || "Balcão"}</div>
-    <div class="hr"></div>
-
-    <table><tbody>${itensRows}</tbody></table>
-
-    <div class="hr"></div>
-    <table class="totais">
-      <tr><td>Subtotal</td><td class="right">${Data.formatMoney(subtotal)}</td></tr>
-      <tr><td>Descontos</td><td class="right">-${Data.formatMoney(descontos)}</td></tr>
-      <tr><td>Acréscimos</td><td class="right">${Data.formatMoney(acrescimos)}</td></tr>
-      <tr><td><strong>Total</strong></td><td class="right"><strong>${Data.formatMoney(total)}</strong></td></tr>
-      <tr><td>Pagamento</td><td class="right">${pagamento}</td></tr>
-      ${pagamento === "Dinheiro" ? `
-        <tr><td>Recebido</td><td class="right">${Data.formatMoney(recebido)}</td></tr>
-        <tr><td>Troco</td><td class="right">${Data.formatMoney(troco)}</td></tr>
-      ` : ``}
-    </table>
-
-    <div class="hr"></div>
-    <div class="center">
-      <div class="muted">Obrigado pela preferência!</div>
-      <div class="qr"></div>
-      <div class="muted">Volte sempre! 🚗</div>
-    </div>
-  `;
+function buildReceiptHTML(params) {
+  const { numero, dataHora, itens, subtotal, descontos, acrescimos, total, pagamento, cliente, recebido, troco } = params;
+  const itensRows = itens.map(i => `<tr><td>${i.nome}<br/><span style="font-size:10px">${i.qtd} x ${Data.formatMoney(i.preco)}</span></td><td class="right">${Data.formatMoney(i.qtd * i.preco)}</td></tr>`).join("");
+  
+  return `<div class="center"><strong>AutoFranquia</strong></div><div class="hr"></div><div style="font-size:10px;text-align:center">Cupom Não Fiscal<br/>Nº: ${numero}<br/>Data: ${dataHora}</div><div class="hr"></div><table><tbody>${itensRows}</tbody></table><div class="hr"></div><table style="font-size:12px"><tr><td>Subtotal</td><td class="right">${Data.formatMoney(subtotal)}</td></tr><tr><td>Desconto</td><td class="right">-${Data.formatMoney(descontos)}</td></tr><tr><td>Acréscimo</td><td class="right">${Data.formatMoney(acrescimos)}</td></tr><tr><td><strong>Total</strong></td><td class="right"><strong>${Data.formatMoney(total)}</strong></td></tr><tr><td>Pagamento</td><td class="right">${pagamento}</td></tr>${pagamento === "Dinheiro" ? `<tr><td>Recebido</td><td class="right">${Data.formatMoney(recebido)}</td></tr><tr><td>Troco</td><td class="right">${Data.formatMoney(troco)}</td></tr>` : ``}</table><div class="hr"></div><div class="center" style="font-size:10px">Obrigado!</div>`;
 }
 
-// ============ PDV ============
 const PDV = {
   carrinho: [],
   filtro: "",
-  checkoutState: { subtotal: 0, descontos: 0, acrescimos: 0, total: 0, pagamento: "Dinheiro", recebido: 0, troco: 0, cliente: "Balcão" },
   produtos: [],
+  checkoutState: {},
 
   async addProduto(id) {
     const p = this.produtos.find(x => x.id === id);
@@ -508,32 +308,25 @@ const PDV = {
     if (idx >= 0) {
       if (p.categoria === "Serviços" || this.carrinho[idx].qtd < p.estoque) {
         this.carrinho[idx].qtd++;
-      } else {
-        alert("Estoque insuficiente.");
       }
     } else {
-      this.carrinho.push({ id: p.id, nome: p.nome, preco: p.preco, qtd: 1, categoria: p.categoria });
+      this.carrinho.push({ id: p.id, nome: p.nome, preco: p.preco, qtd: 1 });
     }
     this.render();
   },
 
   inc(id) {
-    const p = this.produtos.find(x => x.id === id);
     const item = this.carrinho.find(i => i.id === id);
-    if (!p || !item) return;
-    if (p.categoria === "Serviços" || item.qtd < p.estoque) {
-      item.qtd++;
-    } else {
-      alert("Estoque insuficiente.");
-    }
+    if (item) item.qtd++;
     this.render();
   },
 
   dec(id) {
     const item = this.carrinho.find(i => i.id === id);
-    if (!item) return;
-    item.qtd--;
-    if (item.qtd <= 0) this.carrinho = this.carrinho.filter(i => i.id !== id);
+    if (item) {
+      item.qtd--;
+      if (item.qtd <= 0) this.carrinho = this.carrinho.filter(i => i.id !== id);
+    }
     this.render();
   },
 
@@ -548,27 +341,21 @@ const PDV = {
 
   openCheckout() {
     const subtotal = this.total();
-    if (subtotal <= 0) { alert("Carrinho vazio."); return; }
+    if (subtotal <= 0) {
+      alert("Carrinho vazio");
+      return;
+    }
     this.checkoutState = { subtotal, descontos: 0, acrescimos: 0, total: subtotal, pagamento: "Dinheiro", recebido: 0, troco: 0, cliente: "Balcão" };
-
     document.getElementById("ck-cliente").value = "";
     document.getElementById("ck-pagamento").value = "Dinheiro";
     document.getElementById("ck-desc").value = "";
-    document.getElementById("ck-desc-tipo").value = "valor";
     document.getElementById("ck-acres").value = "";
-    document.getElementById("ck-acres-tipo").value = "valor";
     document.getElementById("ck-recebido").value = "";
-
     this.updateCheckoutUI();
-
     document.getElementById("checkout-backdrop").classList.remove("hidden");
     document.getElementById("checkout-modal").classList.remove("hidden");
-
-    const onChange = () => this.updateCheckoutUI();
     ["ck-cliente","ck-pagamento","ck-desc","ck-desc-tipo","ck-acres","ck-acres-tipo","ck-recebido"].forEach(id => {
-      const el = document.getElementById(id);
-      el.oninput = onChange;
-      el.onchange = onChange;
+      document.getElementById(id).oninput = () => this.updateCheckoutUI();
     });
   },
 
@@ -578,46 +365,30 @@ const PDV = {
   },
 
   computeTotals() {
-    const cliente = (document.getElementById("ck-cliente").value || "Balcão").trim();
-    const pagamento = document.getElementById("ck-pagamento").value;
-    const descVal = parseFloat(document.getElementById("ck-desc").value.replace(",", ".")) || 0;
-    const descTipo = document.getElementById("ck-desc-tipo").value;
-    const acresVal = parseFloat(document.getElementById("ck-acres").value.replace(",", ".")) || 0;
-    const acresTipo = document.getElementById("ck-acres-tipo").value;
-    const recebidoVal = parseFloat(document.getElementById("ck-recebido").value.replace(",", ".")) || 0;
-
     const subtotal = this.total();
+    const descVal = parseFloat(document.getElementById("ck-desc").value) || 0;
+    const descTipo = document.getElementById("ck-desc-tipo").value;
+    const acresVal = parseFloat(document.getElementById("ck-acres").value) || 0;
+    const acresTipo = document.getElementById("ck-acres-tipo").value;
+    const recebidoVal = parseFloat(document.getElementById("ck-recebido").value) || 0;
+    const pagamento = document.getElementById("ck-pagamento").value;
+
     const descontos = descTipo === "percent" ? subtotal * (descVal / 100) : descVal;
     const acrescimos = acresTipo === "percent" ? subtotal * (acresVal / 100) : acresVal;
     const total = Math.max(0, subtotal - descontos + acrescimos);
+    const troco = pagamento === "Dinheiro" ? Math.max(0, recebidoVal - total) : 0;
 
-    let recebido = 0, troco = 0;
-    if (pagamento === "Dinheiro") {
-      recebido = recebidoVal;
-      troco = Math.max(0, recebido - total);
-    } else {
-      recebido = total;
-      troco = 0;
-    }
-
-    this.checkoutState = { subtotal, descontos, acrescimos, total, pagamento, recebido, troco, cliente };
+    this.checkoutState = { subtotal, descontos, acrescimos, total, pagamento, recebido: recebidoVal, troco, cliente: document.getElementById("ck-cliente").value || "Balcão" };
   },
 
   updateCheckoutUI() {
     this.computeTotals();
-    const { subtotal, descontos, acrescimos, total, pagamento, troco } = this.checkoutState;
-
+    const { subtotal, descontos, acrescimos, total, troco } = this.checkoutState;
     document.getElementById("ck-subtotal").textContent = Data.formatMoney(subtotal);
     document.getElementById("ck-desc-view").textContent = `-${Data.formatMoney(descontos)}`;
     document.getElementById("ck-acres-view").textContent = Data.formatMoney(acrescimos);
     document.getElementById("ck-total").textContent = Data.formatMoney(total);
     document.getElementById("ck-troco").textContent = Data.formatMoney(troco);
-
-    const recebidoInput = document.getElementById("ck-recebido");
-    recebidoInput.disabled = pagamento !== "Dinheiro";
-    if (pagamento !== "Dinheiro") {
-      recebidoInput.value = "";
-    }
   },
 
   async confirmCheckout() {
@@ -625,27 +396,26 @@ const PDV = {
     const { total, pagamento, recebido, troco, cliente, subtotal, descontos, acrescimos } = this.checkoutState;
 
     if (total <= 0) {
-      alert("Total inválido.");
+      alert("Total inválido");
       return;
     }
     if (pagamento === "Dinheiro" && recebido < total) {
-      alert("Valor recebido insuficiente.");
+      alert("Valor recebido insuficiente");
       return;
     }
 
     try {
-      // Salvar venda
+      const franquiaId = Auth.usuario.franquia_id || 1;
       const venda = await API.post('vendas', {
         cliente,
         valor: total,
         data: new Date().toISOString().slice(0, 10),
-        franquia_id: 1,
+        franquia_id: franquiaId,
         pagamento,
         desconto: descontos,
         acrescimo: acrescimos
       });
 
-      // Salvar itens da venda
       for (const item of this.carrinho) {
         await API.post('venda_itens', {
           venda_id: venda.id,
@@ -653,32 +423,20 @@ const PDV = {
           quantidade: item.qtd,
           preco_unitario: item.preco
         });
-
-        // Debitar estoque se for peça
-        const produto = this.produtos.find(p => p.id === item.id);
-        if (produto && produto.categoria === "Peças") {
-          await API.put('produtos', item.id, {
-            estoque: Math.max(0, produto.estoque - item.qtd)
-          });
-          produto.estoque = Math.max(0, produto.estoque - item.qtd);
-        }
       }
 
-      // Salvar entrada financeira
       await API.post('financeiro', {
         tipo: 'entrada',
         valor: total,
         descricao: `Venda PDV (${pagamento})`,
         data: new Date().toISOString().slice(0, 10),
-        franquia_id: 1
+        franquia_id: franquiaId
       });
 
-      const numero = (venda.id).toString().padStart(6, "0");
+      const numero = venda.id.toString().padStart(6, "0");
       const dataHora = new Date().toLocaleString("pt-BR");
-      const itens = this.carrinho.map(i => ({ ...i }));
-
       const receiptHTML = buildReceiptHTML({
-        numero, dataHora, itens, subtotal, descontos, acrescimos, total, pagamento, cliente, recebido, troco
+        numero, dataHora, itens: this.carrinho, subtotal, descontos, acrescimos, total, pagamento, cliente, recebido, troco
       });
       openPrintWindow(receiptHTML);
 
@@ -686,49 +444,36 @@ const PDV = {
       this.closeCheckout();
       this.render();
     } catch (error) {
-      console.error('Erro ao confirmar checkout:', error);
-      alert('Erro ao processar venda: ' + error.message);
+      alert('Erro: ' + error.message);
     }
   },
 
   async render() {
     const el = document.getElementById("pdv-container");
-    if (!el) return;
-
     try {
       this.produtos = await API.get('produtos');
     } catch (error) {
-      console.error('Erro ao carregar produtos:', error);
       this.produtos = [];
     }
 
-    const termo = (this.filtro || "").toLowerCase().trim();
-    const lista = this.produtos.filter(p =>
-      p.nome.toLowerCase().includes(termo) || p.sku.toLowerCase().includes(termo) || p.categoria.toLowerCase().includes(termo)
-    );
+    const termo = this.filtro.toLowerCase();
+    const lista = this.produtos.filter(p => p.nome.toLowerCase().includes(termo) || p.sku.toLowerCase().includes(termo));
 
     const produtosHTML = `
       <div class="flex items-center gap-3 mb-4">
-        <input id="pdv-search" class="flex-1 border rounded-lg px-4 py-2 dark:bg-gray-800"
-          placeholder="Buscar por nome, SKU ou categoria..." value="${this.filtro || ""}" />
-        <button class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600"
-          onclick="PDV.filtro=''; PDV.render()">Limpar</button>
+        <input id="pdv-search" class="flex-1 border rounded-lg px-4 py-2" placeholder="Buscar..." value="${this.filtro}" />
+        <button class="px-4 py-2 bg-gray-200 rounded-lg" onclick="PDV.filtro=''; PDV.render()">Limpar</button>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         ${lista.map(p => `
-          <div class="border rounded-lg overflow-hidden dark:border-gray-700 ${p.categoria === 'Serviços' ? 'bg-blue-50 dark:bg-blue-900/20' : 'bg-orange-50 dark:bg-orange-900/20'} hover:shadow-lg transition-shadow">
-            <img src="${p.imagem || 'https://placehold.co/300x200'}" alt="${p.nome}" class="w-full h-32 object-cover" />
+          <div class="border rounded-lg overflow-hidden ${p.categoria === 'Serviços' ? 'bg-blue-50' : 'bg-orange-50'} hover:shadow-lg">
+            <img src="${p.imagem || 'https://placehold.co/300x200/cccccc/999999?text=Sem+Imagem'}" alt="${p.nome}" class="w-full h-32 object-cover" />
             <div class="p-3">
-              <div class="flex justify-between items-start mb-2">
-                <div class="font-semibold text-sm">${p.nome}</div>
-                <span class="text-xs px-2 py-1 rounded ${p.categoria === 'Serviços' ? 'bg-blue-200 text-blue-800' : 'bg-orange-200 text-orange-800'}">${p.categoria}</span>
-              </div>
-              <div class="text-xs text-gray-600 dark:text-gray-300 mb-1">SKU: ${p.sku}</div>
+              <div class="font-semibold text-sm">${p.nome}</div>
+              <div class="text-xs text-gray-600 mb-1">SKU: ${p.sku}</div>
               <div class="text-lg font-bold mb-1">${Data.formatMoney(p.preco)}</div>
-              <div class="text-xs mb-2">${p.categoria === 'Serviços' ? 'Disponível' : `Estoque: ${p.estoque}`}</div>
-              <button class="w-full bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 text-sm"
-                ${p.categoria === 'Peças' && p.estoque <= 0 ? "disabled" : ""}
-                onclick="PDV.addProduto(${p.id})">Adicionar</button>
+              <div class="text-xs mb-2">Estoque: ${p.estoque}</div>
+              <button class="w-full bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 text-sm" onclick="PDV.addProduto(${p.id})">Adicionar</button>
             </div>
           </div>
         `).join("")}
@@ -737,137 +482,121 @@ const PDV = {
 
     const carrinhoHTML = `
       <div class="space-y-3">
-        ${this.carrinho.length === 0 ? `<div class="text-gray-500 text-center py-8">Carrinho vazio.</div>` : ""}
+        ${this.carrinho.length === 0 ? `<div class="text-gray-500 text-center py-8">Carrinho vazio</div>` : ""}
         ${this.carrinho.map(i => `
-          <div class="flex items-center justify-between border rounded-lg p-3 dark:border-gray-700 bg-white dark:bg-gray-800">
+          <div class="flex items-center justify-between border rounded-lg p-3">
             <div class="flex-1">
               <div class="font-medium">${i.nome}</div>
-              <div class="text-sm text-gray-600 dark:text-gray-300">${Data.formatMoney(i.preco)} x ${i.qtd} = ${Data.formatMoney(i.preco * i.qtd)}</div>
+              <div class="text-sm text-gray-600">${Data.formatMoney(i.preco)} x ${i.qtd} = ${Data.formatMoney(i.preco * i.qtd)}</div>
             </div>
             <div class="flex items-center gap-2">
-              <button class="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-600" onclick="PDV.dec(${i.id})">-</button>
+              <button class="w-8 h-8 bg-gray-200 rounded" onclick="PDV.dec(${i.id})">-</button>
               <span class="w-8 text-center">${i.qtd}</span>
-              <button class="w-8 h-8 bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-600" onclick="PDV.inc(${i.id})">+</button>
-              <button class="w-8 h-8 bg-red-500 text-white rounded-lg flex items-center justify-center hover:bg-red-600" onclick="PDV.rem(${i.id})">🗑</button>
+              <button class="w-8 h-8 bg-gray-200 rounded" onclick="PDV.inc(${i.id})">+</button>
+              <button class="w-8 h-8 bg-red-500 text-white rounded" onclick="PDV.rem(${i.id})">X</button>
             </div>
           </div>
         `).join("")}
       </div>
-      <div class="mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+      <div class="mt-4 p-4 bg-gray-50 rounded-lg">
         <div class="text-2xl font-bold text-center mb-3">Total: ${Data.formatMoney(this.total())}</div>
-        <button class="w-full bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 font-semibold"
-          onclick="PDV.openCheckout()">💳 Finalizar Venda</button>
+        <button class="w-full bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 font-semibold" onclick="PDV.openCheckout()">Finalizar Venda</button>
       </div>
     `;
 
-    el.innerHTML = `
-      <div class="grid lg:grid-cols-3 gap-6">
-        <div class="lg:col-span-2">
-          <h3 class="text-lg font-bold mb-4">Produtos e Serviços</h3>
-          ${produtosHTML}
-        </div>
-        <div>
-          <h3 class="text-lg font-bold mb-4">Carrinho de Compras</h3>
-          ${carrinhoHTML}
-        </div>
-      </div>
-    `;
-
-    const search = document.getElementById("pdv-search");
-    if (search) {
-      search.addEventListener("input", (e) => {
-        PDV.filtro = e.target.value;
-        PDV.render();
-      });
-    }
+    el.innerHTML = `<div class="grid lg:grid-cols-3 gap-6"><div class="lg:col-span-2"><h3 class="text-lg font-bold mb-4">Produtos e Serviços</h3>${produtosHTML}</div><div><h3 class="text-lg font-bold mb-4">Carrinho</h3>${carrinhoHTML}</div></div>`;
+    document.getElementById("pdv-search").addEventListener("input", (e) => {
+      PDV.filtro = e.target.value;
+      PDV.render();
+    });
   }
 };
 
-// ============ PRODUTOS ============
 const Produtos = {
   editingId: null,
-  
+
+  async render() {
+    const el = document.getElementById("produtos-container");
+    try {
+      const produtos = await API.get('produtos');
+      el.innerHTML = `<div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        ${produtos.map(p => `
+          <div class="border rounded-lg overflow-hidden bg-white hover:shadow-lg">
+            <img src="${p.imagem || 'https://placehold.co/300x200/cccccc/999999?text=Sem+Imagem'}" alt="${p.nome}" class="w-full h-32 object-cover" />
+            <div class="p-4">
+              <div class="font-semibold">${p.nome}</div>
+              <div class="text-sm text-gray-600 mb-1">SKU: ${p.sku}</div>
+              <div class="text-lg font-bold mb-1">${Data.formatMoney(p.preco)}</div>
+              <div class="text-sm mb-3">Estoque: ${p.estoque}</div>
+              <div class="flex gap-2">
+                <button class="flex-1 text-blue-600 border border-blue-600 px-3 py-2 rounded text-sm" onclick="Produtos.openModal(${p.id})">Editar</button>
+                <button class="text-red-600 border border-red-600 px-3 py-2 rounded text-sm" onclick="Produtos.delete(${p.id})">X</button>
+              </div>
+            </div>
+          </div>
+        `).join("")}
+      </div>`;
+    } catch (error) {
+      el.innerHTML = '<div class="text-red-500">Erro ao carregar</div>';
+    }
+  },
+
   openModal(id = null) {
     this.editingId = id;
-    const title = id ? "Editar Produto" : "Novo Produto";
-    
-    let content = `
+    const content = `
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="md:col-span-2">
-          <label class="block text-sm font-medium mb-1">Nome do Produto</label>
-          <input id="prod-nome" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1">SKU</label>
-          <input id="prod-sku" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1">Categoria</label>
-          <select id="prod-categoria" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
-            <option value="Serviços">Serviços</option>
-            <option value="Peças">Peças</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1">Preço (R$)</label>
-          <input id="prod-preco" type="number" step="0.01" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1">Estoque</label>
-          <input id="prod-estoque" type="number" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
-        </div>
-        <div class="md:col-span-2">
-          <label class="block text-sm font-medium mb-1">URL da Imagem</label>
-          <input id="prod-imagem" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" placeholder="https://exemplo.com/imagem.jpg" />
-        </div>
+        <div class="md:col-span-2"><label class="block text-sm font-medium mb-1">Nome</label><input id="prod-nome" class="w-full border rounded-lg px-3 py-2" /></div>
+        <div><label class="block text-sm font-medium mb-1">SKU</label><input id="prod-sku" class="w-full border rounded-lg px-3 py-2" /></div>
+        <div><label class="block text-sm font-medium mb-1">Categoria</label><select id="prod-categoria" class="w-full border rounded-lg px-3 py-2"><option value="Serviços">Serviços</option><option value="Peças">Peças</option></select></div>
+        <div><label class="block text-sm font-medium mb-1">Preço</label><input id="prod-preco" type="number" step="0.01" class="w-full border rounded-lg px-3 py-2" /></div>
+        <div><label class="block text-sm font-medium mb-1">Estoque</label><input id="prod-estoque" type="number" class="w-full border rounded-lg px-3 py-2" /></div>
+        <div class="md:col-span-2"><label class="block text-sm font-medium mb-1">URL da Imagem</label><input id="prod-imagem" class="w-full border rounded-lg px-3 py-2" /></div>
       </div>
     `;
+    Modal.open(id ? 'Editar Produto' : 'Novo Produto', content, () => this.save());
 
     if (id) {
       API.get('produtos', id).then(produto => {
-        document.getElementById("prod-nome").value = produto.nome || '';
-        document.getElementById("prod-sku").value = produto.sku || '';
-        document.getElementById("prod-categoria").value = produto.categoria || 'Serviços';
-        document.getElementById("prod-preco").value = produto.preco || '';
-        document.getElementById("prod-estoque").value = produto.estoque || '';
+        document.getElementById("prod-nome").value = produto.nome;
+        document.getElementById("prod-sku").value = produto.sku;
+        document.getElementById("prod-categoria").value = produto.categoria;
+        document.getElementById("prod-preco").value = produto.preco;
+        document.getElementById("prod-estoque").value = produto.estoque;
         document.getElementById("prod-imagem").value = produto.imagem || '';
       });
     }
-    
-    Modal.open(title, content, () => this.save());
   },
-  
+
   async save() {
-    const nome = document.getElementById("prod-nome").value.trim();
-    const sku = document.getElementById("prod-sku").value.trim();
-    const categoria = document.getElementById("prod-categoria").value;
-    const preco = parseFloat(document.getElementById("prod-preco").value) || 0;
-    const estoque = parseInt(document.getElementById("prod-estoque").value) || 0;
-    const imagem = document.getElementById("prod-imagem").value.trim();
-    
-    if (!nome || !sku) {
-      alert("Nome e SKU são obrigatórios.");
+    const data = {
+      nome: document.getElementById("prod-nome").value.trim(),
+      sku: document.getElementById("prod-sku").value.trim(),
+      categoria: document.getElementById("prod-categoria").value,
+      preco: parseFloat(document.getElementById("prod-preco").value),
+      estoque: parseInt(document.getElementById("prod-estoque").value),
+      imagem: document.getElementById("prod-imagem").value.trim()
+    };
+
+    if (!data.nome || !data.sku) {
+      alert("Nome e SKU obrigatórios");
       return;
     }
-    
+
     try {
-      const data = { nome, sku, categoria, preco, estoque, imagem };
-      
       if (this.editingId) {
         await API.put('produtos', this.editingId, data);
       } else {
         await API.post('produtos', data);
       }
-      
       Modal.close();
       this.render();
     } catch (error) {
       alert('Erro: ' + error.message);
     }
   },
-  
+
   async delete(id) {
-    if (confirm("Deseja excluir este produto?")) {
+    if (confirm('Deletar?')) {
       try {
         await API.delete('produtos', id);
         this.render();
@@ -875,401 +604,269 @@ const Produtos = {
         alert('Erro: ' + error.message);
       }
     }
-  },
-  
-  async render() {
-    const el = document.getElementById("produtos-container");
-    if (!el) return;
-    
-    try {
-      const produtos = await API.get('produtos');
-      
-      el.innerHTML = `
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          ${produtos.map(p => `
-            <div class="border rounded-lg overflow-hidden dark:border-gray-700 bg-white dark:bg-gray-800 hover:shadow-lg transition-shadow">
-              <img src="${p.imagem || 'https://placehold.co/300x200'}" alt="${p.nome}" class="w-full h-32 object-cover" />
-              <div class="p-4">
-                <div class="flex justify-between items-start mb-2">
-                  <div class="font-semibold">${p.nome}</div>
-                  <span class="px-2 py-1 rounded text-xs ${p.categoria === 'Serviços' ? 'bg-blue-200 text-blue-800' : 'bg-orange-200 text-orange-800'}">${p.categoria}</span>
-                </div>
-                <div class="text-sm text-gray-600 dark:text-gray-300 mb-1">SKU: ${p.sku}</div>
-                <div class="text-lg font-bold mb-1">${Data.formatMoney(p.preco)}</div>
-                <div class="text-sm mb-3">${p.categoria === 'Serviços' ? 'Disponível' : `Estoque: ${p.estoque}`}</div>
-                <div class="flex gap-2">
-                  <button class="flex-1 text-blue-600 hover:text-blue-800 border border-blue-600 hover:border-blue-800 px-3 py-2 rounded-lg text-sm" onclick="Produtos.openModal(${p.id})">✏️ Editar</button>
-                  <button class="text-red-600 hover:text-red-800 border border-red-600 hover:border-red-800 px-3 py-2 rounded-lg text-sm" onclick="Produtos.delete(${p.id})">🗑️</button>
-                </div>
-              </div>
-            </div>
-          `).join("")}
-        </div>
-      `;
-    } catch (error) {
-      console.error('Erro ao carregar produtos:', error);
-      el.innerHTML = '<div class="text-red-500">Erro ao carregar produtos</div>';
-    }
   }
 };
 
-// ============ CLIENTES ============
 const Clientes = {
-  editingId: null,
-  
-  openModal(id = null) {
-    this.editingId = id;
-    const title = id ? "Editar Cliente" : "Novo Cliente";
-    
-    const content = `
-      <div class="space-y-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="md:col-span-2">
-            <label class="block text-sm font-medium mb-1">Nome / Razão Social</label>
-            <input id="cli-nome" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1">Tipo de Documento</label>
-            <select id="cli-tipo-doc" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
-              <option value="CPF">CPF</option>
-              <option value="CNPJ">CNPJ</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1">Documento</label>
-            <input id="cli-documento" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" placeholder="000.000.000-00" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1">Email</label>
-            <input id="cli-email" type="email" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1">Telefone</label>
-            <input id="cli-telefone" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" placeholder="(00) 00000-0000" />
-          </div>
-          <div class="md:col-span-2">
-            <label class="block text-sm font-medium mb-1">Veículo</label>
-            <input id="cli-veiculo" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" placeholder="Ex: Honda Civic 2020" />
-          </div>
-        </div>
-        
-        <div class="border-t pt-4">
-          <h4 class="font-medium mb-3">Endereço</h4>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="md:col-span-2">
-              <label class="block text-sm font-medium mb-1">Logradouro</label>
-              <input id="cli-logradouro" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Bairro</label>
-              <input id="cli-bairro" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">CEP</label>
-              <input id="cli-cep" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">Cidade</label>
-              <input id="cli-cidade" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
-            </div>
-            <div>
-              <label class="block text-sm font-medium mb-1">UF</label>
-              <select id="cli-uf" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
-                <option value="">Selecione...</option>
-                <option value="RS">RS</option>
-                <option value="SC">SC</option>
-                <option value="PR">PR</option>
-                <option value="SP">SP</option>
-              </select>
+  async render() {
+    const el = document.getElementById("clientes-container");
+    try {
+      const clientes = await API.get('clientes');
+      el.innerHTML = `<div class="grid gap-4">
+        ${clientes.map(c => `
+          <div class="border rounded-lg p-4 bg-white">
+            <h3 class="font-semibold text-lg">${c.nome}</h3>
+            <p class="text-sm text-gray-600">${c.tipoDocumento}: ${Data.formatDocument(c.documento, c.tipoDocumento)}</p>
+            <div class="grid md:grid-cols-2 gap-4 text-sm mt-3">
+              <div><span class="font-medium">Email:</span> ${c.email || 'N/A'}</div>
+              <div><span class="font-medium">Telefone:</span> ${c.telefone || 'N/A'}</div>
+              <div><span class="font-medium">Veículo:</span> ${c.veiculo || 'N/A'}</div>
+              <div><span class="font-medium">Endereço:</span> ${c.logradouro || 'N/A'}</div>
             </div>
           </div>
-        </div>
-      </div>
-    `;
-    
-    Modal.open(title, content, () => this.save());
-
-    if (id) {
-      API.get('clientes', id).then(cliente => {
-        document.getElementById("cli-nome").value = cliente.nome || '';
-        document.getElementById("cli-tipo-doc").value = cliente.tipoDocumento || 'CPF';
-        document.getElementById("cli-documento").value = cliente.documento || '';
-        document.getElementById("cli-email").value = cliente.email || '';
-        document.getElementById("cli-telefone").value = cliente.telefone || '';
-        document.getElementById("cli-veiculo").value = cliente.veiculo || '';
-        document.getElementById("cli-logradouro").value = cliente.logradouro || '';
-        document.getElementById("cli-bairro").value = cliente.bairro || '';
-        document.getElementById("cli-cep").value = cliente.cep || '';
-        document.getElementById("cli-cidade").value = cliente.cidade || '';
-        document.getElementById("cli-uf").value = cliente.uf || '';
-      });
+        `).join("")}
+      </div>`;
+    } catch (error) {
+      el.innerHTML = '<div class="text-red-500">Erro ao carregar</div>';
     }
   },
-  
+
+  openModal() {
+    const content = `
+      <div class="space-y-4">
+        <input id="cli-nome" class="w-full border rounded px-3 py-2" placeholder="Nome" />
+        <input id="cli-email" class="w-full border rounded px-3 py-2" placeholder="Email" />
+        <input id="cli-telefone" class="w-full border rounded px-3 py-2" placeholder="Telefone" />
+      </div>
+    `;
+    Modal.open('Novo Cliente', content, () => this.save());
+  },
+
   async save() {
-    const nome = document.getElementById("cli-nome").value.trim();
-    const tipoDocumento = document.getElementById("cli-tipo-doc").value;
-    const documento = document.getElementById("cli-documento").value.trim();
-    const email = document.getElementById("cli-email").value.trim();
-    const telefone = document.getElementById("cli-telefone").value.trim();
-    const veiculo = document.getElementById("cli-veiculo").value.trim();
-    
-    if (!nome) {
-      alert("Nome é obrigatório.");
-      return;
-    }
-    
+    const data = {
+      nome: document.getElementById("cli-nome").value,
+      tipoDocumento: 'CPF',
+      documento: '',
+      email: document.getElementById("cli-email").value,
+      telefone: document.getElementById("cli-telefone").value,
+      veiculo: '',
+      logradouro: '',
+      bairro: '',
+      cep: '',
+      cidade: '',
+      uf: ''
+    };
     try {
-      const data = {
-        nome, tipoDocumento, documento, email, telefone, veiculo,
-        logradouro: document.getElementById("cli-logradouro").value.trim(),
-        bairro: document.getElementById("cli-bairro").value.trim(),
-        cep: document.getElementById("cli-cep").value.trim(),
-        cidade: document.getElementById("cli-cidade").value.trim(),
-        uf: document.getElementById("cli-uf").value
-      };
-      
-      if (this.editingId) {
-        await API.put('clientes', this.editingId, data);
-      } else {
-        await API.post('clientes', data);
-      }
-      
+      await API.post('clientes', data);
       Modal.close();
       this.render();
     } catch (error) {
       alert('Erro: ' + error.message);
     }
-  },
-  
-  async delete(id) {
-    if (confirm("Deseja excluir este cliente?")) {
-      try {
-        await API.delete('clientes', id);
-        this.render();
-      } catch (error) {
-        alert('Erro: ' + error.message);
-      }
-    }
-  },
-  
-  async render() {
-    const el = document.getElementById("clientes-container");
-    if (!el) return;
-    
-    try {
-      const clientes = await API.get('clientes');
-      
-      el.innerHTML = `
-        <div class="grid gap-4">
-          ${clientes.map(c => `
-            <div class="border rounded-lg p-4 dark:border-gray-700 bg-white dark:bg-gray-800">
-              <div class="flex justify-between items-start mb-3">
-                <div>
-                  <h3 class="font-semibold text-lg">${c.nome}</h3>
-                  <div class="text-sm text-gray-600 dark:text-gray-300">
-                    ${c.tipoDocumento}: ${Data.formatDocument(c.documento, c.tipoDocumento)}
-                  </div>
-                </div>
-                <div class="flex gap-2">
-                  <button class="text-blue-600 hover:text-blue-800 border border-blue-600 hover:border-blue-800 px-3 py-2 rounded-lg text-sm" onclick="Clientes.openModal(${c.id})">✏️ Editar</button>
-                  <button class="text-red-600 hover:text-red-800 border border-red-600 hover:border-red-800 px-3 py-2 rounded-lg text-sm" onclick="Clientes.delete(${c.id})">🗑️</button>
-                </div>
-              </div>
-              <div class="grid md:grid-cols-2 gap-4 text-sm">
-                <div>
-                  <div class="mb-2">
-                    <span class="font-medium">📧 Email:</span> ${c.email || 'Não informado'}
-                  </div>
-                  <div class="mb-2">
-                    <span class="font-medium">📱 Telefone:</span> ${c.telefone || 'Não informado'}
-                  </div>
-                  <div>
-                    <span class="font-medium">🚗 Veículo:</span> ${c.veiculo || 'Não informado'}
-                  </div>
-                </div>
-                <div>
-                  <div class="font-medium mb-1">📍 Endereço:</div>
-                  <div class="text-gray-600 dark:text-gray-300">
-                    ${c.logradouro || 'Não informado'}<br/>
-                    ${c.bairro ? c.bairro + '<br/>' : ''}
-                    ${c.cidade || ''} - ${c.uf || ''}<br/>
-                    ${c.cep || ''}
-                  </div>
-                </div>
-              </div>
-            </div>
-          `).join("")}
-        </div>
-      `;
-    } catch (error) {
-      console.error('Erro ao carregar clientes:', error);
-      el.innerHTML = '<div class="text-red-500">Erro ao carregar clientes</div>';
-    }
   }
 };
 
-// ============ RELATÓRIOS ============
 const Relatorios = {
+  filtroDataInicio: new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString().slice(0, 10),
+  filtroDataFim: new Date().toISOString().slice(0, 10),
   filtroFranquia: 0,
   franquias: [],
-  
+
   async render() {
     const el = document.getElementById("relatorios-container");
-    if (!el) return;
-    
     try {
-      const vendas = await API.get('vendas');
       this.franquias = await API.get('franquias');
+      let vendas = await API.get('vendas');
       
-      const vendasFiltradas = this.filtroFranquia === 0 ? vendas : vendas.filter(v => v.franquia_id === this.filtroFranquia);
-      const total = vendasFiltradas.reduce((s, v) => s + v.valor, 0);
+      const isSuperAdmin = Auth.usuario.role === 'super_admin';
+      if (!isSuperAdmin) {
+        vendas = vendas.filter(v => v.franquia_id === Auth.usuario.franquia_id);
+      }
+      
+      vendas = vendas.filter(v => v.data >= this.filtroDataInicio && v.data <= this.filtroDataFim);
+      if (this.filtroFranquia > 0) {
+        vendas = vendas.filter(v => v.franquia_id === this.filtroFranquia);
+      }
+      
+      const total = vendas.reduce((s, v) => s + v.valor, 0);
       
       el.innerHTML = `
-        <div class="mb-6">
-          <label class="block text-sm font-medium mb-2">Filtrar por Franquia:</label>
-          <select id="rel-franquia" class="border rounded-lg px-3 py-2 dark:bg-gray-900" onchange="Relatorios.filtroFranquia = parseInt(this.value); Relatorios.render();">
-            <option value="0">Todas as Franquias</option>
-            ${this.franquias.map(f => `
-              <option value="${f.id}">${f.nome}</option>
-            `).join("")}
-          </select>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+          <div>
+            <label class="block text-sm font-medium mb-1">Data Início</label>
+            <input type="date" id="rel-data-inicio" class="w-full border rounded px-3 py-2" value="${this.filtroDataInicio}" onchange="Relatorios.filtroDataInicio = this.value; Relatorios.render()" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Data Fim</label>
+            <input type="date" id="rel-data-fim" class="w-full border rounded px-3 py-2" value="${this.filtroDataFim}" onchange="Relatorios.filtroDataFim = this.value; Relatorios.render()" />
+          </div>
+          ${isSuperAdmin ? `
+            <div>
+              <label class="block text-sm font-medium mb-1">Franquia</label>
+              <select id="rel-franquia" class="w-full border rounded px-3 py-2" onchange="Relatorios.filtroFranquia = parseInt(this.value); Relatorios.render()">
+                <option value="0">Todas</option>
+                ${this.franquias.map(f => `<option value="${f.id}" ${this.filtroFranquia === f.id ? 'selected' : ''}>${f.nome}</option>`).join("")}
+              </select>
+            </div>
+          ` : ''}
         </div>
         
         <div class="grid sm:grid-cols-3 gap-4 mb-6">
-          <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-            <div class="text-sm text-gray-500 dark:text-gray-300">Vendas (Qtd)</div>
-            <div class="text-2xl font-semibold">${vendasFiltradas.length}</div>
-          </div>
-          <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-            <div class="text-sm text-gray-500 dark:text-gray-300">Faturamento</div>
-            <div class="text-2xl font-semibold text-green-600">${Data.formatMoney(total)}</div>
-          </div>
-          <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-            <div class="text-sm text-gray-500 dark:text-gray-300">Ticket Médio</div>
-            <div class="text-2xl font-semibold">${Data.formatMoney(vendasFiltradas.length ? total / vendasFiltradas.length : 0)}</div>
-          </div>
+          <div class="p-4 border rounded-lg bg-white"><div class="text-sm text-gray-500">Total de Vendas</div><div class="text-2xl font-semibold">${vendas.length}</div></div>
+          <div class="p-4 border rounded-lg bg-white"><div class="text-sm text-gray-500">Faturamento</div><div class="text-2xl font-semibold text-green-600">${Data.formatMoney(total)}</div></div>
+          <div class="p-4 border rounded-lg bg-white"><div class="text-sm text-gray-500">Ticket Médio</div><div class="text-2xl font-semibold">${Data.formatMoney(vendas.length ? total / vendas.length : 0)}</div></div>
         </div>
-        
-        <div class="overflow-auto border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
+        <div class="overflow-auto border rounded-lg bg-white">
           <table class="min-w-full text-sm">
-            <thead class="bg-gray-50 dark:bg-gray-700">
-              <tr>
-                <th class="p-3 text-left font-medium">Data</th>
-                <th class="p-3 text-left font-medium">Cliente</th>
-                <th class="p-3 text-left font-medium">Forma de Pagamento</th>
-                <th class="p-3 text-right font-medium">Valor</th>
-              </tr>
-            </thead>
+            <thead class="bg-gray-50"><tr><th class="p-3 text-left">Data</th><th class="p-3 text-left">Cliente</th><th class="p-3 text-left">Pagamento</th><th class="p-3 text-right">Valor</th></tr></thead>
             <tbody>
-              ${vendasFiltradas.slice().reverse().map(v => `
-                <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
-                  <td class="p-3">${new Date(v.data).toLocaleDateString('pt-BR')}</td>
-                  <td class="p-3">${v.cliente}</td>
-                  <td class="p-3">${v.pagamento || 'N/A'}</td>
-                  <td class="p-3 text-right font-semibold text-green-600">${Data.formatMoney(v.valor)}</td>
-                </tr>
+              ${vendas.slice().reverse().map(v => `
+                <tr class="border-t"><td class="p-3">${new Date(v.data).toLocaleDateString('pt-BR')}</td><td class="p-3">${v.cliente}</td><td class="p-3">${v.pagamento || 'N/A'}</td><td class="p-3 text-right font-semibold text-green-600">${Data.formatMoney(v.valor)}</td></tr>
               `).join("")}
-              ${vendasFiltradas.length === 0 ? `
-                <tr>
-                  <td colspan="4" class="p-8 text-center text-gray-500">Nenhuma venda encontrada</td>
-                </tr>
-              ` : ""}
+              ${vendas.length === 0 ? '<tr><td colspan="4" class="p-8 text-center text-gray-500">Nenhuma venda encontrada</td></tr>' : ''}
             </tbody>
           </table>
         </div>
       `;
     } catch (error) {
-      console.error('Erro ao carregar relatórios:', error);
-      el.innerHTML = '<div class="text-red-500">Erro ao carregar relatórios</div>';
+      el.innerHTML = '<div class="text-red-500">Erro ao carregar</div>';
     }
   }
 };
 
-// ============ FINANCEIRO ============
 const Financeiro = {
-  editingId: null,
+  filtroDataInicio: new Date(new Date().getFullYear(), new Date().getMonth(), 1).toISOString().slice(0, 10),
+  filtroDataFim: new Date().toISOString().slice(0, 10),
+  filtroFranquia: 0,
   franquias: [],
-  
-  openModal(id = null) {
-    this.editingId = id;
-    const title = id ? "Editar Transação" : "Nova Transação";
-    
-    const content = `
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-sm font-medium mb-1">Tipo</label>
-          <select id="fin-tipo" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
-            <option value="entrada">💰 Entrada</option>
-            <option value="saida">💸 Saída</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1">Valor (R$)</label>
-          <input id="fin-valor" type="number" step="0.01" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
-        </div>
-        <div class="md:col-span-2">
-          <label class="block text-sm font-medium mb-1">Descrição</label>
-          <input id="fin-descricao" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1">Data</label>
-          <input id="fin-data" type="date" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="${new Date().toISOString().slice(0,10)}" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1">Franquia</label>
-          <select id="fin-franquia" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900">
-            ${this.franquias.map(f => `
-              <option value="${f.id}">${f.nome}</option>
-            `).join("")}
-          </select>
-        </div>
-      </div>
-    `;
-    
-    Modal.open(title, content, () => this.save());
 
-    if (id) {
-      API.get('financeiro', id).then(transacao => {
-        document.getElementById("fin-tipo").value = transacao.tipo || 'entrada';
-        document.getElementById("fin-valor").value = transacao.valor || '';
-        document.getElementById("fin-descricao").value = transacao.descricao || '';
-        document.getElementById("fin-data").value = transacao.data || '';
-        document.getElementById("fin-franquia").value = transacao.franquia_id || 1;
-      });
-    }
-  },
-  
-  async save() {
-    const tipo = document.getElementById("fin-tipo").value;
-    const valor = parseFloat(document.getElementById("fin-valor").value) || 0;
-    const descricao = document.getElementById("fin-descricao").value.trim();
-    const data = document.getElementById("fin-data").value;
-    const franquia_id = parseInt(document.getElementById("fin-franquia").value);
-    
-    if (!descricao || valor <= 0) {
-      alert("Descrição e valor são obrigatórios.");
-      return;
-    }
-    
+  async render() {
+    const el = document.getElementById("financeiro-container");
     try {
-      const dados = { tipo, valor, descricao, data, franquia_id };
+      this.franquias = await API.get('franquias');
+      let fin = await API.get('financeiro');
       
-      if (this.editingId) {
-        await API.put('financeiro', this.editingId, dados);
-      } else {
-        await API.post('financeiro', dados);
+      const isSuperAdmin = Auth.usuario.role === 'super_admin';
+      if (!isSuperAdmin) {
+        fin = fin.filter(f => f.franquia_id === Auth.usuario.franquia_id);
       }
       
+      fin = fin.filter(f => f.data >= this.filtroDataInicio && f.data <= this.filtroDataFim);
+      if (this.filtroFranquia > 0) {
+        fin = fin.filter(f => f.franquia_id === this.filtroFranquia);
+      }
+      
+      const entradas = fin.filter(f => f.tipo === 'entrada').reduce((s, f) => s + f.valor, 0);
+      const saidas = fin.filter(f => f.tipo === 'saida').reduce((s, f) => s + f.valor, 0);
+      
+      el.innerHTML = `
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+          <div>
+            <label class="block text-sm font-medium mb-1">Data Início</label>
+            <input type="date" id="fin-data-inicio" class="w-full border rounded px-3 py-2" value="${this.filtroDataInicio}" onchange="Financeiro.filtroDataInicio = this.value; Financeiro.render()" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Data Fim</label>
+            <input type="date" id="fin-data-fim" class="w-full border rounded px-3 py-2" value="${this.filtroDataFim}" onchange="Financeiro.filtroDataFim = this.value; Financeiro.render()" />
+          </div>
+          ${isSuperAdmin ? `
+            <div>
+              <label class="block text-sm font-medium mb-1">Franquia</label>
+              <select id="fin-franquia" class="w-full border rounded px-3 py-2" onchange="Financeiro.filtroFranquia = parseInt(this.value); Financeiro.render()">
+                <option value="0">Todas</option>
+                ${this.franquias.map(f => `<option value="${f.id}" ${this.filtroFranquia === f.id ? 'selected' : ''}>${f.nome}</option>`).join("")}
+              </select>
+            </div>
+          ` : ''}
+        </div>
+        
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="p-4 border rounded-lg bg-green-50"><div class="text-sm">Entradas</div><div class="text-2xl font-semibold text-green-600">${Data.formatMoney(entradas)}</div></div>
+          <div class="p-4 border rounded-lg bg-red-50"><div class="text-sm">Saídas</div><div class="text-2xl font-semibold text-red-600">${Data.formatMoney(saidas)}</div></div>
+          <div class="p-4 border rounded-lg bg-blue-50"><div class="text-sm">Saldo</div><div class="text-2xl font-semibold text-blue-600">${Data.formatMoney(entradas - saidas)}</div></div>
+        </div>
+        
+        <div class="overflow-auto border rounded-lg bg-white">
+          <table class="min-w-full text-sm">
+            <thead class="bg-gray-50"><tr><th class="p-3 text-left">Data</th><th class="p-3 text-left">Tipo</th><th class="p-3 text-left">Descrição</th><th class="p-3 text-right">Valor</th><th class="p-3 text-center">Ações</th></tr></thead>
+            <tbody>
+              ${fin.slice().reverse().map(f => `
+                <tr class="border-t">
+                  <td class="p-3">${new Date(f.data).toLocaleDateString('pt-BR')}</td>
+                  <td class="p-3"><span class="px-2 py-1 rounded text-xs ${f.tipo === 'entrada' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">${f.tipo === 'entrada' ? 'Entrada' : 'Saída'}</span></td>
+                  <td class="p-3">${f.descricao}</td>
+                  <td class="p-3 text-right font-semibold ${f.tipo === 'entrada' ? 'text-green-600' : 'text-red-600'}">${Data.formatMoney(f.valor)}</td>
+                  <td class="p-3 text-center">
+                    <button class="text-blue-600 text-sm mr-2" onclick="Financeiro.openEditModal(${f.id})">✏️</button>
+                    <button class="text-red-600 text-sm" onclick="Financeiro.delete(${f.id})">🗑️</button>
+                  </td>
+                </tr>
+              `).join("")}
+              ${fin.length === 0 ? '<tr><td colspan="5" class="p-8 text-center text-gray-500">Nenhuma transação</td></tr>' : ''}
+            </tbody>
+          </table>
+        </div>
+      `;
+    } catch (error) {
+      el.innerHTML = '<div class="text-red-500">Erro ao carregar</div>';
+    }
+  },
+
+  openModal() {
+    const content = `
+      <select id="fin-tipo" class="w-full border rounded px-3 py-2 mb-2"><option value="entrada">Entrada</option><option value="saida">Saída</option></select>
+      <input id="fin-valor" type="number" step="0.01" class="w-full border rounded px-3 py-2 mb-2" placeholder="Valor" />
+      <input id="fin-descricao" class="w-full border rounded px-3 py-2 mb-2" placeholder="Descrição" />
+      <input id="fin-data" type="date" class="w-full border rounded px-3 py-2" value="${new Date().toISOString().slice(0, 10)}" />
+    `;
+    Modal.open('Nova Transação', content, () => this.save());
+  },
+
+  openEditModal(id) {
+    API.get('financeiro', id).then(transacao => {
+      const content = `
+        <select id="fin-tipo" class="w-full border rounded px-3 py-2 mb-2"><option value="entrada" ${transacao.tipo === 'entrada' ? 'selected' : ''}>Entrada</option><option value="saida" ${transacao.tipo === 'saida' ? 'selected' : ''}>Saída</option></select>
+        <input id="fin-valor" type="number" step="0.01" class="w-full border rounded px-3 py-2 mb-2" placeholder="Valor" value="${transacao.valor}" />
+        <input id="fin-descricao" class="w-full border rounded px-3 py-2 mb-2" placeholder="Descrição" value="${transacao.descricao}" />
+        <input id="fin-data" type="date" class="w-full border rounded px-3 py-2" value="${transacao.data}" />
+      `;
+      Modal.open('Editar Transação', content, () => this.saveEdit(id));
+    });
+  },
+
+  async save() {
+    try {
+      await API.post('financeiro', {
+        tipo: document.getElementById("fin-tipo").value,
+        valor: parseFloat(document.getElementById("fin-valor").value),
+        descricao: document.getElementById("fin-descricao").value,
+        data: document.getElementById("fin-data").value,
+        franquia_id: Auth.usuario.franquia_id || 1
+      });
       Modal.close();
       this.render();
     } catch (error) {
       alert('Erro: ' + error.message);
     }
   },
-  
+
+  async saveEdit(id) {
+    try {
+      await API.put('financeiro', id, {
+        tipo: document.getElementById("fin-tipo").value,
+        valor: parseFloat(document.getElementById("fin-valor").value),
+        descricao: document.getElementById("fin-descricao").value,
+        data: document.getElementById("fin-data").value
+      });
+      Modal.close();
+      this.render();
+    } catch (error) {
+      alert('Erro: ' + error.message);
+    }
+  },
+
   async delete(id) {
-    if (confirm("Deseja excluir esta transação?")) {
+    if (confirm('Deletar transação?')) {
       try {
         await API.delete('financeiro', id);
         this.render();
@@ -1277,236 +874,101 @@ const Financeiro = {
         alert('Erro: ' + error.message);
       }
     }
-  },
-  
-  async render() {
-    const el = document.getElementById("financeiro-container");
-    if (!el) return;
-    
-    try {
-      const financeiro = await API.get('financeiro');
-      this.franquias = await API.get('franquias');
-      
-      const entradas = financeiro.filter(f => f.tipo === "entrada").reduce((s, f) => s + f.valor, 0);
-      const saidas = financeiro.filter(f => f.tipo === "saida").reduce((s, f) => s + f.valor, 0);
-      const saldo = entradas - saidas;
-      
-      el.innerHTML = `
-        <div class="grid sm:grid-cols-3 gap-4 mb-6">
-          <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-            <div class="text-sm text-gray-500 dark:text-gray-300">💰 Entradas</div>
-            <div class="text-2xl font-semibold text-green-600">${Data.formatMoney(entradas)}</div>
-          </div>
-          <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-            <div class="text-sm text-gray-500 dark:text-gray-300">💸 Saídas</div>
-            <div class="text-2xl font-semibold text-red-600">${Data.formatMoney(saidas)}</div>
-          </div>
-          <div class="p-4 border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-            <div class="text-sm text-gray-500 dark:text-gray-300">📊 Saldo</div>
-            <div class="text-2xl font-semibold ${saldo >= 0 ? 'text-green-600' : 'text-red-600'}">${Data.formatMoney(saldo)}</div>
-          </div>
-        </div>
-        
-        <div class="overflow-auto border rounded-lg dark:border-gray-700 bg-white dark:bg-gray-800">
-          <table class="min-w-full text-sm">
-            <thead class="bg-gray-50 dark:bg-gray-700">
-              <tr>
-                <th class="p-3 text-left font-medium">Data</th>
-                <th class="p-3 text-left font-medium">Tipo</th>
-                <th class="p-3 text-left font-medium">Descrição</th>
-                <th class="p-3 text-right font-medium">Valor</th>
-                <th class="p-3 text-center font-medium">Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${financeiro.slice().reverse().map(f => `
-                <tr class="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
-                  <td class="p-3">${new Date(f.data).toLocaleDateString('pt-BR')}</td>
-                  <td class="p-3">
-                    <span class="px-2 py-1 rounded text-xs ${f.tipo === 'entrada' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'}">
-                      ${f.tipo === 'entrada' ? '💰 Entrada' : '💸 Saída'}
-                    </span>
-                  </td>
-                  <td class="p-3">${f.descricao}</td>
-                  <td class="p-3 text-right font-semibold ${f.tipo === 'entrada' ? 'text-green-600' : 'text-red-600'}">${Data.formatMoney(f.valor)}</td>
-                  <td class="p-3 text-center">
-                    <button class="text-blue-600 hover:text-blue-800 mr-2" onclick="Financeiro.openModal(${f.id})">✏️</button>
-                    <button class="text-red-600 hover:text-red-800" onclick="Financeiro.delete(${f.id})">🗑️</button>
-                  </td>
-                </tr>
-              `).join("")}
-              ${financeiro.length === 0 ? `
-                <tr>
-                  <td colspan="5" class="p-8 text-center text-gray-500">Nenhuma transação encontrada</td>
-                </tr>
-              ` : ""}
-            </tbody>
-          </table>
-        </div>
-      `;
-    } catch (error) {
-      console.error('Erro ao carregar financeiro:', error);
-      el.innerHTML = '<div class="text-red-500">Erro ao carregar financeiro</div>';
-    }
   }
 };
 
-// ============ CONFIGURAÇÕES ============
 const Configuracoes = {
-  activeTab: 'empresa',
-  franquias: [],
-  
   async render() {
     const el = document.getElementById("configuracoes-container");
-    if (!el) return;
+    el.innerHTML = `<div class="bg-white rounded-lg border p-6">
+      <h3 class="text-lg font-semibold mb-4">Configurações</h3>
+      <p>Sua Franquia: ${Auth.usuario.franquia_id || 'Matriz'}</p>
+      <p>Papel: ${Auth.usuario.role}</p>
+    </div>`;
+  }
+};
+
+const Franquias = {
+  editingId: null,
+
+  async render() {
+    const el = document.getElementById("franquias-container");
+    
+    if (Auth.usuario.role !== 'super_admin') {
+      el.innerHTML = '<div class="text-red-500 text-center p-8">Acesso negado. Apenas Super Admin pode gerenciar franquias.</div>';
+      return;
+    }
     
     try {
-      this.franquias = await API.get('franquias');
-    } catch (error) {
-      console.error('Erro ao carregar franquias:', error);
-    }
-    
-    el.innerHTML = `
-      <div class="mb-6">
-        <div class="flex border-b dark:border-gray-700">
-          <button class="px-4 py-2 border-b-2 ${this.activeTab === 'empresa' ? 'border-blue-600 text-blue-600' : 'border-transparent'}" onclick="Configuracoes.setTab('empresa')">🏢 Empresa</button>
-          <button class="px-4 py-2 border-b-2 ${this.activeTab === 'franquias' ? 'border-blue-600 text-blue-600' : 'border-transparent'}" onclick="Configuracoes.setTab('franquias')">🪖 Franquias</button>
-        </div>
-      </div>
-      
-      <div id="config-content">
-        ${this.renderTab()}
-      </div>
-    `;
-  },
-  
-  setTab(tab) {
-    this.activeTab = tab;
-    this.render();
-  },
-  
-  renderTab() {
-    switch(this.activeTab) {
-      case 'empresa':
-        return this.renderEmpresa();
-      case 'franquias':
-        return this.renderFranquias();
-      default:
-        return '';
-    }
-  },
-  
-  renderEmpresa() {
-    return `
-      <div class="bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 p-6">
-        <h3 class="text-lg font-semibold mb-4">Dados da Empresa</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="md:col-span-2">
-            <label class="block text-sm font-medium mb-1">Razão Social</label>
-            <input id="emp-razao" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="AutoFranquia Ltda" />
-          </div>
-          <div class="md:col-span-2">
-            <label class="block text-sm font-medium mb-1">Nome Fantasia</label>
-            <input id="emp-fantasia" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="AutoFranquia - Lavagem & Peças" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1">CNPJ</label>
-            <input id="emp-cnpj" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="12.345.678/0001-90" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1">Inscrição Estadual</label>
-            <input id="emp-ie" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="123.456.789" />
-          </div>
-          <div class="md:col-span-2">
-            <label class="block text-sm font-medium mb-1">Endereço</label>
-            <input id="emp-endereco" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="Av. Automotiva, 456" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1">Telefone</label>
-            <input id="emp-telefone" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="(51) 3333-4444" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium mb-1">Email</label>
-            <input id="emp-email" type="email" class="w-full border rounded-lg px-3 py-2 dark:bg-gray-900" value="contato@autofranquia.com" />
-          </div>
-        </div>
-        <div class="mt-6">
-          <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="Configuracoes.saveEmpresa()">Salvar Dados</button>
-        </div>
-      </div>
-    `;
-  },
-  
-  renderFranquias() {
-    return `
-      <div class="space-y-4">
-        <div class="flex justify-between items-center">
-          <h3 class="text-lg font-semibold">Gestão de Franquias</h3>
-          <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="Configuracoes.addFranquia()">+ Nova Franquia</button>
-        </div>
-        
-        <div class="grid gap-4">
-          ${this.franquias.map(f => `
-            <div class="bg-white dark:bg-gray-800 rounded-lg border dark:border-gray-700 p-4">
-              <div class="flex justify-between items-start">
-                <div class="flex-1">
-                  <h4 class="font-semibold">${f.nome}</h4>
-                  <div class="text-sm text-gray-600 dark:text-gray-300">
-                    <div>Cidade: ${f.cidade}</div>
-                    <div>CNPJ: ${f.cnpj}</div>
-                  </div>
-                </div>
-                <div class="flex gap-2">
-                  <button class="text-blue-600 hover:text-blue-800" onclick="Configuracoes.editFranquia(${f.id})">✏️</button>
-                  <button class="text-red-600 hover:text-red-800" onclick="Configuracoes.deleteFranquia(${f.id})">🗑️</button>
-                </div>
+      const franquias = await API.get('franquias');
+      el.innerHTML = `<div class="grid gap-4">
+        ${franquias.map(f => `
+          <div class="border rounded-lg p-4 bg-white hover:shadow-lg">
+            <div class="flex justify-between items-start">
+              <div class="flex-1">
+                <h3 class="font-semibold text-lg">${f.nome}</h3>
+                <p class="text-sm text-gray-600">Cidade: ${f.cidade}</p>
+                <p class="text-sm text-gray-600">CNPJ: ${f.cnpj}</p>
+              </div>
+              <div class="flex gap-2">
+                <button class="text-blue-600 text-sm" onclick="Franquias.openModal(${f.id})">✏️ Editar</button>
+                <button class="text-red-600 text-sm" onclick="Franquias.delete(${f.id})">🗑️ Deletar</button>
               </div>
             </div>
-          `).join("")}
-        </div>
+          </div>
+        `).join("")}
+      </div>`;
+    } catch (error) {
+      el.innerHTML = '<div class="text-red-500">Erro ao carregar franquias</div>';
+    }
+  },
+
+  openModal(id = null) {
+    this.editingId = id;
+    const content = `
+      <div class="space-y-4">
+        <input id="fra-nome" class="w-full border rounded px-3 py-2" placeholder="Nome da Franquia" />
+        <input id="fra-cidade" class="w-full border rounded px-3 py-2" placeholder="Cidade" />
+        <input id="fra-cnpj" class="w-full border rounded px-3 py-2" placeholder="CNPJ" />
       </div>
     `;
-  },
-  
-  saveEmpresa() {
-    alert("Dados da empresa salvos com sucesso!");
-  },
-  
-  async addFranquia() {
-    const nome = prompt("Nome da franquia:");
-    const cidade = prompt("Cidade:");
-    const cnpj = prompt("CNPJ:");
-    
-    if (nome && cidade && cnpj) {
-      try {
-        await API.post('franquias', { nome, cidade, cnpj });
-        this.render();
-      } catch (error) {
-        alert('Erro: ' + error.message);
-      }
+    Modal.open(id ? 'Editar Franquia' : 'Nova Franquia', content, () => this.save());
+
+    if (id) {
+      API.get('franquias', id).then(franquia => {
+        document.getElementById("fra-nome").value = franquia.nome;
+        document.getElementById("fra-cidade").value = franquia.cidade;
+        document.getElementById("fra-cnpj").value = franquia.cnpj;
+      });
     }
   },
-  
-  async editFranquia(id) {
-    const franquia = this.franquias.find(f => f.id === id);
-    if (!franquia) return;
-    
-    const nome = prompt("Nome da franquia:", franquia.nome);
-    const cidade = prompt("Cidade:", franquia.cidade);
-    const cnpj = prompt("CNPJ:", franquia.cnpj);
-    
-    if (nome && cidade && cnpj) {
-      try {
-        await API.put('franquias', id, { nome, cidade, cnpj });
-        this.render();
-      } catch (error) {
-        alert('Erro: ' + error.message);
+
+  async save() {
+    const nome = document.getElementById("fra-nome").value.trim();
+    const cidade = document.getElementById("fra-cidade").value.trim();
+    const cnpj = document.getElementById("fra-cnpj").value.trim();
+
+    if (!nome || !cidade || !cnpj) {
+      alert("Todos os campos são obrigatórios");
+      return;
+    }
+
+    try {
+      const data = { nome, cidade, cnpj };
+      if (this.editingId) {
+        await API.put('franquias', this.editingId, data);
+      } else {
+        await API.post('franquias', data);
       }
+      Modal.close();
+      this.render();
+    } catch (error) {
+      alert('Erro: ' + error.message);
     }
   },
-  
-  async deleteFranquia(id) {
-    if (confirm("Deseja excluir esta franquia?")) {
+
+  async delete(id) {
+    if (confirm('Deletar franquia?')) {
       try {
         await API.delete('franquias', id);
         this.render();
@@ -1517,65 +979,167 @@ const Configuracoes = {
   }
 };
 
-// ============ APP ============
-const App = {
-  sections: ["pdv","produtos","clientes","relatorios","financeiro","configuracoes"],
-  sectionTitles: {
-    "pdv": "PDV / Caixa",
-    "produtos": "Gestão de Produtos",
-    "clientes": "Gestão de Clientes", 
-    "relatorios": "Relatórios de Vendas",
-    "financeiro": "Gestão Financeira",
-    "configuracoes": "Configurações do Sistema"
-  },
-  
-  async init() {
-    console.log('Inicializando sistema...');
-  },
-  
-  showSection(name) {
-    this.sections.forEach(s => {
-      const el = document.getElementById(`section-${s}`);
-      if (el) el.classList.add("hidden");
-    });
-    
-    const active = document.getElementById(`section-${name}`);
-    if (active) {
-      active.classList.remove("hidden");
-      
-      const titleEl = document.getElementById("page-title");
-      if (titleEl) {
-        titleEl.textContent = this.sectionTitles[name] || name;
-      }
-      
-      if (name === "pdv") PDV.render();
-      if (name === "produtos") Produtos.render();
-      if (name === "clientes") Clientes.render();
-      if (name === "relatorios") Relatorios.render();
-      if (name === "financeiro") Financeiro.render();
-      if (name === "configuracoes") Configuracoes.render();
+const Usuarios = {
+  async render() {
+    const el = document.getElementById("usuarios-container");
+    try {
+      const response = await fetch(`${API_URL}/auth/usuarios`);
+      if (!response.ok) throw new Error('Erro ao carregar');
+      const usuarios = await response.json();
+      el.innerHTML = `<div class="grid gap-4">
+        ${usuarios.map(u => `
+          <div class="border rounded-lg p-4 bg-white hover:shadow-lg">
+            <div class="flex justify-between items-start">
+              <div class="flex-1">
+                <h3 class="font-semibold">${u.nome}</h3>
+                <p class="text-sm text-gray-600">${u.email}</p>
+                <p class="text-xs text-gray-500 mt-1">Papel: <strong>${u.role.replace(/_/g, ' ')}</strong></p>
+                <p class="text-xs mt-1">${u.ativo ? '✅ Ativo' : '❌ Inativo'}</p>
+              </div>
+              <div class="flex gap-2">
+                <button class="text-blue-600 text-sm" onclick="Usuarios.openModal(${u.id})">✏️ Editar</button>
+                <button class="text-red-600 text-sm" onclick="Usuarios.delete(${u.id})">🗑️ Deletar</button>
+              </div>
+            </div>
+          </div>
+        `).join("")}
+      </div>`;
+    } catch (error) {
+      el.innerHTML = '<div class="text-red-500">Erro ao carregar usuários</div>';
     }
-    
-    this.updateSidebarActive(name);
   },
-  
-  updateSidebarActive(activeSection) {
-    const buttons = document.querySelectorAll('#sidebar nav button');
-    buttons.forEach(btn => {
-      btn.classList.remove('bg-blue-700');
-    });
-    
-    const sectionIndex = this.sections.indexOf(activeSection);
-    if (sectionIndex >= 0 && buttons[sectionIndex]) {
-      buttons[sectionIndex].classList.add('bg-blue-700');
+
+  openModal(id = null) {
+    const content = `
+      <div class="space-y-4">
+        <input id="usu-nome" class="w-full border rounded px-3 py-2" placeholder="Nome" />
+        <input id="usu-email" class="w-full border rounded px-3 py-2" placeholder="Email" />
+        <input id="usu-senha" type="password" class="w-full border rounded px-3 py-2" placeholder="Senha" />
+        <select id="usu-role" class="w-full border rounded px-3 py-2">
+          <option value="colaborador">Colaborador</option>
+          <option value="admin_franquia">Admin Franquia</option>
+          <option value="super_admin">Super Admin</option>
+        </select>
+        <select id="usu-franquia" class="w-full border rounded px-3 py-2">
+          <option value="">Selecionar Franquia</option>
+          <option value="1">Matriz Porto Alegre</option>
+          <option value="2">Filial Canoas</option>
+        </select>
+      </div>
+    `;
+    Modal.open(id ? 'Editar Usuário' : 'Novo Usuário', content, () => this.save(id));
+  },
+
+  async save(id) {
+    const nome = document.getElementById("usu-nome").value.trim();
+    const email = document.getElementById("usu-email").value.trim();
+    const senha = document.getElementById("usu-senha").value;
+    const role = document.getElementById("usu-role").value;
+    const franquia_id = document.getElementById("usu-franquia").value || null;
+
+    if (!nome || !email) {
+      alert("Nome e email obrigatórios");
+      return;
+    }
+
+    try {
+      if (id) {
+        const data = { nome, email, role, franquia_id };
+        if (senha) data.senha = senha;
+        await fetch(`${API_URL}/auth/usuarios/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+      } else {
+        if (!senha) {
+          alert("Senha obrigatória para novo usuário");
+          return;
+        }
+        await fetch(`${API_URL}/auth/usuarios`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ nome, email, senha, role, franquia_id })
+        });
+      }
+      Modal.close();
+      this.render();
+    } catch (error) {
+      alert('Erro: ' + error.message);
+    }
+  },
+
+  async delete(id) {
+    if (confirm('Deletar usuário?')) {
+      try {
+        await fetch(`${API_URL}/auth/usuarios/${id}`, { method: 'DELETE' });
+        this.render();
+      } catch (error) {
+        alert('Erro: ' + error.message);
+      }
     }
   }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  App.init();
-  App.showSection("pdv");
-});
+const App = {
+  sections: ["pdv","produtos","clientes","relatorios","financeiro","franquias","usuarios","configuracoes"],
+
+  async init() {
+    const usuario = await Auth.getPerfil();
+    
+    if (!usuario) {
+      document.getElementById('login-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        try {
+          await Auth.login(document.getElementById('login-email').value, document.getElementById('login-senha').value);
+          document.getElementById('login-screen').classList.add('hidden');
+          document.getElementById('dashboard').classList.remove('hidden');
+          this.setupDashboard();
+          this.showSection('pdv');
+        } catch (error) {
+          document.getElementById('login-error').textContent = error.message;
+          document.getElementById('login-error').classList.remove('hidden');
+        }
+      });
+    } else {
+      document.getElementById('login-screen').classList.add('hidden');
+      document.getElementById('dashboard').classList.remove('hidden');
+      this.setupDashboard();
+      this.showSection('pdv');
+    }
+  },
+
+  setupDashboard() {
+    document.getElementById('user-name').textContent = Auth.usuario.nome;
+    document.getElementById('user-role').textContent = Auth.usuario.role.replace(/_/g, ' ');
+    
+    if (Auth.usuario.role === 'super_admin') {
+      document.getElementById('menu-franquias').classList.remove('hidden');
+      document.getElementById('menu-usuarios').classList.remove('hidden');
+    }
+    
+    document.getElementById('btn-logout').addEventListener('click', async () => {
+      await Auth.logout();
+      location.reload();
+    });
+  },
+
+  showSection(name) {
+    this.sections.forEach(s => document.getElementById(`section-${s}`).classList.add('hidden'));
+    document.getElementById(`section-${name}`).classList.remove('hidden');
+    
+    if (name === 'pdv') PDV.render();
+    if (name === 'produtos') Produtos.render();
+    if (name === 'clientes') Clientes.render();
+    if (name === 'relatorios') Relatorios.render();
+    if (name === 'financeiro') Financeiro.render();
+    if (name === 'franquias') Franquias.render();
+    if (name === 'usuarios') Usuarios.render();
+    if (name === 'configuracoes') Configuracoes.render();
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => App.init());
 </script>
 </body>
 </html>
