@@ -181,7 +181,8 @@
 </div>
 
 <script>
-const API_URL = 'http://localhost:8000/api/index.php';
+//const API_URL = 'http://localhost:8000/api/index.php';
+const API_URL = 'http://erp-pdv.test:8080/api/index.php';
 
 const Auth = {
   usuario: null,
@@ -466,11 +467,11 @@ const PDV = {
     const lista = this.produtos.filter(p => p.nome.toLowerCase().includes(termo) || p.sku.toLowerCase().includes(termo));
 
     const produtosHTML = `
-      <div class="flex items-center gap-3 mb-4">
-        <input id="pdv-search" class="flex-1 border rounded-lg px-4 py-2" placeholder="Buscar..." value="${this.filtro}" />
-        <button class="px-4 py-2 bg-gray-200 rounded-lg" onclick="PDV.filtro=''; PDV.render()">Limpar</button>
+      <div class="flex items-center gap-3 mb-4 text-gray-700">
+        <input id="pdv-search" class="flex-1 border rounded-lg px-4 py-2 text-gray-700" placeholder="Buscar..." value="${this.filtro}" />
+        <button class="px-4 py-2 bg-gray-200 rounded-lg text-gray-700 hover:bg-gray-300" onclick="PDV.filtro=''; PDV.render()">Limpar</button>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 text-gray-700">
         ${lista.map(p => `
           <div class="border rounded-lg overflow-hidden ${p.categoria === 'Serviços' ? 'bg-blue-50' : 'bg-orange-50'} hover:shadow-lg">
             <img src="${p.imagem || 'https://placehold.co/300x200/cccccc/999999?text=Sem+Imagem'}" alt="${p.nome}" class="w-full h-32 object-cover" />
@@ -487,7 +488,7 @@ const PDV = {
     `;
 
     const carrinhoHTML = `
-      <div class="space-y-3">
+      <div class="space-y-3 text-gray-600">
         ${this.carrinho.length === 0 ? `<div class="text-gray-500 text-center py-8">Carrinho vazio</div>` : ""}
         ${this.carrinho.map(i => `
           <div class="flex items-center justify-between border rounded-lg p-3">
@@ -496,7 +497,7 @@ const PDV = {
               <div class="text-sm text-gray-600">${Data.formatMoney(i.preco)} x ${i.qtd} = ${Data.formatMoney(i.preco * i.qtd)}</div>
             </div>
             <div class="flex items-center gap-2">
-              <button class="w-8 h-8 bg-gray-200 rounded" onclick="PDV.dec(${i.id})">-</button>
+              <button class="w-8 h-8 bg-gray-300 rounded text-black" onclick="PDV.dec(${i.id})">-</button>
               <span class="w-8 text-center">${i.qtd}</span>
               <button class="w-8 h-8 bg-gray-200 rounded" onclick="PDV.inc(${i.id})">+</button>
               <button class="w-8 h-8 bg-red-500 text-white rounded" onclick="PDV.rem(${i.id})">X</button>
@@ -510,7 +511,7 @@ const PDV = {
       </div>
     `;
 
-    el.innerHTML = `<div class="grid lg:grid-cols-3 gap-6"><div class="lg:col-span-2"><h3 class="text-lg font-bold mb-4">Produtos e Serviços</h3>${produtosHTML}</div><div><h3 class="text-lg font-bold mb-4">Carrinho</h3>${carrinhoHTML}</div></div>`;
+    el.innerHTML = `<div class="grid lg:grid-cols-3 gap-6"><div class="lg:col-span-2"><h3 class="text-lg font-bold mb-4 ">Produtos e Serviços</h3>${produtosHTML}</div><div><h3 class="text-lg font-bold mb-4 text-gray-300">Carrinho</h3>${carrinhoHTML}</div></div>`;
     document.getElementById("pdv-search").addEventListener("input", (e) => {
       PDV.filtro = e.target.value;
       PDV.render();
@@ -527,7 +528,7 @@ const Produtos = {
       const produtos = await API.get('produtos');
       el.innerHTML = `<div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         ${produtos.map(p => `
-          <div class="border rounded-lg overflow-hidden bg-white hover:shadow-lg">
+          <div class="border rounded-lg overflow-hidden bg-white hover:shadow-lg text-gray-600">
             <img src="${p.imagem || 'https://placehold.co/300x200/cccccc/999999?text=Sem+Imagem'}" alt="${p.nome}" class="w-full h-32 object-cover" />
             <div class="p-4">
               <div class="font-semibold">${p.nome}</div>
@@ -621,13 +622,13 @@ const Clientes = {
       el.innerHTML = `<div class="grid gap-4">
         ${clientes.map(c => `
           <div class="border rounded-lg p-4 bg-white">
-            <h3 class="font-semibold text-lg">${c.nome}</h3>
+            <h3 class="font-semibold text-lg text-gray-700">${c.nome}</h3>
             <p class="text-sm text-gray-600">${c.tipoDocumento}: ${Data.formatDocument(c.documento, c.tipoDocumento)}</p>
-            <div class="grid md:grid-cols-2 gap-4 text-sm mt-3">
-              <div><span class="font-medium">Email:</span> ${c.email || 'N/A'}</div>
-              <div><span class="font-medium">Telefone:</span> ${c.telefone || 'N/A'}</div>
-              <div><span class="font-medium">Veículo:</span> ${c.veiculo || 'N/A'}</div>
-              <div><span class="font-medium">Endereço:</span> ${c.logradouro || 'N/A'}</div>
+            <div class="grid md:grid-cols-2 gap-4 text-sm mt-3 text-gray-600">
+              <div><span class="font-medium text-gray-600">Email:</span> ${c.email || 'N/A'}</div>
+              <div><span class="font-medium text-gray-600">Telefone:</span> ${c.telefone || 'N/A'}</div>
+              <div><span class="font-medium text-gray-600">Veículo:</span> ${c.veiculo || 'N/A'}</div>
+              <div><span class="font-medium text-gray-600">Endereço:</span> ${c.logradouro || 'N/A'}</div>
             </div>
           </div>
         `).join("")}
@@ -700,16 +701,16 @@ const Relatorios = {
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
           <div>
             <label class="block text-sm font-medium mb-1">Data Início</label>
-            <input type="date" id="rel-data-inicio" class="w-full border rounded px-3 py-2" value="${this.filtroDataInicio}" onchange="Relatorios.filtroDataInicio = this.value; Relatorios.render()" />
+            <input type="date" id="rel-data-inicio" class="w-full border rounded px-3 py-2 text-gray-500" value="${this.filtroDataInicio}" onchange="Relatorios.filtroDataInicio = this.value; Relatorios.render()" />
           </div>
           <div>
             <label class="block text-sm font-medium mb-1">Data Fim</label>
-            <input type="date" id="rel-data-fim" class="w-full border rounded px-3 py-2" value="${this.filtroDataFim}" onchange="Relatorios.filtroDataFim = this.value; Relatorios.render()" />
+            <input type="date" id="rel-data-fim" class="w-full border rounded px-3 py-2 text-gray-500" value="${this.filtroDataFim}" onchange="Relatorios.filtroDataFim = this.value; Relatorios.render()" />
           </div>
           ${isSuperAdmin ? `
             <div>
               <label class="block text-sm font-medium mb-1">Franquia</label>
-              <select id="rel-franquia" class="w-full border rounded px-3 py-2" onchange="Relatorios.filtroFranquia = parseInt(this.value); Relatorios.render()">
+              <select id="rel-franquia" class="w-full border rounded px-3 py-2 text-gray-500" onchange="Relatorios.filtroFranquia = parseInt(this.value); Relatorios.render()">
                 <option value="0">Todas</option>
                 ${this.franquias.map(f => `<option value="${f.id}" ${this.filtroFranquia === f.id ? 'selected' : ''}>${f.nome}</option>`).join("")}
               </select>
@@ -718,16 +719,16 @@ const Relatorios = {
         </div>
         
         <div class="grid sm:grid-cols-3 gap-4 mb-6">
-          <div class="p-4 border rounded-lg bg-white"><div class="text-sm text-gray-500">Total de Vendas</div><div class="text-2xl font-semibold">${vendas.length}</div></div>
+          <div class="p-4 border rounded-lg bg-white"><div class="text-sm text-gray-500">Total de Vendas</div><div class="text-2xl font-semibold text-gray-500">${vendas.length}</div></div>
           <div class="p-4 border rounded-lg bg-white"><div class="text-sm text-gray-500">Faturamento</div><div class="text-2xl font-semibold text-green-600">${Data.formatMoney(total)}</div></div>
-          <div class="p-4 border rounded-lg bg-white"><div class="text-sm text-gray-500">Ticket Médio</div><div class="text-2xl font-semibold">${Data.formatMoney(vendas.length ? total / vendas.length : 0)}</div></div>
+          <div class="p-4 border rounded-lg bg-white"><div class="text-sm text-gray-500">Ticket Médio</div><div class="text-2xl font-semibold text-gray-500">${Data.formatMoney(vendas.length ? total / vendas.length : 0)}</div></div>
         </div>
         <div class="overflow-auto border rounded-lg bg-white">
           <table class="min-w-full text-sm">
-            <thead class="bg-gray-50"><tr><th class="p-3 text-left">Data</th><th class="p-3 text-left">Cliente</th><th class="p-3 text-left">Pagamento</th><th class="p-3 text-right">Valor</th></tr></thead>
+            <thead class="bg-gray-50"><tr><th class="p-3 text-left text-gray-700">Data</th><th class="p-3 text-left text-gray-700">Cliente</th><th class="p-3 text-left text-gray-700">Pagamento</th><th class="p-3 text-right text-gray-700">Valor</th></tr></thead>
             <tbody>
               ${vendas.slice().reverse().map(v => `
-                <tr class="border-t"><td class="p-3">${new Date(v.data).toLocaleDateString('pt-BR')}</td><td class="p-3">${v.cliente}</td><td class="p-3">${v.pagamento || 'N/A'}</td><td class="p-3 text-right font-semibold text-green-600">${Data.formatMoney(v.valor)}</td></tr>
+                <tr class="border-t"><td class="p-3 text-gray-600">${new Date(v.data).toLocaleDateString('pt-BR')}</td><td class="p-3 text-gray-600">${v.cliente}</td><td class="p-3 text-gray-600">${v.pagamento || 'N/A'}</td><td class="p-3 text-right font-semibold text-green-600">${Data.formatMoney(v.valor)}</td></tr>
               `).join("")}
               ${vendas.length === 0 ? '<tr><td colspan="4" class="p-8 text-center text-gray-500">Nenhuma venda encontrada</td></tr>' : ''}
             </tbody>
@@ -769,16 +770,16 @@ const Financeiro = {
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
           <div>
             <label class="block text-sm font-medium mb-1">Data Início</label>
-            <input type="date" id="fin-data-inicio" class="w-full border rounded px-3 py-2" value="${this.filtroDataInicio}" onchange="Financeiro.filtroDataInicio = this.value; Financeiro.render()" />
+            <input type="date" id="fin-data-inicio" class="w-full border rounded px-3 py-2 text-gray-700" value="${this.filtroDataInicio}" onchange="Financeiro.filtroDataInicio = this.value; Financeiro.render()" />
           </div>
           <div>
             <label class="block text-sm font-medium mb-1">Data Fim</label>
-            <input type="date" id="fin-data-fim" class="w-full border rounded px-3 py-2" value="${this.filtroDataFim}" onchange="Financeiro.filtroDataFim = this.value; Financeiro.render()" />
+            <input type="date" id="fin-data-fim" class="w-full border rounded px-3 py-2 text-gray-700" value="${this.filtroDataFim}" onchange="Financeiro.filtroDataFim = this.value; Financeiro.render()" />
           </div>
           ${isSuperAdmin ? `
             <div>
               <label class="block text-sm font-medium mb-1">Franquia</label>
-              <select id="fin-franquia" class="w-full border rounded px-3 py-2" onchange="Financeiro.filtroFranquia = parseInt(this.value); Financeiro.render()">
+              <select id="fin-franquia" class="w-full border rounded px-3 py-2 text-gray-700" onchange="Financeiro.filtroFranquia = parseInt(this.value); Financeiro.render()">
                 <option value="0">Todas</option>
                 ${this.franquias.map(f => `<option value="${f.id}" ${this.filtroFranquia === f.id ? 'selected' : ''}>${f.nome}</option>`).join("")}
               </select>
@@ -787,20 +788,20 @@ const Financeiro = {
         </div>
         
         <div class="grid sm:grid-cols-3 gap-4 mb-6">
-          <div class="p-4 border rounded-lg bg-green-50"><div class="text-sm">Entradas</div><div class="text-2xl font-semibold text-green-600">${Data.formatMoney(entradas)}</div></div>
-          <div class="p-4 border rounded-lg bg-red-50"><div class="text-sm">Saídas</div><div class="text-2xl font-semibold text-red-600">${Data.formatMoney(saidas)}</div></div>
-          <div class="p-4 border rounded-lg bg-blue-50"><div class="text-sm">Saldo</div><div class="text-2xl font-semibold text-blue-600">${Data.formatMoney(entradas - saidas)}</div></div>
+          <div class="p-4 border rounded-lg bg-green-50"><div class="text-sm text-gray-700">Entradas</div><div class="text-2xl font-semibold text-green-600">${Data.formatMoney(entradas)}</div></div>
+          <div class="p-4 border rounded-lg bg-red-50"><div class="text-sm text-gray-700">Saídas</div><div class="text-2xl font-semibold text-red-600">${Data.formatMoney(saidas)}</div></div>
+          <div class="p-4 border rounded-lg bg-blue-50"><div class="text-sm text-gray-600">Saldo</div><div class="text-2xl font-semibold text-blue-600">${Data.formatMoney(entradas - saidas)}</div></div>
         </div>
         
         <div class="overflow-auto border rounded-lg bg-white">
           <table class="min-w-full text-sm">
-            <thead class="bg-gray-50"><tr><th class="p-3 text-left">Data</th><th class="p-3 text-left">Tipo</th><th class="p-3 text-left">Descrição</th><th class="p-3 text-right">Valor</th><th class="p-3 text-center">Ações</th></tr></thead>
+            <thead class="bg-gray-50"><tr><th class="p-3 text-left text-gray-700">Data</th><th class="p-3 text-left text-gray-700">Tipo</th><th class="p-3 text-left text-gray-700">Descrição</th><th class="p-3 text-right text-gray-700">Valor</th><th class="p-3 text-center text-gray-700">Ações</th></tr></thead>
             <tbody>
               ${fin.slice().reverse().map(f => `
                 <tr class="border-t">
-                  <td class="p-3">${new Date(f.data).toLocaleDateString('pt-BR')}</td>
-                  <td class="p-3"><span class="px-2 py-1 rounded text-xs ${f.tipo === 'entrada' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">${f.tipo === 'entrada' ? 'Entrada' : 'Saída'}</span></td>
-                  <td class="p-3">${f.descricao}</td>
+                  <td class="p-3 text-gray-500">${new Date(f.data).toLocaleDateString('pt-BR')}</td>
+                  <td class="p-3 text-gray-500"><span class="px-2 py-1 rounded text-xs ${f.tipo === 'entrada' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}">${f.tipo === 'entrada' ? 'Entrada' : 'Saída'}</span></td>
+                  <td class="p-3 text-gray-500">${f.descricao}</td>
                   <td class="p-3 text-right font-semibold ${f.tipo === 'entrada' ? 'text-green-600' : 'text-red-600'}">${Data.formatMoney(f.valor)}</td>
                   <td class="p-3 text-center">
                     <button class="text-blue-600 text-sm mr-2" onclick="Financeiro.openEditModal(${f.id})">✏️</button>
@@ -887,9 +888,9 @@ const Configuracoes = {
   async render() {
     const el = document.getElementById("configuracoes-container");
     el.innerHTML = `<div class="bg-white rounded-lg border p-6">
-      <h3 class="text-lg font-semibold mb-4">Configurações</h3>
-      <p>Sua Franquia: ${Auth.usuario.franquia_id || 'Matriz'}</p>
-      <p>Papel: ${Auth.usuario.role}</p>
+      <h3 class="text-lg font-semibold mb-4 text-gray-600">Configurações</h3>
+      <p class="text-sm text-gray-600 ">Sua Franquia: ${Auth.usuario.franquia_id || 'Matriz'}</p>
+      <p class="text-sm text-gray-600 ">Papel: ${Auth.usuario.role}</p>
     </div>`;
   }
 };
@@ -912,7 +913,7 @@ const Franquias = {
           <div class="border rounded-lg p-4 bg-white hover:shadow-lg">
             <div class="flex justify-between items-start">
               <div class="flex-1">
-                <h3 class="font-semibold text-lg">${f.nome}</h3>
+                <h3 class="font-semibold text-lg text-gray-600">${f.nome}</h3>
                 <p class="text-sm text-gray-600">Cidade: ${f.cidade}</p>
                 <p class="text-sm text-gray-600">CNPJ: ${f.cnpj}</p>
               </div>
@@ -997,10 +998,10 @@ const Usuarios = {
           <div class="border rounded-lg p-4 bg-white hover:shadow-lg">
             <div class="flex justify-between items-start">
               <div class="flex-1">
-                <h3 class="font-semibold">${u.nome}</h3>
+                <h3 class="font-semibold text-gray-800">${u.nome}</h3>
                 <p class="text-sm text-gray-600">${u.email}</p>
-                <p class="text-xs text-gray-500 mt-1">Papel: <strong>${u.role.replace(/_/g, ' ')}</strong></p>
-                <p class="text-xs mt-1">${u.ativo ? '✅ Ativo' : '❌ Inativo'}</p>
+                <p class="text-xs text-gray-500 mt-1">Papel: <strong class="text-gray-500">${u.role.replace(/_/g, ' ')}</strong></p>
+                <p class="text-xs mt-1 text-gray-500">${u.ativo ? '✅ Ativo' : '❌ Inativo'}</p>
               </div>
               <div class="flex gap-2">
                 <button class="text-blue-600 text-sm" onclick="Usuarios.openModal(${u.id})">✏️ Editar</button>
